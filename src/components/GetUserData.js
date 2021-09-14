@@ -36,21 +36,20 @@ const GetUserData = () => {
     dailyPressure: null,
   });
   const [currentStep, setCurrentStep] = useState(0);
-  const [finalScore, setFinalScore] = useState("");
+  // const [finalScore, setFinalScore] = useState("");
 
   const makeRequest = (formData) => {
     // console.log(typeof formData, formData);
-    let score = 0;
-    for (let n of Object.keys(formData)) {
-      const val = parseInt(formData[n]);
-      if (val && n === "skinConcerns") {
-        score += formData[n].length * 5;
-      } else if (val && n !== "phone" && n !== "age") {
-        score += val;
-      }
-    }
-    setFinalScore(score);
-
+    // let score = 0;
+    // for (let n of Object.keys(formData)) {
+    //   const val = parseInt(formData[n]);
+    //   if (val && n === "skinConcerns") {
+    //     score += formData[n].length * 5;
+    //   } else if (val && n !== "phone" && n !== "age") {
+    //     score += val;
+    //   }
+    // }
+    // setFinalScore(score);
     // console.log(score);
   };
 

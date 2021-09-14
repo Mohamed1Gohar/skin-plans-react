@@ -41,25 +41,25 @@ const FinalResult = () => {
       opacity: "1",
       display: `${resultReceived && timeout && "block"}`,
     },
-    // delay: showingTime,
-    delay: 0,
+    delay: showingTime,
+    // delay: 0,
   });
   const reportAnimationOut = useSpring({
     to: {
       display: `${resultReceived && timeout && "none"}`,
     },
     from: { display: "block" },
-    delay: 0,
-    // delay: showingTime,
+    // delay: 0,
+    delay: showingTime,
   });
   return (
     <>
-      {/* <animated.div style={reportAnimationOut}>
+      <animated.div style={reportAnimationOut}>
         <ContentWhileFetching
           resultReceived={resultReceived}
           showingTime={showingTime}
         />
-      </animated.div> */}
+      </animated.div>
       <animated.div style={reportAnimationIn}>
         <FinalReport />
       </animated.div>

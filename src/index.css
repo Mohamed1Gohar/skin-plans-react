@@ -331,10 +331,18 @@ form .list-group-item label {
 @keyframes skinMatchAnimation {
   0% {
     transform: rotateZ(15deg);
+    -webkit-transform: rotateZ(15deg);
+    -moz-transform: rotateZ(15deg);
+    -ms-transform: rotateZ(15deg);
+    -o-transform: rotateZ(15deg);
   }
 
   50% {
     transform: rotateZ(20deg);
+    -webkit-transform: rotateZ(20deg);
+    -moz-transform: rotateZ(20deg);
+    -ms-transform: rotateZ(20deg);
+    -o-transform: rotateZ(20deg);
   }
 
   100% {
@@ -380,13 +388,9 @@ form .list-group-item label {
     border: 0.5rem solid #e7ddff;
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
-    border-bottom: 0;
-    position: relative
   }
 
   .halfCircle::after {
-    content: "";
-    position: absolute;
     top: -0.5rem;
     left: -0.5rem;
     width: 10rem;
@@ -394,11 +398,10 @@ form .list-group-item label {
     border: 0.5rem solid #363873;
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
-    border-bottom: 0;
-    transform-origin: center bottom;
-    animation: skinMatchAnimation 1.5s linear infinite;
-
   }
 
+  .expectedChangesContainer ul {
+    border-left: none
+  }
 
 }

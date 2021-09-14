@@ -16,15 +16,11 @@ const GetUserLocation = (props) => {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position);
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
       fetch(
         `${API_LINK}/weather/?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=${API_KEY}`
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setTemp(data.main.temp);
           setHumid(data.main.humidity);
           setLoading(false);
@@ -57,9 +53,6 @@ const GetUserLocation = (props) => {
                     style={{
                       width: `${(temp * 100) / 50}%`,
                     }}
-                    aria-valuenow={`${temp}`}
-                    aria-valuemin="0"
-                    aria-valuemax="50"
                   ></div>
                 </div>
               </div>
@@ -76,9 +69,6 @@ const GetUserLocation = (props) => {
                     style={{
                       width: `${humid}%`,
                     }}
-                    aria-valuenow={`${humid}`}
-                    aria-valuemin="0"
-                    aria-valuemax=""
                   ></div>
                 </div>
               </div>
@@ -95,9 +85,6 @@ const GetUserLocation = (props) => {
                     style={{
                       width: `85%`,
                     }}
-                    aria-valuenow="80%"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
                   ></div>
                 </div>
               </div>
@@ -114,9 +101,6 @@ const GetUserLocation = (props) => {
                     style={{
                       width: `100%`,
                     }}
-                    aria-valuenow="100%"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
                   ></div>
                 </div>
               </div>

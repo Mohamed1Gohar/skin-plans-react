@@ -34,8 +34,8 @@ const ExpectedChanges = () => {
         التغيرات المتوقعة لبشرتك في حالة استخدام هذا المنتج : (بناءً على نتائج
         عملاء مشابهين)
       </p>
-      <div className="gridContainer text-left expectedChangesContainer align-items-center">
-        <ul className="h-100 d-flex justify-content-center flex-column pl-4">
+      <div className="gridContainer text-right text-lg-left expectedChangesContainer align-items-center">
+        <ul className="h-100 d-flex justify-content-center flex-column px-4">
           {changes.map((c, i) => {
             return (
               <li key={i}>
