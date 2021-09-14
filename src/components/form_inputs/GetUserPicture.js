@@ -95,7 +95,7 @@ const GetUserPicture = (props) => {
                 </figure>
                 <input
                   type="file"
-                  accept=".jpg, .jpeg, .png, .bmp"
+                  accept="image/*"
                   capture="camera"
                   onInput={handleSelfiePic}
                   style={selfieInputStyle}
