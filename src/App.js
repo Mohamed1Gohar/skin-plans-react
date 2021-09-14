@@ -2,7 +2,7 @@ import Home from "./pages/Home";
 import GetUserPage from "./pages/GetUserPage";
 import FinalResultPage from "./pages/FinalResultPage";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import { AppProvider } from "./context/GlobalContext";
 
