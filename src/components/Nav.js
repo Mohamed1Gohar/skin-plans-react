@@ -5,7 +5,7 @@ import SetRoutineBtn from "./SetRoutineBtn";
 const Nav = () => {
   return (
     <nav className="navbar ">
-      <div className="container-fluid flex-column flex-sm-row">
+      <div className="container flex-column flex-sm-row">
         <div>
           <NavLink className="navbar-brand m-auto" to="/" exact>
             <img
