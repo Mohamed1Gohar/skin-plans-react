@@ -49,6 +49,7 @@ const Header = () => {
               لذلك صممنا لك Quiz مجاني يحدد لك نسبة العناصر التي تحتاج اليها
               بشرتك للوصول الى النتائج المرغوب فيها بسهوله.
             </p>
+            <div style={{ width: "80%", margin: "auto" }}></div>
             <SetRoutineBtn text={"اكتشفي روتينك المناسب"} showArrow={true} />
             <p className=" my-4 cl-prime" style={{ lineHeight: "1.4" }}>
               مجاني يستغرق دقيقتين فقط ليرشح لك الروتين الامثل لك.

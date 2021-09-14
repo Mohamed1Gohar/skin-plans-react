@@ -7,7 +7,7 @@ const Nav = () => {
     <nav className="navbar ">
       <div className="container-fluid flex-column flex-sm-row">
         <div>
-          <NavLink className="navbar-brand m-auto" to="/" exact>
+          <NavLink className="navbar-brand m-auto" to="/skin" exact>
             <img
               src={Logo}
               style={{ width: "12rem" }}

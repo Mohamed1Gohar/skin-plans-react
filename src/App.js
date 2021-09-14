@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import GetUserPage from "./pages/GetUserPage";
+import FinalResultPage from "./pages/FinalResultPage";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -10,15 +11,9 @@ function App() {
     <AppProvider>
       <Router>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/skin" exact component={Home} />
           <Route path="/assessment" exact component={GetUserPage} />
-
-          {/* <Route path="/about">
-          <About />
-          </Route>
-          <Route path="/users">
-          <Users />
-        </Route> */}
+          <Route path="/results" exact component={FinalResultPage} />
         </Switch>
       </Router>
     </AppProvider>

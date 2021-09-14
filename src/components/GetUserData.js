@@ -17,7 +17,6 @@ import UsingMakeUp from "./form_inputs/UsingMakeUp";
 import DailyPressure from "./form_inputs/DailyPressure";
 import GetUserLocation from "./form_inputs/GetUserLocation";
 import GetUserPicture from "./form_inputs/GetUserPicture";
-import FinalResult from "./form_inputs/resultDisplay/FinalResult";
 
 const GetUserData = () => {
   const [data, setData] = useState({
@@ -37,37 +36,21 @@ const GetUserData = () => {
     dailyPressure: null,
   });
   const [currentStep, setCurrentStep] = useState(0);
-  const [finalProduct, setFinalProduct] = useState("");
-
-  const API_LINK = "https://api.openweathermap.org/data/2.5";
-  const API_KEY = "e69ae94fc40fb0ee7312a34838aa827c";
+  const [finalScore, setFinalScore] = useState("");
 
   const makeRequest = (formData) => {
-    console.log(typeof formData, formData);
+    // console.log(typeof formData, formData);
     let score = 0;
     for (let n of Object.keys(formData)) {
       const val = parseInt(formData[n]);
       if (val && n === "skinConcerns") {
         score += formData[n].length * 5;
-      } else if (val && n !== "phone") {
+      } else if (val && n !== "phone" && n !== "age") {
         score += val;
       }
-
-      navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position);
-        console.log("Latitude is :", position.coords.latitude);
-        console.log("Longitude is :", position.coords.longitude);
-        fetch(
-          `${API_LINK}/weather/?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=${API_KEY}`
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            setFinalProduct("bateekh");
-          });
-      });
-
-      console.log(n, formData[n], score);
     }
+    setFinalScore(score);
+
     // console.log(score);
   };
 
@@ -108,15 +91,14 @@ const GetUserData = () => {
     <DailyPressure next={handleNextStep} prev={handlePrevStep} data={data} />,
     <GetUserLocation next={handleNextStep} prev={handlePrevStep} data={data} />,
     <GetUserPicture next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <FinalResult product={finalProduct} />,
   ];
 
-  // console.log("data", data);
+  console.log("data", data);
 
   return (
     <div
       className="d-flex align-items-center justify-content-center flex-column"
-      style={{ height: "100vh" }}
+      style={{ minHeight: "100vh" }}
     >
       <div
         className="mb-5 mt-2"

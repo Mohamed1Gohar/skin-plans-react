@@ -4,7 +4,7 @@ import FormArrows from "../FormArrows";
 
 const UserPhone = (props) => {
   const handleSubmit = (values) => {
-    console.log(props);
+    // console.log(props);
     props.next(values);
   };
 

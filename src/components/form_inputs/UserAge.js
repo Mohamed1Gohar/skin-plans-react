@@ -1,4 +1,5 @@
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import FormArrows from "../FormArrows";
 
 const UserAge = (props) => {
@@ -7,83 +8,25 @@ const UserAge = (props) => {
   };
 
   return (
-    <Formik initialValues={props.data} onSubmit={handleSubmit}>
-      {({ values }) => (
+    <Formik
+      validationSchema={Yup.object({
+        age: Yup.number().integer().required("برجاء ادخال  عمرك"),
+      })}
+      initialValues={props.data}
+      onSubmit={handleSubmit}
+    >
+      {({ values, isValid }) => (
         <Form>
-          <div
-            className="cl-prime mb-3"
-            role="group"
-            aria-labelledby="radio-group"
-          >
+          <div className="cl-prime mb-3">
             <p>
               <strong>كم عمرك:</strong>
             </p>
-            <ul className="list-group">
-              <li
-                className={`list-group-item my-2  ${
-                  values.age === "20" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="age"
-                    value="20"
-                    aria-label="20"
-                    style={{ visibility: "hidden" }}
-                  />
-                  &lt; 20
-                </label>
-              </li>
-              <li
-                className={`list-group-item my-2  ${
-                  values.age === "15" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="age"
-                    value="15"
-                    aria-label="15"
-                    style={{ visibility: "hidden" }}
-                  />
-                  20-30
-                </label>
-              </li>
-              <li
-                className={`list-group-item my-2  ${
-                  values.age === "5" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="age"
-                    value="5"
-                    aria-label="5"
-                    style={{ visibility: "hidden" }}
-                  />
-                  31-40
-                </label>
-              </li>
-              <li
-                className={`list-group-item my-2  ${
-                  values.age === "0" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="age"
-                    value="0"
-                    aria-label="0"
-                    style={{ visibility: "hidden" }}
-                  />
-                  40 &gt;
-                </label>
-              </li>
-            </ul>
+            <Field name="age" type="number" className="p-2 cl-prime h5" />
+            <br />
+            <p style={{ color: "red" }}>
+              <ErrorMessage name="age" />
+            </p>
+            {console.log(isValid)}
           </div>
           <FormArrows
             values={values}

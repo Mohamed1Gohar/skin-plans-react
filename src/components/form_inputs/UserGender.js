@@ -2,25 +2,25 @@ import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
 
 const UserGender = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
-    console.log(" values", values);
+    clearTimeout(submitTimeout)
     props.next(values);
   };
 
   const autoSubmit = (values, isSubmitting) => {
     console.log("formik is submitting ", isSubmitting);
     if (!isSubmitting) {
-      setTimeout(() => {
+      clearTimeout(submitTimeout);
+      submitTimeout = setTimeout(() => {
         handleSubmit(values);
       }, 3000);
     }
-    console.log("issubmitting", isSubmitting);
   };
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values, isSubmitting, setSubmitting }) => (
         <Form>
-          {console.log(setSubmitting)}
           <div
             className="cl-prime mb-3"
             style={{ width: "16rem" }}
@@ -47,10 +47,10 @@ const UserGender = (props) => {
                     value="male"
                     aria-label="male"
                     style={{ visibility: "hidden" }}
-                    // onInput={() => {
-                    //   autoSubmit(values, isSubmitting);
-                    //   setSubmitting(!isSubmitting);
-                    // }}
+                    onInput={() => {
+                      autoSubmit(values, isSubmitting);
+                      setSubmitting(!isSubmitting);
+                    }}
                   />
                   ذكر
                 </label>
@@ -67,10 +67,10 @@ const UserGender = (props) => {
                     value="female"
                     aria-label="female"
                     style={{ visibility: "hidden" }}
-                    // onInput={() => {
-                    //   autoSubmit(values, isSubmitting);
-                    //   setSubmitting(!isSubmitting);
-                    // }}
+                    onInput={() => {
+                      autoSubmit(values, isSubmitting);
+                      setSubmitting(!isSubmitting);
+                    }}
                   />
                   أنثى
                 </label>
