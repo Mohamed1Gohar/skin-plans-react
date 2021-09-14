@@ -11,7 +11,7 @@ function App() {
     <AppProvider>
       <Router>
         <Switch>
-          <Route path="/skin" exact component={Home} />
+          <Route path="/" exact component={Home} />
           <Route path="/assessment" exact component={GetUserPage} />
           <Route path="/results" exact component={FinalResultPage} />
         </Switch>
