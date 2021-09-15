@@ -30,28 +30,28 @@ const DailyPressure = (props) => {
             </p>
             <ul className="list-group">
               <RadioInput
-                valName="usingMakeUp"
+                valName="dailyPressure"
                 value="0"
                 txt="ضغط شديد"
                 values={values}
                 autoSubmit={autoSubmit}
               />
               <RadioInput
-                valName="usingMakeUp"
+                valName="dailyPressure"
                 value="5"
                 txt="ضغط متوسط"
                 values={values}
                 autoSubmit={autoSubmit}
               />
               <RadioInput
-                valName="usingMakeUp"
+                valName="dailyPressure"
                 value="15"
                 txt="ضغط بسيط"
                 values={values}
                 autoSubmit={autoSubmit}
               />
               <RadioInput
-                valName="usingMakeUp"
+                valName="dailyPressure"
                 value="20"
                 txt="لا يوجد ضغوطات"
                 values={values}

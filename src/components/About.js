@@ -16,14 +16,14 @@ const About = () => {
           <h2 className="heading cl-prime">نقوم بالعمل المجهد بدلا منك</h2>
           <p className="my-5">
             Skin-plans هو برنامج مطور خصيصًا لمساعدتك في اختيار الروتين الانسب
-            لكي بدقه واحترافيه،وفي غضون دقيقتين فقط.
+            لك بدقه واحترافيه،وفي غضون دقيقتين فقط.
           </p>
           <ul className="mb-4">
             <li style={listItemStyle}>
               <span style={listItemPointer} className="cl-prime">
                 1
               </span>
-              من بين مئات المنتجات نرشح لكي المنتج المناسب لبشرتك
+              من بين مئات المنتجات نرشح لك المنتج المناسب لبشرتك
             </li>
             <li style={listItemStyle}>
               <span style={listItemPointer} className="cl-prime">

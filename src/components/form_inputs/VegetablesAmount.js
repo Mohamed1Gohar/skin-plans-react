@@ -113,7 +113,7 @@ const VegetablesAmount = (props) => {
           <animated.div style={animPropsFadeOut} className="h5">
             <strong style={{ lineHeight: "1.3" }}>
               عندما يتعلق الأمر بالانتظام على روتين معين، تجنبي دائمًا المنتجات
-              الكيماوية واختاري المكونات الطبيعية. يرشح لكي skin- plans منتجات
+              الكماوية واختاري المكونات الطبيعية. يرشح لك skin- plans منتجات
               طبيعيه لتقليل مخاطر التعامل مع مشاكل البشرة وتهيجها لاحقًا
             </strong>
             <img

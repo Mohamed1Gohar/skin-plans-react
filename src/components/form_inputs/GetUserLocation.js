@@ -11,17 +11,15 @@ const GetUserLocation = (props) => {
   const [humid, setHumid] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const API_LINK = "https://api.openweathermap.org/data/2.5";
   const API_KEY = "e69ae94fc40fb0ee7312a34838aa827c";
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      fetch(
-        `${API_LINK}/weather/?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=${API_KEY}`
-      )
+      fetch(`https://api.openweathermap.org/data/2.5/weather?id=360630&appid=${API_KEY}`)
         .then((res) => res.json())
         .then((data) => {
-          setTemp(data.main.temp);
+          console.log(data)
+          const CelsiusTemp = data.main.temp - 273.15
+          setTemp(CelsiusTemp);
           setHumid(data.main.humidity);
           setLoading(false);
         });

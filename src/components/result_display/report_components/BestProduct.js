@@ -13,7 +13,7 @@ const BestProduct = () => {
   return (
     <div className="result_comp_style">
       <h1 className="h3" style={{ fontWieght: "900" }}>
-        المنتج الطبيعي الأنسب لكي هو
+        المنتج الطبيعي الأنسب لك هو
         <strong>كريم لو رايدز </strong>
       </h1>
       <img src={ProductImage} alt="كريم لو رايدز" />
