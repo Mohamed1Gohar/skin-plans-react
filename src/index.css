@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "cairo", 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "cairo", 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -275,7 +275,7 @@ form .list-group-item label {
 }
 
 .expectedChangesContainer ul {
-  border-left: 2px solid #363873
+  border-right: 2px solid #363873
 }
 
 .expectedChangesContainer li {
@@ -434,7 +434,7 @@ summary:focus-visible {
   }
 
   .expectedChangesContainer ul {
-    border-left: none
+    border: none
   }
 
 }
