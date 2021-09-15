@@ -281,6 +281,13 @@ form .list-group-item label {
   -webkit-animation: skinMatchAnimation 1.5s linear infinite;
 }
 
+
+summary:active,
+summary:focus,
+summary:focus-visible {
+  outline: none;
+}
+
 /* keyframes */
 @keyframes imageScanVerticalAnimation {
   0% {

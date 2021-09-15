@@ -28,13 +28,17 @@ const Disclaimer = () => {
   ];
 
   return (
-    <div>
+    <div
+      className="result_comp_style text-left"
+      dir="ltr"
+      style={{ alignItems: "normal" }}
+    >
       {content.map((c, i) => {
         return (
-          <div key={i} className="result_comp_style">
-            <p className="h4 mb-4">{c.name}</p>
-            <p>{c.p}</p>
-          </div>
+          <details key={i} className="mb-3">
+            <summary className="h5 mb-2">{c.name}</summary>
+            <p className="pl-3">{c.p}</p>
+          </details>
         );
       })}
     </div>
