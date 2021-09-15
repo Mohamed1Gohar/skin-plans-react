@@ -21,7 +21,12 @@ const UserAge = (props) => {
             <p>
               <strong>كم عمرك:</strong>
             </p>
-            <Field name="age" type="number" className="p-2 cl-prime h5" />
+            <Field
+              name="age"
+              type="number"
+              className="p-2 cl-prime h5"
+              min="0"
+            />
             <br />
             <p style={{ color: "red" }}>
               <ErrorMessage name="age" />

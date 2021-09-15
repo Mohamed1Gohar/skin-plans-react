@@ -1,10 +1,19 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
+import RadioInput from "../formFields/RadioInput";
 
 const WaterAmount = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
-    console.log(values);
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   return (
@@ -20,7 +29,43 @@ const WaterAmount = (props) => {
               <strong>أشرب …. كوب يوميا</strong>
             </p>
             <ul className="list-group">
-              <li
+              <RadioInput
+                valName="waterAmount"
+                value="0"
+                txt=" < 5"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="waterAmount"
+                value="5"
+                txt="6 - 5"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="waterAmount"
+                value="10"
+                txt="7 - 6"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="waterAmount"
+                value="15"
+                txt="8 - 7"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="waterAmount"
+                value="20"
+                txt="+8"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+
+              {/* <li
                 className={`list-group-item my-2  ${
                   values.waterAmount === "0" ? "active" : null
                 }`}
@@ -101,7 +146,7 @@ const WaterAmount = (props) => {
                   />
                   +8
                 </label>
-              </li>
+              </li> */}
             </ul>
           </div>
           <FormArrows

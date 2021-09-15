@@ -1,10 +1,19 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
+import RadioInput from "../formFields/RadioInput";
 
 const Cheeks = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
-    console.log(values);
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   return (
@@ -20,71 +29,34 @@ const Cheeks = (props) => {
               <strong>نوع بشرتي…</strong>
             </p>
             <ul className="list-group">
-              <li
-                className={`list-group-item my-2  ${
-                  values.cheeks === "20" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="cheeks"
-                    value="20"
-                    aria-label="20"
-                    style={{ visibility: "hidden" }}
-                  />
-                  دهنية
-                </label>
-              </li>
-              <li
-                className={`list-group-item my-2  ${
-                  values.cheeks === "15" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="cheeks"
-                    value="15"
-                    aria-label="15"
-                    style={{ visibility: "hidden" }}
-                  />
-                  مختلطة
-                </label>
-              </li>
-
-              <li
-                className={`list-group-item my-2  ${
-                  values.cheeks === "10" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="cheeks"
-                    value="10"
-                    aria-label="10"
-                    style={{ visibility: "hidden" }}
-                  />
-                  عادية
-                </label>
-              </li>
-              <li
-                className={`list-group-item my-2  ${
-                  values.cheeks === "5" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="cheeks"
-                    value="5"
-                    aria-label="5"
-                    style={{ visibility: "hidden" }}
-                  />
-                  جافة
-                </label>
-              </li>
+              <RadioInput
+                valName="cheeks"
+                value="20"
+                txt="دهنية"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="cheeks"
+                value="15"
+                txt="مختلطة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="cheeks"
+                value="10"
+                txt="عادية"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="cheeks"
+                value="5"
+                txt="جافة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
             </ul>
           </div>
           <FormArrows

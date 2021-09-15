@@ -1,10 +1,18 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
-
+import RadioInput from "../formFields/RadioInput";
 const SlimLines = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
-    console.log(values);
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   return (
@@ -20,9 +28,31 @@ const SlimLines = (props) => {
               <strong>الخطوط الرفيعه الموجودة على بشرتي</strong>
             </p>
             <ul className="list-group">
-              <li
+              <RadioInput
+                valName="slimLines"
+                value="15"
+                txt="تظهر عند الابتسام"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="slimLines"
+                value="10"
+                txt="خفيفة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="slimLines"
+                value="5"
+                txt="واضحة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+
+              {/* <li
                 className={`list-group-item my-2  ${
-                  values.SlimLines === "15" ? "active" : null
+                  values.slimLines === "15" ? "active" : null
                 }`}
               >
                 <label className="d-block mb-0">
@@ -69,7 +99,7 @@ const SlimLines = (props) => {
                   />
                   واضحة
                 </label>
-              </li>
+              </li> */}
             </ul>
           </div>
           <FormArrows

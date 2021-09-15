@@ -1,9 +1,19 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
+import RadioInput from "../formFields/RadioInput";
+
 const Wrinkles = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
-    console.log(values);
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   return (
@@ -19,7 +29,29 @@ const Wrinkles = (props) => {
               <strong>التجاعيد على بشرتي</strong>
             </p>
             <ul className="list-group">
-              <li
+              <RadioInput
+                valName="wrinkles"
+                value="20"
+                txt="غير موجودة حتى الآن"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="wrinkles"
+                value="10"
+                txt="قليلة و سطحية"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="wrinkles"
+                value="5"
+                txt="منتشرة و عميقة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+
+              {/* <li
                 className={`list-group-item my-2  ${
                   values.wrinkles === "20" ? "active" : null
                 }`}
@@ -68,7 +100,7 @@ const Wrinkles = (props) => {
                   />
                   منتشرة وعميقة
                 </label>
-              </li>
+              </li> */}
             </ul>
           </div>
           <FormArrows

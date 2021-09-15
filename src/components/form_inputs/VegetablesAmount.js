@@ -4,11 +4,21 @@ import { useSpring, animated } from "react-spring";
 import FormArrows from "../FormArrows";
 import VegetablesImg from "../../assets/media/images/vegetables_intro.png";
 
+import RadioInput from "../formFields/RadioInput";
+
 const animationDuration = 10000;
 const VegetablesAmount = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
-    console.log(values);
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   const mediaMatch = window.matchMedia("(min-width: 500px)");
@@ -122,73 +132,104 @@ const VegetablesAmount = (props) => {
                 <p>
                   <strong>أتناول الخضروات … خلال الأسبوع</strong>
                 </p>
-                <li
-                  className={`list-group-item my-2  ${
-                    values.vegetablesAmount === "0" ? "active" : null
-                  }`}
-                >
-                  <label className="d-block mb-0">
-                    <Field
-                      type="radio"
-                      name="vegetablesAmount"
-                      value="0"
-                      aria-label="0"
-                      style={{ visibility: "hidden" }}
-                    />
-                    لا أتناول الخضروات
-                  </label>
-                </li>
+                <ul className="list-group">
+                  <RadioInput
+                    valName="vegetablesAmount"
+                    value="0"
+                    txt="لا أتناول الخضروات "
+                    values={values}
+                    autoSubmit={autoSubmit}
+                  />
+                  <RadioInput
+                    valName="vegetablesAmount"
+                    value="5"
+                    txt="مرتين"
+                    values={values}
+                    autoSubmit={autoSubmit}
+                  />
+                  <RadioInput
+                    valName="vegetablesAmount"
+                    value="10"
+                    txt="5-3 مرات"
+                    values={values}
+                    autoSubmit={autoSubmit}
+                  />
+                  <RadioInput
+                    valName="vegetablesAmount"
+                    value="20"
+                    txt="يومياََ"
+                    values={values}
+                    autoSubmit={autoSubmit}
+                  />
 
-                <li
-                  className={`list-group-item my-2  ${
-                    values.vegetablesAmount === "5" ? "active" : null
-                  }`}
-                >
-                  <label className="d-block mb-0">
-                    <Field
-                      type="radio"
-                      name="vegetablesAmount"
-                      value="5"
-                      aria-label="5"
-                      style={{ visibility: "hidden" }}
-                    />
-                    مرتين
-                  </label>
-                </li>
+                  {/* <li
+                    className={`list-group-item my-2  ${
+                      values.vegetablesAmount === "0" ? "active" : null
+                    }`}
+                  >
+                    <label className="d-block mb-0">
+                      <Field
+                        type="radio"
+                        name="vegetablesAmount"
+                        value="0"
+                        aria-label="0"
+                        style={{ visibility: "hidden" }}
+                      />
+                      لا أتناول الخضروات
+                    </label>
+                  </li>
 
-                <li
-                  className={`list-group-item my-2  ${
-                    values.vegetablesAmount === "10" ? "active" : null
-                  }`}
-                >
-                  <label className="d-block mb-0">
-                    <Field
-                      type="radio"
-                      name="vegetablesAmount"
-                      value="10"
-                      aria-label="10"
-                      style={{ visibility: "hidden" }}
-                    />
-                    3-5 مرات
-                  </label>
-                </li>
+                  <li
+                    className={`list-group-item my-2  ${
+                      values.vegetablesAmount === "5" ? "active" : null
+                    }`}
+                  >
+                    <label className="d-block mb-0">
+                      <Field
+                        type="radio"
+                        name="vegetablesAmount"
+                        value="5"
+                        aria-label="5"
+                        style={{ visibility: "hidden" }}
+                      />
+                      مرتين
+                    </label>
+                  </li>
 
-                <li
-                  className={`list-group-item my-2  ${
-                    values.vegetablesAmount === "20" ? "active" : null
-                  }`}
-                >
-                  <label className="d-block mb-0">
-                    <Field
-                      type="radio"
-                      name="vegetablesAmount"
-                      value="20"
-                      aria-label="20"
-                      style={{ visibility: "hidden" }}
-                    />
-                    يوميا
-                  </label>
-                </li>
+                  <li
+                    className={`list-group-item my-2  ${
+                      values.vegetablesAmount === "10" ? "active" : null
+                    }`}
+                  >
+                    <label className="d-block mb-0">
+                      <Field
+                        type="radio"
+                        name="vegetablesAmount"
+                        value="10"
+                        aria-label="10"
+                        style={{ visibility: "hidden" }}
+                      />
+                      3-5 مرات
+                    </label>
+                  </li>
+
+                  <li
+                    className={`list-group-item my-2  ${
+                      values.vegetablesAmount === "20" ? "active" : null
+                    }`}
+                  >
+                    <label className="d-block mb-0">
+                      <Field
+                        type="radio"
+                        name="vegetablesAmount"
+                        value="20"
+                        aria-label="20"
+                        style={{ visibility: "hidden" }}
+                      />
+                      يوميا
+                    </label>
+                  </li> */}
+                </ul>
               </div>
               <FormArrows
                 values={values}

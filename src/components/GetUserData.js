@@ -70,29 +70,29 @@ const GetUserData = () => {
   };
 
   const steps = [
-    <UserName next={handleNextStep} data={data} />,
-    <UserAge next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <UserPhone next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <UserGender next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <SkinConcerns next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <Cheeks next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <BlackSpots next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <SlimLines next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <Wrinkles next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <WaterAmount next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <VegetablesAmount
-      next={handleNextStep}
-      prev={handlePrevStep}
-      data={data}
-    />,
-    <SleepingHours next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <UserName next={handleNextStep} data={data} />,
+    // <UserAge next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <UserPhone next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <UserGender next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <SkinConcerns next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <Cheeks next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <BlackSpots next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <SlimLines next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <Wrinkles next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <WaterAmount next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <VegetablesAmount
+    //   next={handleNextStep}
+    //   prev={handlePrevStep}
+    //   data={data}
+    // />,
+    // <SleepingHours next={handleNextStep} prev={handlePrevStep} data={data} />,
     <UsingMakeUp next={handleNextStep} prev={handlePrevStep} data={data} />,
     <DailyPressure next={handleNextStep} prev={handlePrevStep} data={data} />,
     <GetUserLocation next={handleNextStep} prev={handlePrevStep} data={data} />,
     <GetUserPicture next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
 
-  console.log("data", data);
+  // console.log("data", data);
 
   return (
     <div

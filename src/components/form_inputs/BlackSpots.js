@@ -1,9 +1,19 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
+import RadioInput from "../formFields/RadioInput";
+
 const BlackSpots = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
-    console.log(values);
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   return (
@@ -19,7 +29,36 @@ const BlackSpots = (props) => {
               <strong>البقع الداكنة في بشرتي موجودة بنسبة..؟</strong>
             </p>
             <ul className="list-group">
-              <li
+              <RadioInput
+                valName="blackSpots"
+                value="15"
+                txt="منعدمة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="blackSpots"
+                value="10"
+                txt="صغيرة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="blackSpots"
+                value="5"
+                txt="متوسطة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="blackSpots"
+                value="0"
+                txt="كبيرة"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+
+              {/* <li
                 className={`list-group-item my-2  ${
                   values.blackSpots === "15" ? "active" : null
                 }`}
@@ -85,7 +124,7 @@ const BlackSpots = (props) => {
                   />
                   كبيرة
                 </label>
-              </li>
+              </li> */}
             </ul>
           </div>
           <FormArrows

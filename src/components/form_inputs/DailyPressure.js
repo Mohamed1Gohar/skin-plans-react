@@ -1,9 +1,19 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
+import RadioInput from "../formFields/RadioInput";
 
 const DailyPressure = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   return (
@@ -19,7 +29,36 @@ const DailyPressure = (props) => {
               <strong>كمية الضغط النفسي التي اواجهها يومياً</strong>
             </p>
             <ul className="list-group">
-              <li
+              <RadioInput
+                valName="usingMakeUp"
+                value="0"
+                txt="ضغط شديد"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="usingMakeUp"
+                value="5"
+                txt="ضغط متوسط"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="usingMakeUp"
+                value="15"
+                txt="ضغط بسيط"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="usingMakeUp"
+                value="20"
+                txt="لا يوجد ضغوطات"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+
+              {/* <li
                 className={`list-group-item my-2  ${
                   values.dailyPressure === "0" ? "active" : null
                 }`}
@@ -85,7 +124,7 @@ const DailyPressure = (props) => {
                   />
                   لا يوجد ضغوطات
                 </label>
-              </li>
+              </li> */}
             </ul>
           </div>
           <FormArrows

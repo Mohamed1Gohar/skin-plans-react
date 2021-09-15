@@ -1,9 +1,19 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
+import RadioInput from "../formFields/RadioInput";
 
 const UsingMakeUp = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   return (
@@ -19,7 +29,29 @@ const UsingMakeUp = (props) => {
               <strong>أضع مستحضرات التجميل</strong>
             </p>
             <ul className="list-group">
-              <li
+              <RadioInput
+                valName="usingMakeUp"
+                value="5"
+                txt="يوميا"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="usingMakeUp"
+                value="10"
+                txt="أحيانا"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="usingMakeUp"
+                value="15"
+                txt="لا أضع"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+
+              {/* <li
                 className={`list-group-item my-2  ${
                   values.usingMakeUp === "5" ? "active" : null
                 }`}
@@ -68,7 +100,7 @@ const UsingMakeUp = (props) => {
                   />
                   لا أضع
                 </label>
-              </li>
+              </li> */}
             </ul>
           </div>
           <FormArrows

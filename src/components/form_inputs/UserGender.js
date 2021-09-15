@@ -1,21 +1,21 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
+import RadioInput from "../formFields/RadioInput";
 
 const UserGender = (props) => {
   let submitTimeout;
   const handleSubmit = (values) => {
-    clearTimeout(submitTimeout)
+    clearTimeout(submitTimeout);
+    console.log("clear time out");
     props.next(values);
   };
 
-  const autoSubmit = (values, isSubmitting) => {
-    console.log("formik is submitting ", isSubmitting);
-    if (!isSubmitting) {
-      clearTimeout(submitTimeout);
-      submitTimeout = setTimeout(() => {
-        handleSubmit(values);
-      }, 3000);
-    }
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    console.log("clear time out inside ");
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
@@ -35,7 +35,7 @@ const UserGender = (props) => {
             </p>
 
             <ul className="list-group">
-              <li
+              {/* <li
                 className={`list-group-item my-2  ${
                   values.gender === "male" && "active"
                 }`}
@@ -54,8 +54,8 @@ const UserGender = (props) => {
                   />
                   ذكر
                 </label>
-              </li>
-              <li
+              </li> */}
+              {/* <li
                 className={`list-group-item my-2  ${
                   values.gender === "female" && "active"
                 }`}
@@ -74,7 +74,21 @@ const UserGender = (props) => {
                   />
                   أنثى
                 </label>
-              </li>
+              </li> */}
+              <RadioInput
+                valName="gender"
+                value="female"
+                txt="أنثى"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="gender"
+                value="male"
+                txt="ذكر"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
             </ul>
           </div>
           <FormArrows

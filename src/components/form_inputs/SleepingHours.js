@@ -1,10 +1,19 @@
 import { Formik, Field, Form } from "formik";
 import FormArrows from "../FormArrows";
+import RadioInput from "../formFields/RadioInput";
 
 const SleepingHours = (props) => {
+  let submitTimeout;
   const handleSubmit = (values) => {
-    console.log(values);
+    clearTimeout(submitTimeout);
     props.next(values);
+  };
+
+  const autoSubmit = (values) => {
+    clearTimeout(submitTimeout);
+    submitTimeout = setTimeout(() => {
+      handleSubmit(values);
+    }, 1000);
   };
 
   return (
@@ -20,7 +29,29 @@ const SleepingHours = (props) => {
               <strong>عادةً، نومي يكون ...</strong>
             </p>
             <ul className="list-group">
-              <li
+              <RadioInput
+                valName="sleepingHours"
+                value="0"
+                txt="غير منتظم ومتقلب - < 5"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="sleepingHours"
+                value="10"
+                txt="6 - 8"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+              <RadioInput
+                valName="sleepingHours"
+                value="20"
+                txt="+8"
+                values={values}
+                autoSubmit={autoSubmit}
+              />
+
+              {/* <li
                 className={`list-group-item my-2  ${
                   values.sleepingHours === "5" ? "active" : null
                 }`}
@@ -69,7 +100,7 @@ const SleepingHours = (props) => {
                   />
                   +8
                 </label>
-              </li>
+              </li> */}
             </ul>
           </div>
           <FormArrows
