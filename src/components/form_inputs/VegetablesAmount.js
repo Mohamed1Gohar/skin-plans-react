@@ -6,7 +6,7 @@ import VegetablesImg from "../../assets/media/images/vegetables_intro.png";
 
 import RadioInput from "../formFields/RadioInput";
 
-const animationDuration = 10000;
+const animationDuration = 15000;
 const VegetablesAmount = (props) => {
   let submitTimeout;
   const handleSubmit = (values) => {
