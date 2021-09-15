@@ -30,8 +30,19 @@ img {
 }
 
 a:hover,
-a:focus {
+a:focus,
+a:focus-visible {
   background: #4b4d9a !important;
+  outline: none !important;
+  border: none !important;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus-visible {
+  border-color: transparent;
+  outline: transparent;
+  box-shadow: 0 0 0 transparent;
 }
 
 p {
@@ -150,19 +161,19 @@ form .list-group-item label {
   max-width: 15rem;
   margin: 1rem auto;
   position: relative;
+  overflow-x: hidden;
 }
 
 
-.userPicContainer::before {
-  content: "";
-  position: absolute;
-  background-color: aqua;
-}
+.userPicContainer::before {}
 
 
 /* horizontal */
 .userPicContainer::before {
-  top: 0;
+  content: "";
+  position: absolute;
+  background-color: aqua;
+  top: -10%;
   left: -1%;
   height: 3px;
   width: 102%;
@@ -172,6 +183,28 @@ form .list-group-item label {
 }
 
 
+
+.submitFormBtn,
+.submitFormBtn:hover,
+.submitFormBtn:focus,
+.submitFormBtn:focus-visible {
+  text-decoration: none;
+  width: 100%;
+  display: inline-block;
+  height: 100%;
+  /* background: transparent !important; */
+  padding: 0.5rem;
+  cursor: inherit;
+  pointer-events: none;
+}
+
+.submitFormBtn[data-active="active"],
+.submitFormBtn:hover[data-active="active"],
+.submitFormBtn:focus[data-active="active"],
+.submitFormBtn:focus-visible[data-active="active"] {
+  pointer-events: auto;
+  cursor: pointer;
+}
 
 /* .videoContainer,
 .videoContainer canvas {
@@ -289,31 +322,22 @@ summary:focus-visible {
 }
 
 /* keyframes */
-@keyframes imageScanVerticalAnimation {
-  0% {
-    left: 0%
-  }
 
-  50% {
-    left: 100%
-  }
-
-  0% {
-    left: 0%
-  }
-}
 
 @keyframes imageScanHorizontalAnimation {
   0% {
-    top: 0%
+    top: -11%;
+    opacity: 0;
   }
 
   50% {
-    top: 100%
+    top: 98%;
+    opacity: 1;
   }
 
   0% {
-    top: 0%
+    top: -11%;
+    opacity: 0;
   }
 }
 

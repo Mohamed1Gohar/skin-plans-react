@@ -3,7 +3,10 @@ import { useEffect, useState, useRef } from "react";
 import FormArrows from "../FormArrows";
 import { BsImage } from "react-icons/bs";
 import { VscDeviceCamera } from "react-icons/vsc";
+import { NavLink } from "react-router-dom";
+import { FaCheckCircle } from "react-icons/fa";
 
+// FaCheckCircle;
 const GetUserPicture = (props) => {
   const [captured, setCaptured] = useState(false);
   const [userPicSource, setUserPicSource] = useState(null);
@@ -22,57 +25,12 @@ const GetUserPicture = (props) => {
     setCaptured(true);
     setUserPicSource(URL.createObjectURL(userSelfiePic.current.files[0]));
   };
-  // const video = useRef(null),
-  //   canvas = useRef(null);
-  // let cxt;
-  useEffect(() => {
-    // cxt = canvas.current.getContext("2d");
-    // navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
-    //   video.current.srcObject = stream;
-    //   setTimeout(() => {
-    //     capPic();
-    //   }, 3000);
-    // });
-  }, []);
+  useEffect(() => {}, []);
 
-  // const capPic = () => {
-  //   cxt.drawImage(
-  //     video.current,
-  //     0,
-  //     0,
-  //     canvas.current.width,
-  //     canvas.current.height
-  //   );
-  //   video.current.srcObject.getVideoTracks().forEach((track) => track.stop());
-  //   setCaptured(true);
-  // };
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
         <Form>
-          {/* <div
-            className="m-auto videoContainer"
-            style={{
-              maxWidth: "600px",
-              maxHeight: "450px",
-            }}
-          >
-            <video
-              ref={video}
-              style={{
-                display: `${captured ? "none" : "block"}`,
-              }}
-              autoPlay
-            ></video>
-            <canvas
-              ref={canvas}
-              style={{
-                width: "auto",
-                height: "auto",
-                display: `${captured ? "block" : "none"}`,
-              }}
-            ></canvas> */}
-
           <div className="container">
             <p style={{ maxWidth: "25rem" }}>
               لان معظم العملاء يواجهون مشاكل في معرفة ماتحتاجه بشرتهم، يمكنك ان
@@ -86,9 +44,10 @@ const GetUserPicture = (props) => {
                   className="userPic"
                   alt="صورة المستخدمة"
                 />
+                {captured && <FaCheckCircle style={completedIconStyle} />}
               </div>
             )}
-            <div className="d-flex">
+            <div className="d-flex my-lg-1">
               <div style={selfieContainerStyle} className="d-block d-lg-none">
                 <figure>
                   <VscDeviceCamera style={iconStyle} />
@@ -115,8 +74,14 @@ const GetUserPicture = (props) => {
                 />
               </div>
             </div>
+            <NavLink
+              to="/results"
+              className="btn bg-prime text-white  rounded-pill border-0 m-auto"
+              style={{ width: "11rem" }}
+            >
+              تجاوز هذه الخطوة
+            </NavLink>
           </div>
-          {/* </div> */}
           <FormArrows
             values={values}
             parentProps={props}
@@ -148,4 +113,16 @@ const iconStyle = {
   height: "2rem",
 };
 
+const completedIconStyle = {
+  fontSize: " 3rem",
+  color: " #28a828",
+  position: " absolute",
+  top: " calc(50% - 1.5rem)",
+  left: " calc(50% - 1.5rem)",
+  background: " #ffff",
+  borderRadius: " 50%",
+  boxShadow: " 0 0 18px 9px rgb(255 255 255 / 50%)",
+  border: " none",
+  outline: " none",
+};
 export default GetUserPicture;
