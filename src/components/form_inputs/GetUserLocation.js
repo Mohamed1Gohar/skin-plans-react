@@ -13,17 +13,16 @@ const GetUserLocation = (props) => {
 
   const API_KEY = "e69ae94fc40fb0ee7312a34838aa827c";
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?id=360630&appid=${API_KEY}`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data)
-          const CelsiusTemp = data.main.temp - 273.15
-          setTemp(CelsiusTemp);
-          setHumid(data.main.humidity);
-          setLoading(false);
-        });
-    });
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?id=360630&appid=${API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        const CelsiusTemp = data.main.temp - 273.15;
+        setTemp(CelsiusTemp);
+        setHumid(data.main.humidity);
+        setLoading(false);
+      });
   }, []);
 
   return (
