@@ -388,6 +388,7 @@ form .list-group-item label {
     border: 0.5rem solid #e7ddff;
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
+    border-bottom: 0
   }
 
   .halfCircle::after {
@@ -398,6 +399,7 @@ form .list-group-item label {
     border: 0.5rem solid #363873;
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
+    border-bottom: 0
   }
 
   .expectedChangesContainer ul {
