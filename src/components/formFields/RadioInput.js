@@ -8,7 +8,6 @@ const RadioInput = ({ valName, value, txt, values, autoSubmit }) => {
       }`}
     >
       <label className="d-block">
-        {console.log(valName, value)}
         <Field
           type="radio"
           name={valName}

@@ -10,7 +10,7 @@ const Graph = () => {
       <p className="bg-prime text-white rounded p-3">
         نقص في الكولاجين والريتينول بكمية كبيرة!
       </p>
-      <div className="mt-4 gridContainer graph">
+      <div className="mt-4 gridContainer graph mb-4">
         <div className=" result_comp_style">
           <p>بشرتك تحتاج الى معدلات أعلى من الكولاجين وفيتامين أ</p>
         </div>
@@ -25,7 +25,7 @@ const Graph = () => {
           </p>
         </div>
       </div>
-      <div className=" result_comp_style">
+      <div className=" result_comp_style mb-4">
         <video
           src={GraphSource}
           alt="اإثير اشباع برشرتك بالعناصر اللي تحتاجها"

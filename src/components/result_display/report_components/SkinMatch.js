@@ -1,6 +1,6 @@
 const SkinMatch = () => {
   return (
-    <div className=" result_comp_style">
+    <div className=" result_comp_style mb-4">
       <p>مدى توافق بشرتك مع الروتين المرشح لك :</p>
       <div className="halfCircleContainer">
         <div className="halfCircle"></div>

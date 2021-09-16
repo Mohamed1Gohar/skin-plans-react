@@ -1,4 +1,4 @@
-import { Formik, Field, Form } from "formik";
+import { Formik, Form } from "formik";
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import FormArrows from "../FormArrows";

@@ -7,10 +7,6 @@ const UserName = (props) => {
     props.next(values);
   };
 
-  const animateNextField = (e) => {
-    console.log(e.target, "submit ");
-  };
-
   return (
     <Formik
       validationSchema={Yup.object({
@@ -20,7 +16,6 @@ const UserName = (props) => {
       })}
       initialValues={props.data}
       onSubmit={handleSubmit}
-      onInput={(e) => animateNextField(e)}
     >
       {({ values }) => (
         <Form>

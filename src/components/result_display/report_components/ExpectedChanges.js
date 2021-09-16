@@ -27,7 +27,7 @@ const ExpectedChanges = () => {
 
   return (
     <div
-      className="result_comp_style py-4"
+      className="result_comp_style py-4 mb-4"
       style={{ gridArea: "expectChange" }}
     >
       <p className="h5 my-4">

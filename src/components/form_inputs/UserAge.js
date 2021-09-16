@@ -31,7 +31,6 @@ const UserAge = (props) => {
             <p style={{ color: "red" }}>
               <ErrorMessage name="age" />
             </p>
-            {console.log(isValid)}
           </div>
           <FormArrows
             values={values}

@@ -27,7 +27,6 @@ const FinalResult = () => {
         .then((res) => res.json())
         .then((data) => {
           setResultReceived(true);
-          console.log("data received ");
         });
     });
   }, []);

@@ -1,6 +1,9 @@
 const Info = () => {
   return (
-    <div className="text-right result_comp_style" style={{ gridArea: "info" }}>
+    <div
+      className="text-right result_comp_style mb-4"
+      style={{ gridArea: "info" }}
+    >
       <p className="h5">
         معدل دوران الخلايا في بشرتك بطيء نسبياً
         <br />

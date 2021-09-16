@@ -2,11 +2,11 @@ import Logo from "../../../assets/media/images/logo.png";
 
 const SkinEval = () => {
   return (
-    <div className="result_comp_style">
+    <div className="result_comp_style mb-md-4 ">
       <p className="h3 " style={{ fontWeight: "900" }}>
         تقييم البشرة هو
       </p>
-      <p className="display-3" style={{ fontWeight: "900", color:"#5f64e2" }}>
+      <p className="display-3" style={{ fontWeight: "900", color: "#5f64e2" }}>
         9.4
       </p>
       <p>

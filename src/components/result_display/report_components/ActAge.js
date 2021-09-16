@@ -1,6 +1,6 @@
 const ActAge = () => {
   return (
-    <div className="result_comp_style" dir="ltr">
+    <div className="result_comp_style mb-4" dir="ltr">
       <p className="h4">عمرك الحقيقي</p>
       <p>عمرك الحقيقي: {35}</p>
       <div className="progress w-100 my-2" style={{ height: "1.5rem" }}>

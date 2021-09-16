@@ -1,4 +1,4 @@
-import { Formik, Field, Form } from "formik";
+import { Formik, Form } from "formik";
 import FormArrows from "../FormArrows";
 import RadioInput from "../formFields/RadioInput";
 
@@ -6,13 +6,11 @@ const UserGender = (props) => {
   let submitTimeout;
   const handleSubmit = (values) => {
     clearTimeout(submitTimeout);
-    console.log("clear time out");
     props.next(values);
   };
 
   const autoSubmit = (values) => {
     clearTimeout(submitTimeout);
-    console.log("clear time out inside ");
     submitTimeout = setTimeout(() => {
       handleSubmit(values);
     }, 1000);

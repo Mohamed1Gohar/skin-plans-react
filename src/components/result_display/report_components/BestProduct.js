@@ -11,7 +11,7 @@ const BestProduct = () => {
     "يأتيكِ المنتج بضمان استرجاع 30 يوم",
   ];
   return (
-    <div className="result_comp_style">
+    <div className="result_comp_style mb-4">
       <h1 className="h3" style={{ fontWieght: "900" }}>
         المنتج الطبيعي الأنسب لك هو
         <strong>كريم لو رايدز </strong>
