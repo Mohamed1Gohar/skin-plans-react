@@ -56,7 +56,7 @@ const GetUserLocation = (props) => {
               {/* Humidity  */}
               <div className="mb-2">
                 <div className="d-flex justify-content-between">
-                  <span dir="ltr"></span>
+                  <span dir="ltr">متوسطة</span>
                   <span>الرطوبة</span>
                 </div>
                 <div className="progress" dir="ltr">
@@ -89,7 +89,10 @@ const GetUserLocation = (props) => {
               <div className="mb-2">
                 <div className="d-flex justify-content-between">
                   <span dir="ltr">عالية</span>
-                  <span>مستوى الأشعة فوق البنفسجية</span>
+                  <span>
+                    مستوى الأشعة <br />
+                    فوق البنفسجية
+                  </span>
                 </div>
                 <div className="progress" dir="ltr">
                   <div

@@ -4,25 +4,21 @@ import { createContext, useReducer } from "react";
 const appState = {
   userName: "",
   userPhone: "",
+  userAge: "",
+  userGender: "",
   grade: 0,
 };
 
 const appReducer = (state, action) => {
   switch (action.type) {
-    case "ADD_USER_NAME":
+    case "SET_USER_DATA":
       return {
         ...state,
-        userName: action.payload,
-      };
-    case "ADD_USER_PHONE":
-      return {
-        ...state,
-        userPhone: action.payload,
-      };
-    case "CHANGE_USER_GRADE":
-      return {
-        ...state,
-        userGrade: state.grade + action.payload,
+        userName: action.payload.userName,
+        userAge: action.payload.userAge,
+        userGender: action.payload.userGender,
+        userPhone: action.payload.userPhone,
+        grade: action.payload.grade,
       };
     default:
       return state;
@@ -36,26 +32,15 @@ export const AppContext = createContext(appState);
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, appState);
 
-  // add user name
-  const addUserName = (txt) => {
-    dispatch({ type: "ADD_USER_NAME", payload: txt });
+  // set user data
+  const setUserData = (obj) => {
+    console.log("cotext ", obj);
+    dispatch({ type: "SET_USER_DATA", payload: obj });
   };
-  // add user phone
-  const addUserPhone = (txt) => {
-    dispatch({ type: "ADD_USER_PHONE", payload: txt });
-  };
-  // change user grad
-  const changeUSerGrade = (num) => {
-    dispatch({ type: "CHANGE_USER_GRADE", payload: num });
-  };
-
   return (
     <AppContext.Provider
       value={{
-        userData: state,
-        addUserName,
-        addUserPhone,
-        changeUSerGrade,
+        setUserData,
       }}
     >
       {children}

@@ -3,7 +3,6 @@ import FormArrows from "../FormArrows";
 
 const SkinConcerns = (props) => {
   const handleSubmit = (values) => {
-    console.log(values);
     props.next(values);
   };
 
@@ -16,7 +15,6 @@ const SkinConcerns = (props) => {
             role="group"
             aria-labelledby="checkbox-group"
           >
-            {console.log(values.skinConcerns)}
             <p>
               <strong>بشرتي تعاني من ….. (يمكنكي اختيار اكتر من مشكله)</strong>
             </p>

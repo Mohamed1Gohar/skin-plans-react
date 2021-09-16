@@ -20,10 +20,7 @@ body {
   color: #363873;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
 
 img {
   max-width: 100%
@@ -246,6 +243,10 @@ form .list-group-item label {
   height: auto;
   padding: 1rem;
   border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }
 
 .gridContainer {
@@ -253,8 +254,71 @@ form .list-group-item label {
   grid-gap: 1.5rem;
 }
 
-.graph {
-  grid-template-columns: 1fr 2fr;
+.chartContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  animation: chartReveal 3s ease;
+  -webkit-animation: chartReveal 3s ease;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+}
+
+.chartContainer .percent {
+  position: absolute;
+  width: 8rem;
+  box-shadow: 0 0 17px 6px #e6e6e6;
+  top: 17%;
+  left: 56%;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.chartContainer .less {
+  position: absolute;
+  width: 9rem;
+  box-shadow: 0 0 17px 6px #e6e6e6;
+  top: 57%;
+  left: 68%;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.chartContainer .point {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: 19%;
+  right: 7%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.chartContainer .point::after {
+  content: "";
+  width: 150%;
+  height: 150%;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: -25%;
+  right: -25%;
+  -webkit-border-radius: 50%;
+  border: 4px solid #363873;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .secondLineResult {
@@ -382,9 +446,27 @@ summary:focus-visible {
     -ms-transform: rotateZ(15deg);
     -o-transform: rotateZ(15deg);
   }
-
 }
 
+@keyframes chartReveal {
+
+  0% {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+  }
+
+}
 
 
 /* Media Queries */
@@ -405,6 +487,24 @@ summary:focus-visible {
     grid-template-rows: 1fr;
   }
 
+  .chartContainer .percent {
+    width: 4rem;
+    top: 17%;
+    left: 50%;
+    font-size: 0.75rem;
+  }
+
+  .chartContainer .less {
+    width: 5rem;
+    top: 55%;
+    left: 64%;
+    font-size: 0.75rem;
+  }
+
+  .chartContainer .point {
+    width: 1rem;
+    height: 1rem;
+  }
 
 
   .forthLinResult {

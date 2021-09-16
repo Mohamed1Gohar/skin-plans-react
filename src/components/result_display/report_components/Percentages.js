@@ -1,16 +1,17 @@
-import Percentage from "../../../assets/media/gifs/chartts.gif";
-
 import { useSpring, animated } from "react-spring";
 import { useEffect, useState, useRef } from "react";
 
 const Percentages = () => {
+  const [startAnimation, setStartAnimation] = useState(true);
+
   const animaStyle1 = useSpring({
       from: {
         width: "0%",
       },
       to: {
-        width: "63%",
+        width: startAnimation ? "63%" : "0%",
       },
+      delay: 0,
       config: { duration: 1000 },
     }),
     animaStyle2 = useSpring({
@@ -18,7 +19,7 @@ const Percentages = () => {
         width: "0%",
       },
       to: {
-        width: "87%",
+        width: startAnimation ? "87%" : "0%",
       },
       delay: 1500,
       config: { duration: 1000 },
@@ -47,28 +48,24 @@ const Percentages = () => {
   const data = [
     {
       name: "كولاجين",
-      percent: 63,
       subTxt: "تحتاج بشرتك الى 37% من الكولاجين",
       color: "#7173b4",
       animationName: animaStyle1,
     },
     {
       name: "ريتينول",
-      percent: 87,
       subTxt: "تحتاج بشرتك الى 13% من الريتينول",
       color: "#6466ab",
       animationName: animaStyle2,
     },
     {
       name: "الشاي الأخضر",
-      percent: 75,
       subTxt: "تحتاج بشرتك الى 25% من الشاي الأخضر",
       color: "#53529e",
       animationName: animaStyle3,
     },
     {
       name: "الألوفيرا",
-      percent: 75,
       subTxt: "تحتاج بشرتك الى 25% من الألوفيرا",
       color: "#30326b",
       animationName: animaStyle4,
@@ -78,10 +75,27 @@ const Percentages = () => {
   const elementRef = useRef(null);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      // console.log(window.scrollY, window.innerHeight);
-      // console.log(
-      //   elementRef.current.offsetTop - elementRef.current.clientHeight
-      // );
+      console.log(window.scrollY, window.innerHeight);
+      console.log(
+        elementRef.current.offsetTop,
+        window.innerHeight,
+        elementRef.current.clientHeight
+      );
+      console.log(
+        elementRef.current.offsetTop -
+          window.innerHeight +
+          elementRef.current.clientHeight
+      );
+      if (
+        window.scrollY ===
+        elementRef.current.offsetTop -
+          window.innerHeight +
+          elementRef.current.clientHeight
+      ) {
+        setStartAnimation(true);
+      }
+
+      // offset + ele height - view height
     });
   }, []);
 

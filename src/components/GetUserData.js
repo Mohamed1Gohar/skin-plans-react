@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import UserName from "./form_inputs/UserName";
 import UserPhone from "./form_inputs/UserPhone";
@@ -17,6 +17,8 @@ import UsingMakeUp from "./form_inputs/UsingMakeUp";
 import DailyPressure from "./form_inputs/DailyPressure";
 import GetUserLocation from "./form_inputs/GetUserLocation";
 import GetUserPicture from "./form_inputs/GetUserPicture";
+
+import { AppContext } from "../context/GlobalContext";
 
 const GetUserData = () => {
   const [data, setData] = useState({
@@ -38,25 +40,36 @@ const GetUserData = () => {
   const [currentStep, setCurrentStep] = useState(0);
   // const [finalScore, setFinalScore] = useState("");
 
+  const { setUserData } = useContext(AppContext);
+
   const makeRequest = (formData) => {
-    // console.log(typeof formData, formData);
-    // let score = 0;
-    // for (let n of Object.keys(formData)) {
-    //   const val = parseInt(formData[n]);
-    //   if (val && n === "skinConcerns") {
-    //     score += formData[n].length * 5;
-    //   } else if (val && n !== "phone" && n !== "age") {
-    //     score += val;
-    //   }
-    // }
+    console.log(typeof formData, formData);
+    let score = 0;
+    for (let n of Object.keys(formData)) {
+      const val = parseInt(formData[n]);
+      if (val && n === "skinConcerns") {
+        score += formData[n].length * 5;
+      } else if (val && n !== "phone" && n !== "age") {
+        score += val;
+      }
+    }
+    setUserData({
+      name: formData.name,
+      age: formData.age,
+      gender: formData.gender,
+      phone: formData.phone,
+      grade: score,
+    });
     // setFinalScore(score);
-    // console.log(score);
+    console.log(score);
   };
 
   const handleNextStep = (newData, final = false) => {
     setData((prev) => ({ ...prev, ...newData }));
-
+    console.log("handle next step");
     if (final) {
+      console.log("handle next step : final");
+
       makeRequest(newData);
       return;
     }

@@ -31,7 +31,7 @@ const GetUserPicture = (props) => {
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
         <Form>
-          <div className="container">
+          <div className="container" style={{ marginTop: "3rem" }}>
             <p style={{ maxWidth: "25rem" }}>
               لان معظم العملاء يواجهون مشاكل في معرفة ماتحتاجه بشرتهم، يمكنك ان
               تضعي صوره لك وسيتمكن الذكاء الاصطناعي من توضيح المشكله التي تعاني
@@ -78,6 +78,7 @@ const GetUserPicture = (props) => {
               to="/results"
               className="btn bg-prime text-white  rounded-pill border-0 m-auto"
               style={{ width: "11rem" }}
+              onClick={handleSubmit}
             >
               تجاوز هذه الخطوة
             </NavLink>
@@ -87,6 +88,7 @@ const GetUserPicture = (props) => {
             parentProps={props}
             condition={!captured}
             lastStep={true}
+            handleSubmit={handleSubmit}
           />
         </Form>
       )}

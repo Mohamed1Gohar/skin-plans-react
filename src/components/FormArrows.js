@@ -1,7 +1,13 @@
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 
-const FormArrows = ({ parentProps, values, condition, lastStep }) => {
+const FormArrows = ({
+  parentProps,
+  values,
+  condition,
+  lastStep,
+  handleSubmit,
+}) => {
   return (
     <div
       className="d-flex justify-content-between container flex-row"
@@ -22,6 +28,7 @@ const FormArrows = ({ parentProps, values, condition, lastStep }) => {
             to="/results"
             className="text-white rounded-pill submitFormBtn"
             data-active={!condition && "active"}
+            onClick={handleSubmit}
           >
             Submit
           </NavLink>

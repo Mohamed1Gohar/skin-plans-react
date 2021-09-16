@@ -11,7 +11,10 @@ import Disclaimer from "./report_components/Disclaimer";
 
 const FinalReport = () => {
   return (
-    <div className="text-center py-4 container cl-prime">
+    <div
+      className="text-center py-4 container cl-prime"
+      style={{ maxWidth: "45rem" }}
+    >
       <Graph />
       <div className="gridContainer secondLineResult ">
         <SkinEval />
