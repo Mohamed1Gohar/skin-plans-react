@@ -71,16 +71,18 @@ const Percentages = () => {
   const elementRef = useRef(null);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      const startAnimationHeight =
-        elementRef.current.offsetTop -
-        window.innerHeight +
-        elementRef.current.clientHeight;
-      if (
-        elementRef.current &&
-        window.scrollY >= startAnimationHeight &&
-        startAnimationHeight > 0
-      ) {
-        setStartAnimation(true);
+      // to prevent error when component is no in the page so elementRef.current is undefined
+      if (elementRef.current) {
+        const startAnimationHeight =
+          elementRef.current.offsetTop -
+          window.innerHeight +
+          elementRef.current.clientHeight;
+        if (
+          window.scrollY >= startAnimationHeight &&
+          startAnimationHeight > 0
+        ) {
+          setStartAnimation(true);
+        }
       }
     });
   }, [startAnimation]);
