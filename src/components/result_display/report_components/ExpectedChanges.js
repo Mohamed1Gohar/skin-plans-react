@@ -34,7 +34,7 @@ const ExpectedChanges = () => {
         التغيرات المتوقعة لبشرتك في حالة استخدام هذا المنتج : (بناءً على نتائج
         عملاء مشابهين)
       </p>
-      <div className="gridContainer text-right  expectedChangesContainer align-items-center">
+      <div className="gridContainer text-right expectedChangesContainer align-items-around">
         <img
           src={ExpectChangeGraph}
           alt="نضارة 20% و امتلاء بشرة 25% و انتفاخ عين أقل 53% خطوط وجه أقل 75% بقع داكنة أقل 85%"
