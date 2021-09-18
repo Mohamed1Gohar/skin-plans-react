@@ -2,7 +2,7 @@ import { useSpring, animated } from "react-spring";
 import { useEffect, useState, useRef } from "react";
 
 const Percentages = () => {
-  const [startAnimation, setStartAnimation] = useState(true);
+  const [startAnimation, setStartAnimation] = useState(false);
 
   const animaStyle1 = useSpring({
       from: {
@@ -11,8 +11,7 @@ const Percentages = () => {
       to: {
         width: startAnimation ? "63%" : "0%",
       },
-      delay: 0,
-      config: { duration: 1000 },
+      config: { duration: 500 },
     }),
     animaStyle2 = useSpring({
       from: {
@@ -21,28 +20,25 @@ const Percentages = () => {
       to: {
         width: startAnimation ? "87%" : "0%",
       },
-      delay: 1500,
-      config: { duration: 1000 },
+      config: { duration: 500 },
     }),
     animaStyle3 = useSpring({
       from: {
         width: "0%",
       },
       to: {
-        width: "75%",
+        width: startAnimation ? "75%" : "0%",
       },
-      delay: 3000,
-      config: { duration: 1000 },
+      config: { duration: 500 },
     }),
     animaStyle4 = useSpring({
       from: {
         width: "0%",
       },
       to: {
-        width: "75%",
+        width: startAnimation ? "75%" : "0%",
       },
-      delay: 4500,
-      config: { duration: 1000 },
+      config: { duration: 500 },
     });
 
   const data = [
@@ -75,29 +71,15 @@ const Percentages = () => {
   const elementRef = useRef(null);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      console.log(window.scrollY, window.innerHeight);
-      console.log(
-        elementRef.current.offsetTop,
-        window.innerHeight,
-        elementRef.current.clientHeight
-      );
-      console.log(
+      const startAnimationHeight =
         elementRef.current.offsetTop -
-          window.innerHeight +
-          elementRef.current.clientHeight
-      );
-      if (
-        window.scrollY ===
-        elementRef.current.offsetTop -
-          window.innerHeight +
-          elementRef.current.clientHeight
-      ) {
+        window.innerHeight +
+        elementRef.current.clientHeight;
+      if (window.scrollY >= startAnimationHeight && startAnimationHeight > 0) {
         setStartAnimation(true);
       }
-
-      // offset + ele height - view height
     });
-  }, []);
+  }, [startAnimation]);
 
   return (
     <div
@@ -124,8 +106,6 @@ const Percentages = () => {
           </div>
         );
       })}
-
-      {/* <img src={Percentage} alt="graph" /> */}
     </div>
   );
 };
