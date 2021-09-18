@@ -83,7 +83,7 @@ const Percentages = () => {
 
   return (
     <div
-      className="result_comp_style mb-0"
+      className="result_comp_style mb-4 mb-lg-0"
       style={{ gridArea: "percent" }}
       ref={elementRef}
     >

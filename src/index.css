@@ -203,11 +203,6 @@ form .list-group-item label {
   cursor: pointer;
 }
 
-/* .videoContainer,
-.videoContainer canvas {
-  width: 600px;
-  height: 450px;
-} */
 
 /* div.radioContainer::after {
   content: "cheeks";
@@ -329,7 +324,6 @@ form .list-group-item label {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "info percent""info expectChange";
-  /* grid-row-gap: 1.5rem */
 }
 
 .expectedChangesContainer {
@@ -415,10 +409,10 @@ summary:focus-visible {
 
   100% {
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
+    -webkit-transform: ;
+    -moz-transform: ;
+    -ms-transform: ;
+    -o-transform: ;
   }
 }
 
@@ -473,10 +467,8 @@ summary:focus-visible {
 
 @media (max-width : 768px) {
 
-  .videoContainer,
-  .videoContainer canvas {
-    width: 330px;
-    height: auto;
+  .gridContainer {
+    grid-gap: 0;
   }
 
   .graph,
@@ -509,7 +501,6 @@ summary:focus-visible {
 
   .forthLinResult {
     grid-template-areas: "percent""info"" expectChange";
-    grid-row-gap: 1.5rem;
   }
 
   .halfCircle {
