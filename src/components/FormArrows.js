@@ -15,9 +15,8 @@ const FormArrows = ({
     >
       <button
         type="submit"
-        className="btn text-white my-3 bg-prime border-0"
+        className="btn text-white my-3 bg-prime border-0 rounded-pill"
         style={{
-          borderRadius: "3rem",
           width: `${lastStep && "6rem"}`,
           padding: `${lastStep && "0"}`,
         }}
@@ -28,7 +27,7 @@ const FormArrows = ({
             to="/results"
             className="text-white rounded-pill submitFormBtn"
             data-active={!condition && "active"}
-            onClick={handleSubmit}
+            onClick={() => handleSubmit(values)}
           >
             Submit
           </NavLink>

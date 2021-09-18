@@ -161,10 +161,6 @@ form .list-group-item label {
   overflow-x: hidden;
 }
 
-
-.userPicContainer::before {}
-
-
 /* horizontal */
 .userPicContainer::before {
   content: "";

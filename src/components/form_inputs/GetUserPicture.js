@@ -41,7 +41,7 @@ const GetUserPicture = (props) => {
               <div className="userPicContainer">
                 <img
                   src={userPicSource}
-                  className="userPic"
+                  style={{ maxHeight: "45vh" }}
                   alt="صورة المستخدمة"
                 />
                 {captured && <FaCheckCircle style={completedIconStyle} />}
@@ -77,8 +77,7 @@ const GetUserPicture = (props) => {
             <NavLink
               to="/results"
               className="btn bg-prime text-white  rounded-pill border-0 m-auto"
-              style={{ width: "11rem" }}
-              onClick={handleSubmit}
+              onClick={() => handleSubmit(values)}
             >
               تجاوز هذه الخطوة
             </NavLink>
