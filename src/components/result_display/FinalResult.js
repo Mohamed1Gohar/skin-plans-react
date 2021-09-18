@@ -35,7 +35,7 @@ const FinalResult = () => {
       opacity: "1",
       display: `${resultReceived && timeout && "block"}`,
     },
-    delay: showingTime,
+    delay: showingTime + 2000,
     // delay: 0,
   });
   const reportAnimationOut = useSpring({
@@ -44,7 +44,7 @@ const FinalResult = () => {
     },
     from: { display: "block" },
     // delay: 0,
-    delay: showingTime,
+    delay: showingTime + 2000,
   });
   return (
     <>
