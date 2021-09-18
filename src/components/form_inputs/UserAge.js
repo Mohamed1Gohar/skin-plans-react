@@ -10,7 +10,10 @@ const UserAge = (props) => {
   return (
     <Formik
       validationSchema={Yup.object({
-        age: Yup.number().integer().required("برجاء ادخال  عمرك"),
+        age: Yup.number()
+          .integer()
+          .required("برجاء ادخال  عمرك")
+          .max(120, " برجاء ادخال عمر أقل من 120 عام"),
       })}
       initialValues={props.data}
       onSubmit={handleSubmit}

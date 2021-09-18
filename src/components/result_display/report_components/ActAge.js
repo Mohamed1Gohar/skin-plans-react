@@ -11,7 +11,7 @@ const ActAge = () => {
         <div
           className="progress-bar text-right px-2 bg-prime"
           role="progressbar"
-          style={{ width: `calc(2rem + ${age}% )` }}
+          style={{ width: ` ${(age * 100) / 120 - 7}% ` }}
         >
           {age}
         </div>
@@ -21,7 +21,7 @@ const ActAge = () => {
         <div
           className="progress-bar text-right pr-2 bg-danger"
           role="progressbar"
-          style={{ width: `calc(2rem + ${age + 7}% )` }}
+          style={{ width: `${(age * 100) / 120 + 7}% ` }}
         >
           {age + 7}
         </div>
