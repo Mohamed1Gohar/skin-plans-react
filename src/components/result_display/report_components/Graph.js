@@ -1,7 +1,4 @@
 import FullChart from "../../../assets/media/images/fullChart.png";
-// import Chart from "../../../assets/media/svg/chart.png";
-// import { ReactComponent as Dashed } from "../../../assets/media/svg/dashed.svg";
-// import { ReactComponent as Solid } from "../../../assets/media/svg/solid.svg";
 
 const Graph = () => {
   return (
@@ -23,19 +20,11 @@ const Graph = () => {
         className="result_comp_style mb-4 chartContainer"
         style={{ position: "relative", overflow: "hidden" }}
       >
-        {/* <span className="percent ">97% بشرة أكثر نضارة</span>
-        <span className="less ">مشاكل اقل</span>
-        <span className="point bg-prime"></span> */}
-        <img src={FullChart} className="chartSvg" />
-        {/* <img src={Chart} className='chartSvg' />
-        <Dashed className="dashedSvg" />
-        <Solid className="solidSvg" /> */}
-        {/* <video
-          src={GraphSource}
-          alt="اإثير اشباع برشرتك بالعناصر اللي تحتاجها"
-          autoPlay
-          style={{ width: "100%", height: "auto" }}
-        /> */}
+        <img
+          src={FullChart}
+          className="chartSvg"
+          alt="بشرة أكثر نضارة بنسبة 97 % و مشاكل بشرة أقل بكثير كل ذلك مع skin plans"
+        />
       </div>
       <div className=" result_comp_style mb-4">
         <p>
