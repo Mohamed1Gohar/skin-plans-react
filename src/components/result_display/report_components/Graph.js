@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import FullChart from "../../../assets/media/images/fullChart.png";
+import { AppContext } from "../../../context/GlobalContext";
 
 const Graph = () => {
+  const { name } = useContext(AppContext);
   return (
     <div className="mt-3">
       <p className="mb-3">
-        انت تعاني من
+        <strong>{name}</strong> &nbsp; انت تعاني من
         <br />
       </p>
       <p className="bg-prime text-white rounded p-3">

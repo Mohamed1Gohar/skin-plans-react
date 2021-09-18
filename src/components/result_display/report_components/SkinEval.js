@@ -1,13 +1,16 @@
+import { useContext } from "react";
 import Logo from "../../../assets/media/images/logo.png";
+import { AppContext } from "../../../context/GlobalContext";
 
 const SkinEval = () => {
+  const { displayedGrade } = useContext(AppContext);
   return (
     <div className="result_comp_style mb-md-4 ">
       <p className="h3 " style={{ fontWeight: "900" }}>
         تقييم البشرة هو
       </p>
       <p className="display-3" style={{ fontWeight: "900", color: "#5f64e2" }}>
-        9.4
+        {displayedGrade}
       </p>
       <p>
         <img

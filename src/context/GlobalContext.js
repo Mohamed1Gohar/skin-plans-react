@@ -14,10 +14,10 @@ const appReducer = (state, action) => {
     case "SET_USER_DATA":
       return {
         ...state,
-        userName: action.payload.userName,
-        userAge: action.payload.userAge,
-        userGender: action.payload.userGender,
-        userPhone: action.payload.userPhone,
+        userName: action.payload.name,
+        userAge: action.payload.age,
+        userGender: action.payload.gender,
+        userPhone: action.payload.phone,
         grade: action.payload.grade,
       };
     default:
@@ -37,12 +37,19 @@ export const AppProvider = ({ children }) => {
     console.log("cotext ", obj);
     dispatch({ type: "SET_USER_DATA", payload: obj });
   };
+
+  const calculateDisplayedGrade = () => {
+    return ((state.grade * 10) / 185).toFixed();
+  };
   return (
     <AppContext.Provider
       value={{
+        name: state.userName,
+        displayedGrade: calculateDisplayedGrade(),
         setUserData,
       }}
     >
+      {console.log(calculateDisplayedGrade())}
       {children}
     </AppContext.Provider>
   );

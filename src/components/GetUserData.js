@@ -66,9 +66,9 @@ const GetUserData = () => {
 
   const handleNextStep = (newData, final = false) => {
     setData((prev) => ({ ...prev, ...newData }));
-    console.log("handle next step");
+    // console.log("handle next step");
     if (final) {
-      console.log("handle next step : final");
+      // console.log("handle next step : final");
 
       makeRequest(newData);
       return;
