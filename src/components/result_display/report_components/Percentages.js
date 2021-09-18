@@ -75,7 +75,11 @@ const Percentages = () => {
         elementRef.current.offsetTop -
         window.innerHeight +
         elementRef.current.clientHeight;
-      if (window.scrollY >= startAnimationHeight && startAnimationHeight > 0) {
+      if (
+        elementRef.current &&
+        window.scrollY >= startAnimationHeight &&
+        startAnimationHeight > 0
+      ) {
         setStartAnimation(true);
       }
     });
