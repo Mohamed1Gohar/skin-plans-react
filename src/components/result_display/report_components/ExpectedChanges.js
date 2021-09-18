@@ -39,7 +39,7 @@ const ExpectedChanges = () => {
           src={ExpectChangeGraph}
           alt="نضارة 20% و امتلاء بشرة 25% و انتفاخ عين أقل 53% خطوط وجه أقل 75% بقع داكنة أقل 85%"
         />
-        <ul className="h-100 d-flex justify-content-center flex-column px-4">
+        <ul className="h-100 d-flex justify-content-center flex-column pr-4">
           {changes.map((c, i) => {
             return (
               <li key={i}>
