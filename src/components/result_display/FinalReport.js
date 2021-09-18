@@ -11,25 +11,24 @@ import Disclaimer from "./report_components/Disclaimer";
 
 const FinalReport = () => {
   return (
-    <div
-      className="text-center py-4 container cl-prime"
-      style={{ maxWidth: "45rem" }}
-    >
-      <Graph />
-      <div className="gridContainer secondLineResult ">
-        <SkinEval />
-        <ActAge />
+    <>
+      <div className="text-center py-4 container cl-prime resultMaxWidth">
+        <Graph />
+        <div className="gridContainer secondLineResult ">
+          <SkinEval />
+          <ActAge />
+        </div>
+        <SkinMatch />
+        <div className="gridContainer forthLinResult">
+          <Info />
+          <Percentages />
+          <ExpectedChanges />
+        </div>
+        <BestProduct />
+        <ProductComponents />
       </div>
-      <SkinMatch />
-      <div className="gridContainer forthLinResult">
-        <Info />
-        <Percentages />
-        <ExpectedChanges />
-      </div>
-      <BestProduct />
-      <ProductComponents />
       <Disclaimer />
-    </div>
+    </>
   );
 };
 

@@ -28,20 +28,22 @@ const Disclaimer = () => {
   ];
 
   return (
-    <div
-      className="result_comp_style text-left"
+    <footer
+      className="result_comp_style text-left bg-prime text-white text-left"
       dir="ltr"
-      style={{ alignItems: "normal" }}
+      style={{ width: "100vw", borderRadius: "0" }}
     >
-      {content.map((c, i) => {
-        return (
-          <details key={i} className="mb-3">
-            <summary className="h5 mb-2">{c.name}</summary>
-            <p className="pl-3">{c.p}</p>
-          </details>
-        );
-      })}
-    </div>
+      <div className="resultMaxWidth w-100 p-3">
+        {content.map((c, i) => {
+          return (
+            <details key={i} className="mb-3">
+              <summary className="h5 mb-2">{c.name}</summary>
+              <p className="pl-3">{c.p}</p>
+            </details>
+          );
+        })}
+      </div>
+    </footer>
   );
 };
 
