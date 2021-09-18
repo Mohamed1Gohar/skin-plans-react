@@ -48,7 +48,7 @@ const GetUserData = () => {
     for (let n of Object.keys(formData)) {
       const val = parseInt(formData[n]);
       if (val && n === "skinConcerns") {
-        score += formData[n].length * 5;
+        score -= formData[n].length * 5;
       } else if (val && n !== "phone" && n !== "age") {
         score += val;
       }
