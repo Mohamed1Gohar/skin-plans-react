@@ -22,7 +22,7 @@ const Graph = () => {
       >
         <img
           src={FullChart}
-          style={{ maxWidth: "45rem" }}
+          style={{ width: "100%", maxWidth: "45rem" }}
           alt="بشرة أكثر نضارة بنسبة 97 % و مشاكل بشرة أقل بكثير كل ذلك مع skin plans"
         />
       </div>
