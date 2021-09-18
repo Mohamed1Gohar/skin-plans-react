@@ -73,10 +73,10 @@ p {
 form {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background: "#F8F8F8"
+  padding-top: 3rem;
 }
 
 form>div {
