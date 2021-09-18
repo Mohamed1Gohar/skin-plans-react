@@ -118,7 +118,7 @@ const GetUserData = () => {
         style={{ width: "80%", position: "absolute", top: "1rem" }}
       >
         <p className="mb-1">
-          {currentStep} / {steps.length}
+          {currentStep + 1} / {steps.length + 1}
         </p>
         <div
           className="progress"
