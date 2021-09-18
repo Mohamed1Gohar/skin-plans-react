@@ -46,6 +46,7 @@ export const AppProvider = ({ children }) => {
       value={{
         name: state.userName,
         displayedGrade: calculateDisplayedGrade(),
+        age: state.userAge,
         setUserData,
       }}
     >
