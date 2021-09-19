@@ -13,7 +13,7 @@ const Cheeks = (props) => {
     clearTimeout(submitTimeout);
     submitTimeout = setTimeout(() => {
       handleSubmit(values);
-    }, 1000);
+    }, 500);
   };
 
   return (

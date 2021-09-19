@@ -18,7 +18,7 @@ const VegetablesAmount = (props) => {
     clearTimeout(submitTimeout);
     submitTimeout = setTimeout(() => {
       handleSubmit(values);
-    }, 1000);
+    }, 500);
   };
 
   const mediaMatch = window.matchMedia("(min-width: 500px)");
