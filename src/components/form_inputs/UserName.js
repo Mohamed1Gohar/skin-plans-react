@@ -6,7 +6,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 
 const UserName = (props) => {
   const handleSubmit = (values) => {
-    props.next(values);
+    props.next(values, true);
   };
 
   return (
@@ -70,33 +70,6 @@ const UserName = (props) => {
               <ErrorMessage name="phone" />
             </p>
           </div>
-          {/* {console.log(
-            "usename : ",
-            values.name.length >= 2 &&
-              values.age > 0 &&
-              values.phone.length > 11
-          )} */}
-          {/* <div className="d-flex justify-content-between container flex-row formArrowsContainer">
-            <button
-              type="submit"
-              className="btn text-white my-3 bg-prime border-0 rounded-pill w-auto"
-              style={
-                {
-                  // width: "auto",
-                  // padding: `${"0"}`,
-                }
-              }
-            >
-              <NavLink
-                to="/results"
-                className="text-white rounded-pill submitFormBtn"
-                // data-active={!condition && "active"}
-                onClick={() => handleSubmit(values)}
-              >
-                اعرض النتائج الخاصه بي
-              </NavLink>
-            </button>
-          </div> */}
           <FormArrows
             values={values}
             parentProps={props}
@@ -105,6 +78,9 @@ const UserName = (props) => {
                 ? false
                 : true
             }
+            lastStep={true}
+            handleSubmit={handleSubmit}
+
           />
         </Form>
       )}

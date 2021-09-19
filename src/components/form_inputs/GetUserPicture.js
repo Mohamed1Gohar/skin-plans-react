@@ -12,7 +12,8 @@ const GetUserPicture = (props) => {
   const [scanning, setScanning] = useState(false); // prevent user from uploading images will scanning
   const [userPicSource, setUserPicSource] = useState(null);
   const handleSubmit = (values) => {
-    props.next(values, true);
+    console.log("user pic submittind")
+    props.next(values);
   };
   const userPic = useRef(null);
   const userSelfiePic = useRef(null);
@@ -98,9 +99,7 @@ const GetUserPicture = (props) => {
           <FormArrows
             values={values}
             parentProps={props}
-            lastStep={true}
             condition={!captured}
-            handleSubmit={handleSubmit}
           />
         </Form>
       )}
