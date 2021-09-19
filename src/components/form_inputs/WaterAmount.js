@@ -19,13 +19,13 @@ const WaterAmount = (props) => {
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
-        <Form>
+        <Form style={{ height: "100vh" }}>
           <div
             className="cl-prime mb-3"
             role="group"
             aria-labelledby="radio-group"
           >
-            <p>
+            <p style={{ margin: "0.5rem 0" }}>
               <strong>أشرب …. كوب يوميا</strong>
             </p>
             <ul className="list-group">

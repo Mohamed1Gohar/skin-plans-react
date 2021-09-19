@@ -1,5 +1,6 @@
 import Mooc from "../assets/media/images/download.png";
 import Spons from "../assets/media/images/sponsors.png";
+import Logo from "../assets/media/images/logo.png";
 import SetRoutineBtn from "./SetRoutineBtn";
 
 const About = () => {
@@ -15,8 +16,13 @@ const About = () => {
         <div className="col-xl-5 text-right">
           <h2 className="heading cl-prime">نقوم بالعمل المجهد بدلا منك</h2>
           <p className="my-5">
-            Skin-plans هو برنامج مطور خصيصًا لمساعدتك في اختيار الروتين الانسب
-            لك بدقه واحترافيه،وفي غضون دقيقتين فقط.
+            <img
+              src={Logo}
+              alt="ski plans"
+              style={{ width: "6rem", marginLeft: "0.5rem" }}
+            />
+            هو برنامج مطور خصيصًا لمساعدتك في اختيار الروتين الأنسب لك بدقة
+            واحترافية،وفي غضون دقيقتين فقط.
           </p>
           <ul className="mb-4">
             <li style={listItemStyle}>

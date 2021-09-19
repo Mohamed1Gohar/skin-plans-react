@@ -21,7 +21,9 @@ const GetUserLocation = (props) => {
         const CelsiusTemp = data.main.temp - 273.15;
         setTemp(CelsiusTemp);
         setHumid(data.main.humidity);
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 3000);
       });
   }, []);
 

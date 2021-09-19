@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import FormArrows from "../FormArrows";
 import VegetablesImg from "../../assets/media/images/vegetables_intro.png";
+import Logo from "../../assets/media/images/logo.png";
 
 import RadioInput from "../formFields/RadioInput";
 
-const animationDuration = 15000;
+const animationDuration = 12000;
 const VegetablesAmount = (props) => {
   let submitTimeout;
   const handleSubmit = (values) => {
@@ -92,30 +93,39 @@ const VegetablesAmount = (props) => {
     >
       {!props.data.vegetablesAmount && (
         <>
-          <animated.div style={animPropsFadeOut} className="h5">
+          <animated.div
+            style={{ marginTop: "4.5rem", ...animPropsFadeOut }}
+            className="h5"
+          >
             جاري معالجة بيناتك
           </animated.div>
 
-          <div
-            style={{ position: "relative", width: "100%", margin: "1rem 0" }}
-            dir="ltr"
-          >
-            <animated.div
-              className="w-100 progress"
-              style={animPropsProgressBar}
-            ></animated.div>
-            <animated.div
-              className="progress-bar bg-prime"
-              role="progressbar"
-              style={animPropsProgressBarFill}
-            ></animated.div>
-          </div>
           <animated.div style={animPropsFadeOut} className="h5">
             <strong style={{ lineHeight: "1.3" }}>
               عندما يتعلق الأمر بالانتظام على روتين معين، تجنبي دائمًا المنتجات
-              الكماوية واختاري المكونات الطبيعية. يرشح لك skin- plans منتجات
-              طبيعيه لتقليل مخاطر التعامل مع مشاكل البشرة وتهيجها لاحقًا
+              الكماوية واختاري المكونات الطبيعية. يرشح لك
+              <img
+                src={Logo}
+                alt="skin plans"
+                style={{ width: "7rem", margin: "0 0.5rem " }}
+              />
+              منتجات طبيعيه لتقليل مخاطر التعامل مع مشاكل البشرة وتهيجها لاحقًا
             </strong>
+            <div
+              style={{ position: "relative", width: "100%", margin: "1rem 0" }}
+              dir="ltr"
+            >
+              <animated.div
+                className="w-100 progress"
+                style={animPropsProgressBar}
+              ></animated.div>
+              <animated.div
+                className="progress-bar bg-prime"
+                role="progressbar"
+                style={animPropsProgressBarFill}
+              ></animated.div>
+            </div>
+
             <img
               src={VegetablesImg}
               alt="original product"

@@ -32,7 +32,7 @@ const SleepingHours = (props) => {
               <RadioInput
                 valName="sleepingHours"
                 value="0"
-                txt="غير منتظم ومتقلب - < 5"
+                txt="غير منتظم و متقلب - < 5"
                 values={values}
                 autoSubmit={autoSubmit}
               />
