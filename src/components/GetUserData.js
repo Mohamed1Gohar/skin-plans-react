@@ -85,8 +85,8 @@ const GetUserData = () => {
 
   const steps = [
     <UserName next={handleNextStep} data={data} />,
-    <UserAge next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <UserPhone next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <UserAge next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <UserPhone next={handleNextStep} prev={handlePrevStep} data={data} />,
     <UserGender next={handleNextStep} prev={handlePrevStep} data={data} />,
     <SkinConcerns next={handleNextStep} prev={handlePrevStep} data={data} />,
     <Cheeks next={handleNextStep} prev={handlePrevStep} data={data} />,
