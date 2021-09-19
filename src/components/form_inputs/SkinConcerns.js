@@ -9,14 +9,14 @@ const SkinConcerns = (props) => {
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
-        <Form>
+        <Form style={{ height: "100vh" }}>
           <div
             className="cl-prime mb-3"
             role="group"
             aria-labelledby="checkbox-group"
           >
             <p>
-              <strong>بشرتي تعاني من ….. (يمكنكي اختيار اكتر من مشكله)</strong>
+              <strong>بشرتي تعاني من ….. (يمكنك اختيار اكتر من مشكلة)</strong>
             </p>
             <ul className="list-group">
               <li

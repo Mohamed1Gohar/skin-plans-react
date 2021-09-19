@@ -6,13 +6,11 @@ const FormArrows = ({
   values,
   condition,
   lastStep,
+  firstStep,
   handleSubmit,
 }) => {
   return (
-    <div
-      className="d-flex justify-content-between container flex-row formArrowsContainer"
-      style={{ width: "20rem" }}
-    >
+    <div className="d-flex justify-content-between container flex-row formArrowsContainer">
       <button
         type="submit"
         className="btn text-white my-3 bg-prime border-0 rounded-pill"
@@ -22,6 +20,7 @@ const FormArrows = ({
         }}
         disabled={condition}
       >
+        {/* {console.log("conditions : ", condition)} */}
         {lastStep ? (
           <NavLink
             to="/results"
@@ -35,16 +34,18 @@ const FormArrows = ({
           <BsArrowRightShort style={{ fontSize: "2rem" }} />
         )}
       </button>
-      <button
-        type="button"
-        className="btn text-white my-3 bg-prime"
-        style={{ borderRadius: "3rem" }}
-        onClick={() => {
-          parentProps.prev(values);
-        }}
-      >
-        <BsArrowLeftShort style={{ fontSize: "2rem" }} />
-      </button>
+      {!lastStep && !firstStep && (
+        <button
+          type="button"
+          className="btn text-white my-3 bg-prime"
+          style={{ borderRadius: "3rem" }}
+          onClick={() => {
+            parentProps.prev(values);
+          }}
+        >
+          <BsArrowLeftShort style={{ fontSize: "2rem" }} />
+        </button>
+      )}
     </div>
   );
 };

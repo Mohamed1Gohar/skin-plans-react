@@ -162,8 +162,10 @@ form .list-group-item label {
 }
 
 .formArrowsContainer {
+  width: 14rem;
   position: absolute;
-  bottom: 1rem
+  bottom: 1rem;
+  left: calc(50% - 7rem)
 }
 
 .progress {

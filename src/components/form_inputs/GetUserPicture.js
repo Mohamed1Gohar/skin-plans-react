@@ -9,6 +9,7 @@ import { FaCheckCircle } from "react-icons/fa";
 // FaCheckCircle;
 const GetUserPicture = (props) => {
   const [captured, setCaptured] = useState(false);
+  const [scanning, setScanning] = useState(false); // prevent user from uploading images will scanning
   const [userPicSource, setUserPicSource] = useState(null);
   const handleSubmit = (values) => {
     props.next(values, true);
@@ -16,14 +17,20 @@ const GetUserPicture = (props) => {
   const userPic = useRef(null);
   const userSelfiePic = useRef(null);
   const handlePic = () => {
+    setCaptured(false); // if user reuploaded new pic
+    setScanning(true);
     setTimeout(() => {
       setCaptured(true);
+      setScanning(false);
     }, 13000); // this timer depending on animation time 2.5 * 5 + 0.5 for more time
     setUserPicSource(URL.createObjectURL(userPic.current.files[0]));
   };
   const handleSelfiePic = () => {
+    setCaptured(false); // if user reuploaded new pic
+    setScanning(true);
     setTimeout(() => {
       setCaptured(true);
+      setScanning(false);
     }, 13000); // this timer depending on animation time 2.5 * 5 + 0.5 for more time
     setUserPicSource(URL.createObjectURL(userSelfiePic.current.files[0]));
   };
@@ -34,16 +41,17 @@ const GetUserPicture = (props) => {
       {({ values }) => (
         <Form style={specialFormStyle}>
           <div className="container" style={{ marginTop: "3rem" }}>
-            <p style={{ maxWidth: "25rem" }}>
-              لان معظم العملاء يواجهون مشاكل في معرفة ماتحتاجه بشرتهم، يمكنك ان
-              تضعي صوره لك وسيتمكن الذكاء الاصطناعي من توضيح المشكله التي تعاني
-              منها بشرتك لتسهيل معرفة الخيار الامثل لكِ
+            <p
+              style={{ maxWidth: "25rem", margin: "auto", fontSize: "0.8rem" }}
+            >
+              يمكنك ان تضع صورة لك وسيتمكن الذكاء الاصطناعي من توضيح المشكلة
+              التي تعاني منها بشرتك لتسهيل معرفة الخيار الامثل لك
             </p>
             {userPicSource && (
               <div className="userPicContainer">
                 <img
                   src={userPicSource}
-                  style={{ maxHeight: "40vh" }}
+                  style={{ maxHeight: "38vh" }}
                   alt="صورة المستخدمة"
                 />
                 {captured && <FaCheckCircle style={completedIconStyle} />}
@@ -55,10 +63,11 @@ const GetUserPicture = (props) => {
                   <VscDeviceCamera style={iconStyle} />
                 </figure>
                 <input
+                  disabled={scanning}
                   type="file"
                   accept="image/*"
                   capture="camera"
-                  onInput={handleSelfiePic}
+                  onInput={!scanning ? handleSelfiePic : undefined}
                   style={selfieInputStyle}
                   ref={userSelfiePic}
                 />
@@ -68,9 +77,10 @@ const GetUserPicture = (props) => {
                   <BsImage style={iconStyle} />
                 </figure>
                 <input
+                  disabled={scanning}
                   type="file"
                   accept=".jpg, .jpeg, .png, .bmp"
-                  onInput={handlePic}
+                  onInput={!scanning ? handlePic : undefined}
                   style={selfieInputStyle}
                   ref={userPic}
                 />
@@ -79,8 +89,8 @@ const GetUserPicture = (props) => {
             <NavLink
               to="/results"
               className="btn bg-prime text-white  rounded-pill border-0 m-auto"
+              style={{ width: "11rem" }}
               onClick={() => handleSubmit(values)}
-              style={{ width: "12rem" }}
             >
               تجاوز هذه الخطوة
             </NavLink>
@@ -88,8 +98,8 @@ const GetUserPicture = (props) => {
           <FormArrows
             values={values}
             parentProps={props}
-            condition={!captured}
             lastStep={true}
+            condition={!captured}
             handleSubmit={handleSubmit}
           />
         </Form>

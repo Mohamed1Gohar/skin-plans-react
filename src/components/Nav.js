@@ -18,7 +18,7 @@ const Nav = () => {
         </div>
 
         <div>
-          <SetRoutineBtn text={"اكتشفي روتينك المناسب"} />
+          <SetRoutineBtn text={"اكتشف روتينك المناسب"} />
         </div>
       </div>
     </nav>

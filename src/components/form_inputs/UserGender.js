@@ -93,6 +93,7 @@ const UserGender = (props) => {
             values={values}
             parentProps={props}
             condition={!values.gender}
+            firstStep={true}
           />
         </Form>
       )}

@@ -21,7 +21,9 @@ const GetUserLocation = (props) => {
         const CelsiusTemp = data.main.temp - 273.15;
         setTemp(CelsiusTemp);
         setHumid(data.main.humidity);
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 3000);
       });
   }, []);
 
@@ -39,7 +41,7 @@ const GetUserLocation = (props) => {
               role="group"
               aria-labelledby="radio-group"
             >
-              <p className="h3 text-center mb-5">
+              <p className="h5 text-center mb-3">
                 إليكِ معلومات الطقس في منطقتك والتي لها تأثير سلبي على بشرتك
               </p>
               {/* Temperature  */}

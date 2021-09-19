@@ -25,7 +25,7 @@ const SlimLines = (props) => {
             aria-labelledby="radio-group"
           >
             <p>
-              <strong>الخطوط الرفيعه الموجودة على بشرتي</strong>
+              <strong>الخطوط الرفيعة الموجودة على بشرتي</strong>
             </p>
             <ul className="list-group">
               <RadioInput
@@ -49,57 +49,6 @@ const SlimLines = (props) => {
                 values={values}
                 autoSubmit={autoSubmit}
               />
-
-              {/* <li
-                className={`list-group-item my-2  ${
-                  values.slimLines === "15" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="slimLines"
-                    value="15"
-                    aria-label="15"
-                    style={{ visibility: "hidden" }}
-                  />
-                  تظهر عند الابتسام
-                </label>
-              </li>
-
-              <li
-                className={`list-group-item my-2  ${
-                  values.slimLines === "10" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="slimLines"
-                    value="10"
-                    aria-label="10"
-                    style={{ visibility: "hidden" }}
-                  />
-                  خفيفة
-                </label>
-              </li>
-
-              <li
-                className={`list-group-item my-2  ${
-                  values.slimLines === "5" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="slimLines"
-                    value="5"
-                    aria-label="5"
-                    style={{ visibility: "hidden" }}
-                  />
-                  واضحة
-                </label>
-              </li> */}
             </ul>
           </div>
           <FormArrows
