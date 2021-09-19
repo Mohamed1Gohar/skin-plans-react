@@ -40,7 +40,7 @@ const GetUserPicture = (props) => {
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
         <Form style={specialFormStyle}>
-          <div className="container" style={{ marginTop: "3rem" }}>
+          <div className="container" >
             <p
               style={{ maxWidth: "25rem", margin: "auto", fontSize: "0.8rem" }}
             >
@@ -111,7 +111,7 @@ const GetUserPicture = (props) => {
 const specialFormStyle = {
   // height: "100vh",
   display: "block",
-  paddingTop: "5vh",
+  paddingTop: "11vh",
 };
 
 const selfieContainerStyle = {
