@@ -116,7 +116,6 @@ const GetUserData = () => {
       style={{ minHeight: "100vh" }}
     >
       <div
-        className="mb-5 "
         dir="ltr"
         style={{ width: "100%", position: "absolute", top: "0" }}
       >
@@ -130,9 +129,8 @@ const GetUserData = () => {
         </div>
       </div>
       <div
-        className="mb-5 "
         dir="ltr"
-        style={{ width: "90%", position: "absolute", top: "3.6rem" }}
+        style={{ width: "90%", position: "absolute", top: "9vh" }}
       >
         <p className="mb-1">
           {currentStep + 1} / {steps.length}
