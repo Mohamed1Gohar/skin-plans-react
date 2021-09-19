@@ -32,7 +32,7 @@ const UserName = (props) => {
       onSubmit={handleSubmit}
     >
       {({ values, isValid }) => (
-        <Form style={{ height: "100vh" }}>
+        <Form >
           <div>
             <p className="h4">الخطوة الأخيرة</p>
             <p>

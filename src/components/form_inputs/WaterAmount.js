@@ -19,7 +19,7 @@ const WaterAmount = (props) => {
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
-        <Form style={{ height: "100vh" }}>
+        <Form >
           <div
             className="cl-prime mb-3"
             role="group"
