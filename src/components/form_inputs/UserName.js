@@ -9,9 +9,6 @@ const UserName = (props) => {
     props.next(values);
   };
 
-  const allInputsFilled = () => {
-    console.log(props.data);
-  };
   return (
     <Formik
       validationSchema={Yup.object({
@@ -64,7 +61,6 @@ const UserName = (props) => {
               <ErrorMessage name="age" />
             </p>
             <Field
-              onInput={allInputsFilled}
               name="phone"
               type="phone"
               className="p-2 pr-3 cl-prime   rounded-pill"

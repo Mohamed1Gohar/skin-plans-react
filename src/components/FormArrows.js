@@ -11,11 +11,12 @@ const FormArrows = ({
 }) => {
   return (
     <div className="d-flex justify-content-between container flex-row formArrowsContainer">
+   
       <button
         type="submit"
         className="btn text-white my-3 bg-prime border-0 rounded-pill"
         style={{
-          width: `${lastStep && "6rem"}`,
+          width: `${lastStep && "12rem"}`,
           padding: `${lastStep && "0"}`,
         }}
         disabled={condition}
@@ -28,7 +29,7 @@ const FormArrows = ({
             data-active={!condition && "active"}
             onClick={() => handleSubmit(values)}
           >
-            Submit
+            اعرض النتائج الخاصه بي
           </NavLink>
         ) : (
           <BsArrowRightShort style={{ fontSize: "2rem" }} />

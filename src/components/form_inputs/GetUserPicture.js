@@ -12,7 +12,7 @@ const GetUserPicture = (props) => {
   const [scanning, setScanning] = useState(false); // prevent user from uploading images will scanning
   const [userPicSource, setUserPicSource] = useState(null);
   const handleSubmit = (values) => {
-    props.next(values, true);
+    props.next(values);
   };
   const userPic = useRef(null);
   const userSelfiePic = useRef(null);
@@ -58,9 +58,9 @@ const GetUserPicture = (props) => {
               </div>
             )}
             <div className="d-flex justify-content-center my-lg-1">
-              <div style={selfieContainerStyle} className="d-block d-lg-none">
+              <div style={selfieContainerStyle} className="d-block d-lg-none bg-prime text-white">
                 <figure>
-                  <VscDeviceCamera style={iconStyle} />
+                  <VscDeviceCamera style={{...iconStyle, width:"1.5rem" , height:"1.5rem"}} />
                 </figure>
                 <input
                   disabled={scanning}
@@ -72,7 +72,7 @@ const GetUserPicture = (props) => {
                   ref={userSelfiePic}
                 />
               </div>
-              <div style={selfieContainerStyle}>
+              <div style={selfieContainerStyle} className="bg-prime text-white" >
                 <figure>
                   <BsImage style={iconStyle} />
                 </figure>
@@ -86,14 +86,14 @@ const GetUserPicture = (props) => {
                 />
               </div>
             </div>
-            <NavLink
-              to="/results"
-              className="btn bg-prime text-white  rounded-pill border-0 m-auto"
-              style={{ width: "11rem" }}
+            <button
+              type="submit"
+              className="btn cl-prime rounded-pill  m-auto"
+              style={{ width: "12rem", border:"2px solid #363873" }}
               onClick={() => handleSubmit(values)}
             >
               تجاوز هذه الخطوة
-            </NavLink>
+            </button>
           </div>
           <FormArrows
             values={values}
@@ -117,7 +117,7 @@ const specialFormStyle = {
 const selfieContainerStyle = {
   position: " relative",
   width: "5.5rem",
-  padding: "0.1rem 0.5rem",
+  padding: "0.25rem 0.5rem",
   border: "2px solid #363873",
   margin: "0.5rem",
   display: "flex",
@@ -136,8 +136,8 @@ const selfieInputStyle = {
 };
 
 const iconStyle = {
-  width: "1.5rem",
-  height: "1.5rem",
+  width: "1.3rem",
+  height: "1.3rem",
 };
 
 const completedIconStyle = {
