@@ -26,6 +26,10 @@ img {
   max-width: 100%
 }
 
+figure {
+  margin: 0
+}
+
 a:hover,
 a:focus,
 a:focus-visible {

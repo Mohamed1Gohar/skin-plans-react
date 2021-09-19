@@ -47,7 +47,7 @@ const GetUserPicture = (props) => {
                 {captured && <FaCheckCircle style={completedIconStyle} />}
               </div>
             )}
-            <div className="d-flex my-lg-1">
+            <div className="d-flex justify-content-center my-lg-1">
               <div style={selfieContainerStyle} className="d-block d-lg-none">
                 <figure>
                   <VscDeviceCamera style={iconStyle} />
@@ -78,6 +78,7 @@ const GetUserPicture = (props) => {
               to="/results"
               className="btn bg-prime text-white  rounded-pill border-0 m-auto"
               onClick={() => handleSubmit(values)}
+              style={{ width: "12rem" }}
             >
               تجاوز هذه الخطوة
             </NavLink>
@@ -96,13 +97,20 @@ const GetUserPicture = (props) => {
 };
 
 const selfieContainerStyle = {
-  margin: "auto",
-  position: "relative",
+  position: " relative",
+  width: "5.5rem",
+  padding: "0.1rem 0.5rem",
+  border: "2px solid #363873",
+  margin: "0.5rem",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "3rem",
 };
 
 const selfieInputStyle = {
-  width: "2rem",
-  height: "2rem",
+  width: "1.5rem",
+  height: "1.5rem",
   position: " absolute",
   top: " 0",
   left: " 0",
@@ -110,8 +118,8 @@ const selfieInputStyle = {
 };
 
 const iconStyle = {
-  width: "2rem",
-  height: "2rem",
+  width: "1.5rem",
+  height: "1.5rem",
 };
 
 const completedIconStyle = {
