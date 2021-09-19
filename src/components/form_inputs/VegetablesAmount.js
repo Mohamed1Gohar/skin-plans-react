@@ -57,8 +57,8 @@ const VegetablesAmount = (props) => {
   });
 
   const animPropsFadeIn = useSpring({
-    to: { opacity: 1, display: "block" },
-    from: { opacity: 0, display: "none" },
+    to: { opacity: 1, display: "block", width: "100%" },
+    from: { opacity: 0, display: "none", width: "100%" },
     delay: animationDuration,
     config: { duration: 1000 },
   });
@@ -82,7 +82,7 @@ const VegetablesAmount = (props) => {
 
   const styles = {
     container: (windowWidth) => ({
-      width: windowWidth ? "33rem" : "18rem",
+      width: windowWidth ? "33rem" : "90%",
     }),
   };
   return (
@@ -97,7 +97,7 @@ const VegetablesAmount = (props) => {
           </animated.div>
 
           <div
-            style={{ position: "relative", width: "100%", margin: "0.5rem 0" }}
+            style={{ position: "relative", width: "100%", margin: "1rem 0" }}
             dir="ltr"
           >
             <animated.div
@@ -127,7 +127,7 @@ const VegetablesAmount = (props) => {
       <animated.div style={!props.data.vegetablesAmount ? animPropsFadeIn : {}}>
         <Formik initialValues={props.data} onSubmit={handleSubmit}>
           {({ values }) => (
-            <Form>
+            <Form style={{ width: "100%" }}>
               <div role="group" aria-labelledby="radio-group">
                 <p>
                   <strong>أتناول الخضروات … خلال الأسبوع</strong>
@@ -161,74 +161,6 @@ const VegetablesAmount = (props) => {
                     values={values}
                     autoSubmit={autoSubmit}
                   />
-
-                  {/* <li
-                    className={`list-group-item my-2  ${
-                      values.vegetablesAmount === "0" ? "active" : null
-                    }`}
-                  >
-                    <label className="d-block mb-0">
-                      <Field
-                        type="radio"
-                        name="vegetablesAmount"
-                        value="0"
-                        aria-label="0"
-                        style={{ visibility: "hidden" }}
-                      />
-                      لا أتناول الخضروات
-                    </label>
-                  </li>
-
-                  <li
-                    className={`list-group-item my-2  ${
-                      values.vegetablesAmount === "5" ? "active" : null
-                    }`}
-                  >
-                    <label className="d-block mb-0">
-                      <Field
-                        type="radio"
-                        name="vegetablesAmount"
-                        value="5"
-                        aria-label="5"
-                        style={{ visibility: "hidden" }}
-                      />
-                      مرتين
-                    </label>
-                  </li>
-
-                  <li
-                    className={`list-group-item my-2  ${
-                      values.vegetablesAmount === "10" ? "active" : null
-                    }`}
-                  >
-                    <label className="d-block mb-0">
-                      <Field
-                        type="radio"
-                        name="vegetablesAmount"
-                        value="10"
-                        aria-label="10"
-                        style={{ visibility: "hidden" }}
-                      />
-                      3-5 مرات
-                    </label>
-                  </li>
-
-                  <li
-                    className={`list-group-item my-2  ${
-                      values.vegetablesAmount === "20" ? "active" : null
-                    }`}
-                  >
-                    <label className="d-block mb-0">
-                      <Field
-                        type="radio"
-                        name="vegetablesAmount"
-                        value="20"
-                        aria-label="20"
-                        style={{ visibility: "hidden" }}
-                      />
-                      يوميا
-                    </label>
-                  </li> */}
                 </ul>
               </div>
               <FormArrows

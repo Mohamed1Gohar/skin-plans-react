@@ -38,7 +38,7 @@ const UserName = (props) => {
               <ErrorMessage name="name" />
             </p>
           </div>
-          <div className="d-flex container">
+          <div className="d-flex container formArrowsContainer">
             <button
               type="submit"
               className="btn text-white my-3 bg-prime"

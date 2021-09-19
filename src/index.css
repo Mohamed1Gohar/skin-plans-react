@@ -50,17 +50,8 @@ p {
   margin: 0
 }
 
-/* header::after {
-  content: "";
-  position: absolute;
-  background: #000;
-  display: block;
-  width: 100%;
-  height: 5rem;
-  bottom: -5rem;
-  left: 0;
-  background: linear-gradient(to bottom, #f8f8f8, transparent);
-} */
+
+
 
 .heading {
   font-weight: bold;
@@ -76,19 +67,20 @@ p {
 
 form {
   height: 100vh;
+  width: 90%;
+  min-width: 16rem;
+  max-width: 35rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-top: 3rem;
+  position: relative;
 }
 
 form>div {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 16rem;
+  width: 100%;
 }
 
 form button {
@@ -101,6 +93,10 @@ form button {
   -o-border-radius: "3rem" !important;
 }
 
+form p {
+  margin-bottom: 2rem;
+}
+
 input,
 input:focus,
 input:active {
@@ -110,8 +106,18 @@ input:active {
 
 input[type='text'],
 input[type='text']:focus,
-input[type='text']:active {
-  width: 16rem;
+input[type='text']:focus-visible,
+input[type='text']:active,
+input[type='number'],
+input[type='number']:focus,
+input[type='number']:focus-visible,
+input[type='number']:active,
+input[type='phone'],
+input[type='phone']:focus,
+input[type='phone']:focus-visible,
+input[type='phone']:active {
+  width: 100%;
+  /* width: 16rem; */
   border: 2px solid #363873;
 }
 
@@ -128,6 +134,9 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+form .list-group {
+  width: 100%
+}
 
 form .list-group-item {
   border: 2px solid #363873;
@@ -150,6 +159,11 @@ form .list-group-item.active {
 
 form .list-group-item label {
   padding: 0.5rem 1rem;
+}
+
+.formArrowsContainer {
+  position: absolute;
+  bottom: 1rem
 }
 
 .progress {

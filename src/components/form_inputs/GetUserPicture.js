@@ -30,7 +30,7 @@ const GetUserPicture = (props) => {
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
-        <Form>
+        <Form style={specialFormStyle}>
           <div className="container" style={{ marginTop: "3rem" }}>
             <p style={{ maxWidth: "25rem" }}>
               لان معظم العملاء يواجهون مشاكل في معرفة ماتحتاجه بشرتهم، يمكنك ان
@@ -41,7 +41,7 @@ const GetUserPicture = (props) => {
               <div className="userPicContainer">
                 <img
                   src={userPicSource}
-                  style={{ maxHeight: "45vh" }}
+                  style={{ maxHeight: "40vh" }}
                   alt="صورة المستخدمة"
                 />
                 {captured && <FaCheckCircle style={completedIconStyle} />}
@@ -96,6 +96,11 @@ const GetUserPicture = (props) => {
   );
 };
 
+const specialFormStyle = {
+  display: "block",
+  paddingTop: "4rem",
+};
+
 const selfieContainerStyle = {
   position: " relative",
   width: "5.5rem",
@@ -109,8 +114,8 @@ const selfieContainerStyle = {
 };
 
 const selfieInputStyle = {
-  width: "1.5rem",
-  height: "1.5rem",
+  width: "100%",
+  height: "100%",
   position: " absolute",
   top: " 0",
   left: " 0",
@@ -134,4 +139,5 @@ const completedIconStyle = {
   border: " none",
   outline: " none",
 };
+
 export default GetUserPicture;

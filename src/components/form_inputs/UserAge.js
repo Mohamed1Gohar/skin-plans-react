@@ -18,7 +18,7 @@ const UserAge = (props) => {
       initialValues={props.data}
       onSubmit={handleSubmit}
     >
-      {({ values, isValid }) => (
+      {({ values }) => (
         <Form>
           <div className="cl-prime mb-3">
             <p>

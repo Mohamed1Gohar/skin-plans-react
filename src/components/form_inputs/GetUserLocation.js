@@ -30,16 +30,21 @@ const GetUserLocation = (props) => {
       {({ values }) => (
         <Form>
           {loading ? (
-            <p className="h1">جاري التحميل...</p>
+            <p className="h3 text-center">
+              جاري تحميل معلومات الطقس في منطقتك ...
+            </p>
           ) : (
             <div
-              className="cl-prime mb-3"
+              className="cl-prime"
               role="group"
               aria-labelledby="radio-group"
             >
+              <p className="h3 text-center mb-5">
+                إليكِ معلومات الطقس في منطقتك والتي لها تأثير سلبي على بشرتك
+              </p>
               {/* Temperature  */}
-              <div className="mb-2">
-                <div className="d-flex justify-content-between">
+              <div className="mb-4 w-100">
+                <div className="d-flex justify-content-between mb-2">
                   <span dir="ltr">{temp.toFixed()} C</span>
                   <span>درجة الحرارة</span>
                 </div>
@@ -54,8 +59,8 @@ const GetUserLocation = (props) => {
                 </div>
               </div>
               {/* Humidity  */}
-              <div className="mb-2">
-                <div className="d-flex justify-content-between">
+              <div className="mb-4 w-100">
+                <div className="d-flex justify-content-between mb-2">
                   <span dir="ltr">متوسطة</span>
                   <span>الرطوبة</span>
                 </div>
@@ -70,8 +75,8 @@ const GetUserLocation = (props) => {
                 </div>
               </div>
               {/* Pollution */}
-              <div className="mb-2">
-                <div className="d-flex justify-content-between">
+              <div className="mb-4 w-100">
+                <div className="d-flex justify-content-between mb-2">
                   <span dir="ltr">عالية</span>
                   <span>درجة التلوث</span>
                 </div>
@@ -86,13 +91,10 @@ const GetUserLocation = (props) => {
                 </div>
               </div>
               {/* UV Index */}
-              <div className="mb-2">
-                <div className="d-flex justify-content-between">
+              <div className="mb-4 w-100">
+                <div className="d-flex justify-content-between mb-2 ">
                   <span dir="ltr">عالية</span>
-                  <span>
-                    مستوى الأشعة <br />
-                    فوق البنفسجية
-                  </span>
+                  <span>الأشعة فوق البنفسجية</span>
                 </div>
                 <div className="progress" dir="ltr">
                   <div

@@ -10,7 +10,7 @@ const FormArrows = ({
 }) => {
   return (
     <div
-      className="d-flex justify-content-between container flex-row"
+      className="d-flex justify-content-between container flex-row formArrowsContainer"
       style={{ width: "20rem" }}
     >
       <button

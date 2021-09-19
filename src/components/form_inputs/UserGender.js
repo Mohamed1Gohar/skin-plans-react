@@ -21,7 +21,7 @@ const UserGender = (props) => {
         <Form>
           <div
             className="cl-prime mb-3"
-            style={{ width: "16rem" }}
+            style={{ width: "100%" }}
             role="group"
             aria-labelledby="radio-group"
           >

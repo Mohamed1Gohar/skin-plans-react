@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useContext } from "react";
+import Logo from "../assets/media/images/logo.png";
 
 import UserName from "./form_inputs/UserName";
 import UserPhone from "./form_inputs/UserPhone";
@@ -113,9 +114,23 @@ const GetUserData = () => {
       style={{ minHeight: "100vh" }}
     >
       <div
-        className="mb-5 mt-2"
+        className="mb-5 "
         dir="ltr"
-        style={{ width: "80%", position: "absolute", top: "1rem" }}
+        style={{ width: "100%", position: "absolute", top: "0" }}
+      >
+        <div
+          className="d-flex justify-content-center py-2 "
+          style={{
+            boxShadow: "0 0 20px rgb(0 0 0 / 10%)",
+          }}
+        >
+          <img src={Logo} alt="skin plans" style={{ width: "6rem" }} />
+        </div>
+      </div>
+      <div
+        className="mb-5 "
+        dir="ltr"
+        style={{ width: "90%", position: "absolute", top: "3.6rem" }}
       >
         <p className="mb-1">
           {currentStep + 1} / {steps.length}

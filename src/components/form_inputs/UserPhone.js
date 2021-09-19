@@ -28,7 +28,7 @@ const UserPhone = (props) => {
           <div className="phone">
             <label
               htmlFor="phone"
-              className="cl-prime mb-3"
+              className="cl-prime mb-3 mx-auto"
               style={{ width: "16rem" }}
             >
               <strong>
