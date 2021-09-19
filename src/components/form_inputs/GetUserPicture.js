@@ -12,7 +12,7 @@ const GetUserPicture = (props) => {
   const [scanning, setScanning] = useState(false); // prevent user from uploading images will scanning
   const [userPicSource, setUserPicSource] = useState(null);
   const handleSubmit = (values) => {
-    props.next(values);
+    props.next(values, true);
   };
   const userPic = useRef(null);
   const userSelfiePic = useRef(null);
