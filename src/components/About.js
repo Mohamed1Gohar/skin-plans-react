@@ -38,7 +38,9 @@ const About = () => {
               ضمان لمدة 30 يوم في حالة وجود أي مشاكل تتعلق بالمنتج
             </li>
           </ul>
-          <SetRoutineBtn text={"ابدأ الآن"} showArrow={false} />
+          <div className="d-flex justify-content-center d-md-block">
+            <SetRoutineBtn text={"ابدأ الآن"} showArrow={false} />
+          </div>
         </div>
       </div>
     </section>
