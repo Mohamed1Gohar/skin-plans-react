@@ -109,9 +109,9 @@ const GetUserPicture = (props) => {
 };
 
 const specialFormStyle = {
-  height: "100vh",
+  // height: "100vh",
   display: "block",
-  paddingTop: "4rem",
+  paddingTop: "5vh",
 };
 
 const selfieContainerStyle = {

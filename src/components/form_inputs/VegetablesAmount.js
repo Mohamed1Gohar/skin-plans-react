@@ -94,7 +94,7 @@ const VegetablesAmount = (props) => {
       {!props.data.vegetablesAmount && (
         <>
           <animated.div
-            style={{ marginTop: "4.5rem", ...animPropsFadeOut }}
+            style={{ marginTop: "5vh", ...animPropsFadeOut }}
             className="h5"
           >
             جاري معالجة بيناتك
