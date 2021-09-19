@@ -101,9 +101,9 @@ const GetUserData = () => {
     <SleepingHours next={handleNextStep} prev={handlePrevStep} data={data} />,
     <UsingMakeUp next={handleNextStep} prev={handlePrevStep} data={data} />,
     <DailyPressure next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <GetUserLocation next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <UserName next={handleNextStep} data={data} />,
+    // <GetUserLocation next={handleNextStep} prev={handlePrevStep} data={data} />,
     <GetUserPicture next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <UserName next={handleNextStep} data={data} />,
     // <UserAge next={handleNextStep} prev={handlePrevStep} data={data} />,
     // <UserPhone next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];

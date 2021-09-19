@@ -80,7 +80,6 @@ const UserName = (props) => {
             }
             lastStep={true}
             handleSubmit={handleSubmit}
-
           />
         </Form>
       )}

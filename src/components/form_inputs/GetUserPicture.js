@@ -91,7 +91,6 @@ const GetUserPicture = (props) => {
               type="submit"
               className="btn cl-prime rounded-pill  m-auto"
               style={{ width: "12rem", border:"2px solid #363873" }}
-              onClick={() => handleSubmit(values)}
             >
               تجاوز هذه الخطوة
             </button>
