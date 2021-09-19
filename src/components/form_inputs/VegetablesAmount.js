@@ -84,60 +84,18 @@ const VegetablesAmount = (props) => {
   const styles = {
     container: (windowWidth) => ({
       width: windowWidth ? "33rem" : "90%",
+      marginTop: "12vh",
     }),
   };
   return (
     <div
-      className="cl-prime mb-3 d-flex flex-column justify-content-center align-items-center text-center pt-4"
+      className="cl-prime mb-3 d-flex flex-column justify-content-center align-items-center text-center"
       style={styles.container(matches)}
     >
-      {!props.data.vegetablesAmount && (
-        <>
-          <animated.div
-            style={{ marginTop: "5vh", ...animPropsFadeOut }}
-            className="h5"
-          >
-            جاري معالجة بيناتك
-          </animated.div>
-
-          <animated.div style={animPropsFadeOut} className="h5">
-            <strong style={{ lineHeight: "1.3" }}>
-              عندما يتعلق الأمر بالانتظام على روتين معين، تجنبي دائمًا المنتجات
-              الكماوية واختاري المكونات الطبيعية. يرشح لك
-              <img
-                src={Logo}
-                alt="skin plans"
-                style={{ width: "7rem", margin: "0 0.5rem " }}
-              />
-              منتجات طبيعيه لتقليل مخاطر التعامل مع مشاكل البشرة وتهيجها لاحقًا
-            </strong>
-            <div
-              style={{ position: "relative", width: "100%", margin: "1rem 0" }}
-              dir="ltr"
-            >
-              <animated.div
-                className="w-100 progress"
-                style={animPropsProgressBar}
-              ></animated.div>
-              <animated.div
-                className="progress-bar bg-prime"
-                role="progressbar"
-                style={animPropsProgressBarFill}
-              ></animated.div>
-            </div>
-
-            <img
-              src={VegetablesImg}
-              alt="original product"
-              className="img-fluid mt-3"
-            />
-          </animated.div>
-        </>
-      )}
       <animated.div style={!props.data.vegetablesAmount ? animPropsFadeIn : {}}>
         <Formik initialValues={props.data} onSubmit={handleSubmit}>
           {({ values }) => (
-            <Form style={{ width: "100%" }}>
+            <Form style={{ width: "100%", height: "65vh", marginTop: "0" }}>
               <div role="group" aria-labelledby="radio-group">
                 <p>
                   <strong>أتناول الخضروات … خلال الأسبوع</strong>
@@ -182,6 +140,47 @@ const VegetablesAmount = (props) => {
           )}
         </Formik>
       </animated.div>
+
+      {!props.data.vegetablesAmount && (
+        <animated.div style={animPropsFadeOut} className="h5">
+          <animated.div
+            style={{ marginTop: "5vh", ...animPropsFadeOut }}
+            className="h5"
+          >
+            جاري معالجة بيناتك
+          </animated.div>
+          <strong style={{ lineHeight: "1.3" }}>
+            عندما يتعلق الأمر بالانتظام على روتين معين، تجنبي دائمًا المنتجات
+            الكماوية واختاري المكونات الطبيعية. يرشح لك
+            <img
+              src={Logo}
+              alt="skin plans"
+              style={{ width: "7rem", margin: "0 0.5rem " }}
+            />
+            منتجات طبيعيه لتقليل مخاطر التعامل مع مشاكل البشرة وتهيجها لاحقًا
+          </strong>
+          <div
+            style={{ position: "relative", width: "100%", margin: "1rem 0" }}
+            dir="ltr"
+          >
+            <animated.div
+              className="w-100 progress"
+              style={animPropsProgressBar}
+            ></animated.div>
+            <animated.div
+              className="progress-bar bg-prime"
+              role="progressbar"
+              style={animPropsProgressBarFill}
+            ></animated.div>
+          </div>
+
+          <img
+            src={VegetablesImg}
+            alt="original product"
+            className="img-fluid mt-3"
+          />
+        </animated.div>
+      )}
     </div>
   );
 };

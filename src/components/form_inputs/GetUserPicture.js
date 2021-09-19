@@ -12,7 +12,7 @@ const GetUserPicture = (props) => {
   const [scanning, setScanning] = useState(false); // prevent user from uploading images will scanning
   const [userPicSource, setUserPicSource] = useState(null);
   const handleSubmit = (values) => {
-    console.log("user pic submittind")
+    console.log("user pic submittind");
     props.next(values);
   };
   const userPic = useRef(null);
@@ -41,7 +41,7 @@ const GetUserPicture = (props) => {
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
         <Form style={specialFormStyle}>
-          <div className="container" >
+          <div className="container">
             <p
               style={{ maxWidth: "25rem", margin: "auto", fontSize: "0.8rem" }}
             >
@@ -59,9 +59,14 @@ const GetUserPicture = (props) => {
               </div>
             )}
             <div className="d-flex justify-content-center my-lg-1">
-              <div style={selfieContainerStyle} className="d-block d-lg-none bg-prime text-white">
+              <div
+                style={selfieContainerStyle}
+                className="d-block d-lg-none bg-prime text-white"
+              >
                 <figure>
-                  <VscDeviceCamera style={{...iconStyle, width:"1.5rem" , height:"1.5rem"}} />
+                  <VscDeviceCamera
+                    style={{ ...iconStyle, width: "1.5rem", height: "1.5rem" }}
+                  />
                 </figure>
                 <input
                   disabled={scanning}
@@ -73,7 +78,7 @@ const GetUserPicture = (props) => {
                   ref={userSelfiePic}
                 />
               </div>
-              <div style={selfieContainerStyle} className="bg-prime text-white" >
+              <div style={selfieContainerStyle} className="bg-prime text-white">
                 <figure>
                   <BsImage style={iconStyle} />
                 </figure>
@@ -90,7 +95,7 @@ const GetUserPicture = (props) => {
             <button
               type="submit"
               className="btn cl-prime rounded-pill  m-auto"
-              style={{ width: "12rem", border:"2px solid #363873" }}
+              style={{ width: "12rem", border: "2px solid #363873" }}
             >
               تجاوز هذه الخطوة
             </button>
@@ -107,9 +112,9 @@ const GetUserPicture = (props) => {
 };
 
 const specialFormStyle = {
-  // height: "100vh",
+  height: "80vh",
   display: "block",
-  paddingTop: "11vh",
+  marginTop: "20vh",
 };
 
 const selfieContainerStyle = {

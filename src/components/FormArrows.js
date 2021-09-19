@@ -11,10 +11,9 @@ const FormArrows = ({
 }) => {
   return (
     <div className="d-flex justify-content-between container flex-row formArrowsContainer">
-   
       <button
         type="submit"
-        className="btn text-white my-3 bg-prime border-0 rounded-pill"
+        className="btn text-white bg-prime border-0 rounded-pill"
         style={{
           width: `${lastStep && "12rem"}`,
           padding: `${lastStep && "0"}`,
@@ -38,8 +37,7 @@ const FormArrows = ({
       {!lastStep && !firstStep && (
         <button
           type="button"
-          className="btn text-white my-3 bg-prime"
-          style={{ borderRadius: "3rem" }}
+          className="btn text-white bg-prime rounded-pill"
           onClick={() => {
             parentProps.prev(values);
           }}

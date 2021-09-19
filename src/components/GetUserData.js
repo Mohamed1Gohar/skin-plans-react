@@ -112,13 +112,17 @@ const GetUserData = () => {
 
   return (
     <div
-      className="d-flex align-items-center justify-content-center flex-column"
-      style={{ minHeight: "100vh" }}
+      className="d-flex align-items-center flex-column"
+      style={{ height: "100vh" }}
     >
       <div
-        dir="ltr"
-        style={{ width: "100%", position: "absolute", top: "0" }}
+        style={{
+          position: "absolute",
+          top: "0",
+          width: "100%",
+        }}
       >
+        {/* Header Logo  */}
         <div
           className="d-flex justify-content-center py-2 "
           style={{
@@ -127,27 +131,25 @@ const GetUserData = () => {
         >
           <img src={Logo} alt="skin plans" style={{ width: "6rem" }} />
         </div>
-      </div>
-      <div
-        dir="ltr"
-        style={{ width: "90%", position: "absolute", top: "9vh" }}
-      >
-        <p className="mb-1">
-          {currentStep + 1} / {steps.length}
-        </p>
-        <div
-          className="progress"
-          style={{
-            height: "0.5rem",
-          }}
-        >
+        {/* Form progress bar  */}
+        <div dir="ltr" style={{ width: "90%", margin: "0 auto" }}>
+          <p className="mb-1">
+            {currentStep + 1} / {steps.length}
+          </p>
           <div
-            className="progress-bar bg-prime"
-            role="progressbar"
+            className="progress"
             style={{
-              width: `${(currentStep * 100) / steps.length}%`,
+              height: "0.5rem",
             }}
-          ></div>
+          >
+            <div
+              className="progress-bar bg-prime"
+              role="progressbar"
+              style={{
+                width: `${(currentStep * 100) / steps.length}%`,
+              }}
+            ></div>
+          </div>
         </div>
       </div>
       {steps[currentStep]}
