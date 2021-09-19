@@ -18,11 +18,13 @@ const GetUserPicture = (props) => {
   const handlePic = () => {
     setTimeout(() => {
       setCaptured(true);
-    }, 12500); // this timer depending on animation time 2.5 * 5
+    }, 13000); // this timer depending on animation time 2.5 * 5 + 0.5 for more time
     setUserPicSource(URL.createObjectURL(userPic.current.files[0]));
   };
   const handleSelfiePic = () => {
-    setCaptured(true);
+    setTimeout(() => {
+      setCaptured(true);
+    }, 13000); // this timer depending on animation time 2.5 * 5 + 0.5 for more time
     setUserPicSource(URL.createObjectURL(userSelfiePic.current.files[0]));
   };
   useEffect(() => {}, []);
