@@ -35,21 +35,25 @@ const ExpectedChanges = () => {
         عملاء مشابهين)
       </p>
       <div className="gridContainer text-right expectedChangesContainer align-items-around">
-        <img
-          src={ExpectChangeGraph}
-          alt="نضارة 20% و امتلاء بشرة 25% و انتفاخ عين أقل 53% خطوط وجه أقل 75% بقع داكنة أقل 85%"
-        />
-        <ul className="h-100 d-flex justify-content-center flex-column pr-4">
-          {changes.map((c, i) => {
-            return (
-              <li key={i}>
-                <BsFillCaretUpFill />
-                {c.name}
-                <span style={SpecialTxtStyles}> {c.n}</span>
-              </li>
-            );
-          })}
-        </ul>
+        <div>
+          <img
+            src={ExpectChangeGraph}
+            alt="نضارة 20% و امتلاء بشرة 25% و انتفاخ عين أقل 53% خطوط وجه أقل 75% بقع داكنة أقل 85%"
+          />
+        </div>
+        <div>
+          <ul className="h-100 d-flex justify-content-center flex-column pr-4">
+            {changes.map((c, i) => {
+              return (
+                <li key={i}>
+                  <BsFillCaretUpFill />
+                  {c.name}
+                  <span style={SpecialTxtStyles}> {c.n}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );
