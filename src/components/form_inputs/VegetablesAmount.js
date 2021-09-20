@@ -95,7 +95,7 @@ const VegetablesAmount = (props) => {
       <animated.div style={!props.data.vegetablesAmount ? animPropsFadeIn : {}}>
         <Formik initialValues={props.data} onSubmit={handleSubmit}>
           {({ values }) => (
-            <Form style={{ width: "100%", height: "65vh", marginTop: "0" }}>
+            <Form style={{ width: "100%", marginTop: "0" }}>
               <div role="group" aria-labelledby="radio-group">
                 <p>
                   <strong>أتناول الخضروات … خلال الأسبوع</strong>
