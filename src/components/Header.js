@@ -59,7 +59,7 @@ const Header = () => {
                 className=" w-100 "
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "auto 3.5rem",
+                  gridTemplateColumns: "auto 3.7rem",
                   gridGap: "1rem",
                 }}
               >
@@ -73,7 +73,6 @@ const Header = () => {
                   <BsFillCaretLeftFill style={{ fontSize: "1.5rem" }} />
                 </span>
               </NavLink>
-              {/* <SetRoutineBtn text={"ابدأ الآن"} showArrow={true} /> */}
               <p className=" my-4 cl-prime" style={{ lineHeight: "1.4" }}>
                 مجاني يستغرق دقيقتين فقط ليرشح لك الروتين الامثل لك.
               </p>
