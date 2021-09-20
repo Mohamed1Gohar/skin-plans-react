@@ -120,7 +120,7 @@ const GetUserData = () => {
           // position: "absolute",
           // top: "0",
           width: "100%",
-          marginBottom:"1rem"
+          marginBottom: "1rem",
         }}
       >
         {/* Header Logo  */}
@@ -147,7 +147,7 @@ const GetUserData = () => {
               className="progress-bar bg-prime"
               role="progressbar"
               style={{
-                width: `${(currentStep * 100) / steps.length}%`,
+                width: `${((currentStep + 1) * 100) / steps.length}%`,
               }}
             ></div>
           </div>
