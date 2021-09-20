@@ -440,6 +440,7 @@ summary:focus-visible {
 @media (max-width : 768px) {
 
   form {
+    height: "65vh";
     justify-content: normal;
     margin-top: 15vh;
   }

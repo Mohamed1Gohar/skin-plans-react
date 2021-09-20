@@ -149,7 +149,6 @@ const GetUserData = () => {
           </div>
         </div>
       </div>
-      tet
       {steps[currentStep]}
     </div>
   );
