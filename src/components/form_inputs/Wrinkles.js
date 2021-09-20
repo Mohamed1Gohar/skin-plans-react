@@ -50,57 +50,6 @@ const Wrinkles = (props) => {
                 values={values}
                 autoSubmit={autoSubmit}
               />
-
-              {/* <li
-                className={`list-group-item my-2  ${
-                  values.wrinkles === "20" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="wrinkles"
-                    value="20"
-                    aria-label="20"
-                    style={{ visibility: "hidden" }}
-                  />
-                  غير موجودة حتى الآن
-                </label>
-              </li>
-
-              <li
-                className={`list-group-item my-2  ${
-                  values.wrinkles === "10" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="wrinkles"
-                    value="10"
-                    aria-label="10"
-                    style={{ visibility: "hidden" }}
-                  />
-                  قليلة وسطحية
-                </label>
-              </li>
-
-              <li
-                className={`list-group-item my-2  ${
-                  values.wrinkles === "5" ? "active" : null
-                }`}
-              >
-                <label className="d-block mb-0">
-                  <Field
-                    type="radio"
-                    name="wrinkles"
-                    value="5"
-                    aria-label="5"
-                    style={{ visibility: "hidden" }}
-                  />
-                  منتشرة وعميقة
-                </label>
-              </li> */}
             </ul>
           </div>
           <FormArrows

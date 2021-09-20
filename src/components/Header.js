@@ -1,6 +1,5 @@
 import Nav from "./Nav";
 import Head from "../assets/media/images/header.png";
-import SetRoutineBtn from "./SetRoutineBtn";
 
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";

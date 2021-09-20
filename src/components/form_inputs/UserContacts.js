@@ -1,8 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { NavLink } from "react-router-dom";
 import FormArrows from "../FormArrows";
-import { BsArrowRightShort } from "react-icons/bs";
 import RadioInput from "../formFields/RadioInput";
 
 const UserName = (props) => {

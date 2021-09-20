@@ -1,6 +1,6 @@
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
-import { AiFillLock, AiOutlineCheck } from "react-icons/ai";
+import { AiFillLock } from "react-icons/ai";
 
 const FormArrows = ({
   parentProps,
@@ -80,14 +80,4 @@ const FormArrows = ({
   );
 };
 
-const checkIconStyle = {
-  width: "1.5rem",
-  height: "1.5rem",
-  fontSize: "1rem",
-  fontWeight: "900",
-  padding: "0.25rem",
-  marginRight: "0.5rem",
-  border: "1px solid #8f7f7f",
-  color: "#009600",
-};
 export default FormArrows;

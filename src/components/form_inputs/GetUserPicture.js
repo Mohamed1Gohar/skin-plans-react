@@ -1,11 +1,11 @@
 import { Form, Formik } from "formik";
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import FormArrows from "../FormArrows";
 import { BsImage } from "react-icons/bs";
 import { VscDeviceCamera } from "react-icons/vsc";
 import { FaCheckCircle } from "react-icons/fa";
 import userPicPlaceholder from "../../assets/media/images/userPicPlaceholder.png";
-import { useTransition, animated } from "react-spring";
+// import { useTransition, animated } from "react-spring";
 
 // FaCheckCircle;
 const GetUserPicture = (props) => {
@@ -38,20 +38,20 @@ const GetUserPicture = (props) => {
     }, 13000); // this timer depending on animation time 2.5 * 5 + 0.5 for more time
     setUserPicSource(URL.createObjectURL(userSelfiePic.current.files[0]));
   };
-  const scanningBarAnimation = useTransition(userPicSource, null, {
-    from: {
-      top: "-11%",
-      opacity: "0",
-    },
-    enter: {
-      top: "98%",
-      opacity: "1",
-    },
-    leave: {
-      top: "-11%",
-      opacity: "0",
-    },
-  });
+  // const scanningBarAnimation = useTransition(userPicSource, null, {
+  //   from: {
+  //     top: "-11%",
+  //     opacity: "0",
+  //   },
+  //   enter: {
+  //     top: "98%",
+  //     opacity: "1",
+  //   },
+  //   leave: {
+  //     top: "-11%",
+  //     opacity: "0",
+  //   },
+  // });
 
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>

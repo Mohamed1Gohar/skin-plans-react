@@ -11,17 +11,6 @@ const SetRoutineBtn = ({ text, showArrow }) => {
       >
         {text}
       </NavLink>
-      {/* {showArrow && (
-        <NavLink
-          to="/assessment"
-          className="text-white mr-4 mt-3 bg-prime d-inline-block"
-          style={{
-            padding: "7px 10px",
-            borderRadius: "3rem",
-          }}
-        >
-        </NavLink>
-      )} */}
     </>
   );
 };

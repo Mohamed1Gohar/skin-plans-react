@@ -3,9 +3,6 @@ import { useState, useContext } from "react";
 import Logo from "../assets/media/images/logo.png";
 
 import UserContacts from "./form_inputs/UserContacts";
-import UserPhone from "./form_inputs/UserPhone";
-import UserAge from "./form_inputs/UserAge";
-import UserGender from "./form_inputs/UserGender";
 import SkinConcerns from "./form_inputs/SkinConcerns";
 import Cheeks from "./form_inputs/Cheeks";
 import BlackSpots from "./form_inputs/BlackSpots";
@@ -39,7 +36,6 @@ const GetUserData = () => {
     dailyPressure: null,
   });
   const [currentStep, setCurrentStep] = useState(0);
-  // const [finalScore, setFinalScore] = useState("");
 
   const { setUserData } = useContext(AppContext);
 
@@ -61,16 +57,11 @@ const GetUserData = () => {
       phone: formData.phone,
       grade: score,
     });
-    // setFinalScore(score);
-    console.log(score);
   };
 
   const handleNextStep = (newData, final = false) => {
     setData((prev) => ({ ...prev, ...newData }));
-    // console.log("handle next step");
     if (final) {
-      // console.log("handle next step : final");
-
       makeRequest(newData);
       return;
     }
@@ -86,7 +77,6 @@ const GetUserData = () => {
   };
 
   const steps = [
-    // <UserGender next={handleNextStep} prev={handlePrevStep} data={data} />,
     <SkinConcerns next={handleNextStep} prev={handlePrevStep} data={data} />,
     <Cheeks next={handleNextStep} prev={handlePrevStep} data={data} />,
     <BlackSpots next={handleNextStep} prev={handlePrevStep} data={data} />,
@@ -104,11 +94,7 @@ const GetUserData = () => {
     <GetUserLocation next={handleNextStep} prev={handlePrevStep} data={data} />,
     <GetUserPicture next={handleNextStep} prev={handlePrevStep} data={data} />,
     <UserContacts next={handleNextStep} data={data} />,
-    // <UserAge next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <UserPhone next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
-
-  // console.log("data", data);
 
   return (
     <div
@@ -117,8 +103,6 @@ const GetUserData = () => {
     >
       <div
         style={{
-          // position: "absolute",
-          // top: "0",
           width: "100%",
           marginBottom: "1rem",
         }}
