@@ -164,7 +164,6 @@ form .list-group-item label {
 
 .formArrowsContainer {
   width: 14rem;
-  height: 10vh;
   position: absolute;
   bottom: 1vh;
   left: calc(50% - 7rem)

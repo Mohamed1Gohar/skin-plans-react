@@ -4,7 +4,7 @@ const FinalResultPage = () => {
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
-      style={{ minHeight: "100vh" }}
+      // style={{ minHeight: "100vh" }}
     >
       <FinalResult />
     </div>
