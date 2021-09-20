@@ -113,7 +113,7 @@ const GetUserData = () => {
   return (
     <div
       className="d-flex align-items-center flex-column"
-      style={{ height: "100vh" }}
+      style={{ height: "80vh" }}
     >
       <div
         style={{
