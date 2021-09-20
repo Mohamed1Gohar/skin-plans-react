@@ -52,7 +52,7 @@ const GetUserPicture = (props) => {
               <div className="userPicContainer">
                 <img
                   src={userPicSource}
-                  style={{ maxHeight: "38vh" }}
+                  style={{ maxHeight: "30vh" }}
                   alt="صورة المستخدمة"
                 />
                 {captured && <FaCheckCircle style={completedIconStyle} />}
@@ -112,7 +112,7 @@ const GetUserPicture = (props) => {
 };
 
 const specialFormStyle = {
-  height: "70vh",
+  height: "60vh",
   display: "block",
   marginTop: "20vh",
 };
