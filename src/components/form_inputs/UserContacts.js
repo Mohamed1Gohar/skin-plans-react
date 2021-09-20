@@ -41,18 +41,11 @@ const UserName = (props) => {
               يرجي كتابة بيانتك لارسال النتائج
             </p>
             <div
-              className="cl-prime mb-3"
+              className="cl-prime mb-2"
               style={{ width: "100%" }}
               role="group"
               aria-labelledby="radio-group"
             >
-              {/* <p>
-                <strong>
-                  النساء لديهم بشرة أنعم و أرق مقارنة بالرجال، لذلك تظهر علامات
-                  التقدم في السن على بشرتهم بشكل أسرع <br /> انا…..
-                </strong>
-              </p> */}
-
               <ul className="list-group flex-row justify-content-between">
                 <div style={genderInputStyle}>
                   <RadioInput
@@ -79,7 +72,6 @@ const UserName = (props) => {
               className="p-2 pr-3 cl-prime   rounded-pill"
               placeholder="اسمك"
             />
-            <br />
             <p style={{ color: "red", marginBottom: "1rem" }}>
               <ErrorMessage name="name" />
             </p>
@@ -90,7 +82,6 @@ const UserName = (props) => {
               min="0"
               placeholder=" عمرك"
             />
-            <br />
             <p style={{ color: "red", marginBottom: "1rem" }}>
               <ErrorMessage name="age" />
             </p>

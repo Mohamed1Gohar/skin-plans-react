@@ -43,18 +43,18 @@ const FormArrows = ({
             data-active={!condition && "active"}
             onClick={() => handleSubmit(values)}
           >
-            اعرض النتائج الخاصه بي
+            اعرض النتائج الخاصة بي
           </NavLink>
         ) : (
           <BsArrowRightShort style={{ fontSize: "2rem" }} />
         )}
       </button>
       {lastStep && (
-        <div className="mt-2" dir="ltr">
+        <div className="mt-2" dir="ltr" style={{ fontSize: "0.9rem" }}>
           <p className="mb-1">
             {" "}
             <AiFillLock
-              style={{ fontSize: "1.5rem", marginRight: "0.5rem" }}
+              style={{ fontSize: "1.5rem", marginRight: "0.25rem" }}
             />{" "}
             information are 100% secure
           </p>
@@ -81,11 +81,11 @@ const FormArrows = ({
 };
 
 const checkIconStyle = {
-  width: "2rem",
-  height: "2rem",
-  fontSize: "1.2rem",
+  width: "1.5rem",
+  height: "1.5rem",
+  fontSize: "1rem",
   fontWeight: "900",
-  padding: "0.5rem",
+  padding: "0.25rem",
   marginRight: "0.5rem",
   border: "1px solid #8f7f7f",
   color: "#009600",
