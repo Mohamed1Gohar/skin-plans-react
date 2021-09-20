@@ -66,7 +66,7 @@ const Header = () => {
                   style={{ fontSize: "18px" }}
                 >
                   <NavLink
-                    to="/assessments"
+                    to="/assessment"
                     exact
                     className="text-white d-block w-100 h-100 p-3 rounded-pill"
                   >
@@ -75,7 +75,7 @@ const Header = () => {
                 </span>
                 <span className="bg-prime text-white text-center rounded-pill">
                   <NavLink
-                    to="/assessments"
+                    to="/assessment"
                     exact
                     className="text-white d-block w-100 h-100 p-3 rounded-pill"
                   >
