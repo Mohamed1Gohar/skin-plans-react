@@ -14,7 +14,7 @@ const RadioInput = ({ valName, value, txt, values, autoSubmit }) => {
           value={value}
           style={{ visibility: "hidden" }}
           onInput={() => {
-            autoSubmit(values);
+            valName !== "gender" && autoSubmit(values);
           }}
         />
         {txt}

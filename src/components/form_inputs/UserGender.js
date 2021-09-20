@@ -17,7 +17,7 @@ const UserGender = (props) => {
   };
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
-      {({ values, isSubmitting, setSubmitting }) => (
+      {({ values }) => (
         <Form>
           <div
             className="cl-prime mb-3"
@@ -33,46 +33,6 @@ const UserGender = (props) => {
             </p>
 
             <ul className="list-group">
-              {/* <li
-                className={`list-group-item my-2  ${
-                  values.gender === "male" && "active"
-                }`}
-              >
-                <label className="d-block">
-                  <Field
-                    type="radio"
-                    name="gender"
-                    value="male"
-                    aria-label="male"
-                    style={{ visibility: "hidden" }}
-                    onInput={() => {
-                      autoSubmit(values, isSubmitting);
-                      setSubmitting(!isSubmitting);
-                    }}
-                  />
-                  ذكر
-                </label>
-              </li> */}
-              {/* <li
-                className={`list-group-item my-2  ${
-                  values.gender === "female" && "active"
-                }`}
-              >
-                <label className="d-block">
-                  <Field
-                    type="radio"
-                    name="gender"
-                    value="female"
-                    aria-label="female"
-                    style={{ visibility: "hidden" }}
-                    onInput={() => {
-                      autoSubmit(values, isSubmitting);
-                      setSubmitting(!isSubmitting);
-                    }}
-                  />
-                  أنثى
-                </label>
-              </li> */}
               <RadioInput
                 valName="gender"
                 value="female"

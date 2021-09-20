@@ -9,7 +9,7 @@ const SkinConcerns = (props) => {
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
       {({ values }) => (
-        <Form >
+        <Form>
           <div
             className="cl-prime mb-3"
             role="group"
@@ -99,6 +99,7 @@ const SkinConcerns = (props) => {
           <FormArrows
             values={values}
             parentProps={props}
+            firstStep={true}
             condition={values.skinConcerns.length === 0}
           />
         </Form>

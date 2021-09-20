@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import Logo from "../assets/media/images/logo.png";
 
-import UserName from "./form_inputs/UserName";
+import UserContacts from "./form_inputs/UserContacts";
 import UserPhone from "./form_inputs/UserPhone";
 import UserAge from "./form_inputs/UserAge";
 import UserGender from "./form_inputs/UserGender";
@@ -86,7 +86,7 @@ const GetUserData = () => {
   };
 
   const steps = [
-    <UserGender next={handleNextStep} prev={handlePrevStep} data={data} />,
+    // <UserGender next={handleNextStep} prev={handlePrevStep} data={data} />,
     <SkinConcerns next={handleNextStep} prev={handlePrevStep} data={data} />,
     <Cheeks next={handleNextStep} prev={handlePrevStep} data={data} />,
     <BlackSpots next={handleNextStep} prev={handlePrevStep} data={data} />,
@@ -103,7 +103,7 @@ const GetUserData = () => {
     <DailyPressure next={handleNextStep} prev={handlePrevStep} data={data} />,
     // <GetUserLocation next={handleNextStep} prev={handlePrevStep} data={data} />,
     <GetUserPicture next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <UserName next={handleNextStep} data={data} />,
+    <UserContacts next={handleNextStep} data={data} />,
     // <UserAge next={handleNextStep} prev={handlePrevStep} data={data} />,
     // <UserPhone next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
@@ -113,7 +113,7 @@ const GetUserData = () => {
   return (
     <div
       className="d-flex align-items-center flex-column"
-      style={{ position: "relative", height: "100vh", paddingTop: "15vh" }}
+      style={{ position: "relative", height: "80vh", paddingTop: "15vh" }}
     >
       <div
         style={{

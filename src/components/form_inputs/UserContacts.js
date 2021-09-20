@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { NavLink } from "react-router-dom";
 import FormArrows from "../FormArrows";
 import { BsArrowRightShort } from "react-icons/bs";
+import RadioInput from "../formFields/RadioInput";
 
 const UserName = (props) => {
   const handleSubmit = (values) => {
@@ -31,14 +32,47 @@ const UserName = (props) => {
       initialValues={props.data}
       onSubmit={handleSubmit}
     >
-      {({ values, isValid }) => (
-        <Form >
+      {({ values }) => (
+        <Form>
           <div>
             <p className="h4">الخطوة الأخيرة</p>
             <p>
               تم الانتهاء من تحليل نتائجك ستعرف تفاصيل بشرتك في الصفحه التاليه
               يرجي كتابة بيانتك لارسال النتائج
             </p>
+            <div
+              className="cl-prime mb-3"
+              style={{ width: "100%" }}
+              role="group"
+              aria-labelledby="radio-group"
+            >
+              {/* <p>
+                <strong>
+                  النساء لديهم بشرة أنعم و أرق مقارنة بالرجال، لذلك تظهر علامات
+                  التقدم في السن على بشرتهم بشكل أسرع <br /> انا…..
+                </strong>
+              </p> */}
+
+              <ul className="list-group flex-row justify-content-between">
+                <div style={genderInputStyle}>
+                  <RadioInput
+                    valName="gender"
+                    value="female"
+                    txt="أنثى"
+                    values={values}
+                  />
+                </div>
+                <div style={genderInputStyle}>
+                  <RadioInput
+                    valName="gender"
+                    value="male"
+                    txt="ذكر"
+                    values={values}
+                  />
+                </div>
+              </ul>
+            </div>
+
             <Field
               name="name"
               type="text"
@@ -74,7 +108,10 @@ const UserName = (props) => {
             values={values}
             parentProps={props}
             condition={
-              values.name.length >= 2 && values.age && values.phone.length >= 11
+              values.name.length >= 2 &&
+              values.age &&
+              values.phone.length >= 11 &&
+              values.gender
                 ? false
                 : true
             }
@@ -87,4 +124,8 @@ const UserName = (props) => {
   );
 };
 
+const genderInputStyle = {
+  width: "45%",
+  display: "inline-block",
+};
 export default UserName;
