@@ -113,13 +113,14 @@ const GetUserData = () => {
   return (
     <div
       className="d-flex align-items-center flex-column"
-      style={{ position: "relative", height: "80vh", paddingTop: "15vh" }}
+      style={{ height: "90vh" }}
     >
       <div
         style={{
-          position: "absolute",
-          top: "0",
+          // position: "absolute",
+          // top: "0",
           width: "100%",
+          marginBottom:"1rem"
         }}
       >
         {/* Header Logo  */}
