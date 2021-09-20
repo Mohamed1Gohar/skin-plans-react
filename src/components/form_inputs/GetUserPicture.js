@@ -114,7 +114,7 @@ const GetUserPicture = (props) => {
 const specialFormStyle = {
   height: "60vh",
   display: "block",
-  marginTop: "20vh",
+  marginTop: "15vh",
 };
 
 const selfieContainerStyle = {
