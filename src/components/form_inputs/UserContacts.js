@@ -69,7 +69,7 @@ const UserName = (props) => {
             <Field
               name="name"
               type="text"
-              className="p-2 pr-3 cl-prime   rounded-pill"
+              className="p-2 pr-3 cl-prime w-100  rounded-pill"
               placeholder="اسمك"
             />
             <p style={{ color: "red", marginBottom: "1rem" }}>
@@ -78,7 +78,7 @@ const UserName = (props) => {
             <Field
               name="age"
               type="number"
-              className="p-2 pr-3 cl-prime   rounded-pill"
+              className="p-2 pr-3 cl-prime w-100  rounded-pill"
               min="0"
               placeholder=" عمرك"
             />
@@ -88,7 +88,7 @@ const UserName = (props) => {
             <Field
               name="phone"
               type="phone"
-              className="p-2 pr-3 cl-prime   rounded-pill"
+              className="p-2 pr-3 cl-prime w-100  rounded-pill"
               placeholder="رقم التلفون"
             />
             <p style={{ color: "red", marginBottom: "1rem" }}>

@@ -19,7 +19,7 @@ const FormArrows = ({
       } container formArrowsContainer`}
       style={
         lastStep && {
-          width: "auto",
+          width: "100%",
           maxWidth: "35rem",
           left: "unset",
           flexDirection: "column",
@@ -58,11 +58,11 @@ const FormArrows = ({
             />{" "}
             information are 100% secure
           </p>
-          <p>
+          {/* <p>
             <AiOutlineCheck style={checkIconStyle} />i understand my information
             is kept 100% confidential and agree to the terms of service and
             privacy policy
-          </p>
+          </p> */}
         </div>
       )}
       {!lastStep && !firstStep && (
