@@ -440,7 +440,7 @@ summary:focus-visible {
 @media (max-width : 768px) {
 
   form {
-    height: 50vh;
+    /* height: 60vh; */
   }
 
   .gridContainer {
