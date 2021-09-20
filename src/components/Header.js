@@ -4,6 +4,9 @@ import SetRoutineBtn from "./SetRoutineBtn";
 
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
+
+import { BsFillCaretLeftFill } from "react-icons/bs";
 
 const Header = () => {
   const el = useRef(null);
@@ -49,8 +52,28 @@ const Header = () => {
               لذلك صممنا لك Quiz مجاني يحدد لك نسبة العناصر التي تحتاج اليها
               بشرتك للوصول الى النتائج المرغوب فيها بسهولة.
             </p>
-            <div style={{ maxWidth: "20rem" }} className="m-auto m-md-0">
-              <SetRoutineBtn text={"اكتشف روتينك المناسب"} showArrow={true} />
+            <div style={{ maxWidth: "30rem" }} className="w-100 m-md-auto">
+              <NavLink
+                to="/"
+                exact
+                className=" w-100 "
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "auto 3.5rem",
+                  gridGap: "1rem",
+                }}
+              >
+                <span
+                  className="bg-prime p-3 text-white text-center rounded-pill"
+                  style={{ fontSize: "18px" }}
+                >
+                  اكتشف روتينك المناسب
+                </span>
+                <span className="bg-prime p-3 text-white rounded-pill">
+                  <BsFillCaretLeftFill style={{ fontSize: "1.5rem" }} />
+                </span>
+              </NavLink>
+              {/* <SetRoutineBtn text={"ابدأ الآن"} showArrow={true} /> */}
               <p className=" my-4 cl-prime" style={{ lineHeight: "1.4" }}>
                 مجاني يستغرق دقيقتين فقط ليرشح لك الروتين الامثل لك.
               </p>
