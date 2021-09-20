@@ -17,7 +17,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #F8F8F8;
   color: #363873;
-  background: red;
 }
 
 
@@ -71,7 +70,6 @@ form {
   width: 90%;
   min-width: 16rem;
   max-width: 35rem;
-  background-color: #363873;
   /* display: flex; */
   /* justify-content: center;
   align-items: center; */
