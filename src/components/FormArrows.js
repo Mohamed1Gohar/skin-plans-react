@@ -16,7 +16,6 @@ const FormArrows = ({
         className="btn text-white bg-prime border-0 rounded-pill"
         style={{
           width: `${lastStep && "12rem"}`,
-          padding: `${lastStep && "0"}`,
         }}
         disabled={condition}
       >

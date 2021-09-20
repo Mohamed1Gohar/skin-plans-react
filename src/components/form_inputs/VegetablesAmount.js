@@ -84,7 +84,7 @@ const VegetablesAmount = (props) => {
   const styles = {
     container: (windowWidth) => ({
       width: windowWidth ? "33rem" : "90%",
-      marginTop: "12vh",
+      // marginTop: "12vh",
     }),
   };
   return (

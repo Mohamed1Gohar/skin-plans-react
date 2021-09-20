@@ -94,7 +94,7 @@ const GetUserPicture = (props) => {
             </div>
             <button
               type="submit"
-              className="btn cl-prime rounded-pill  m-auto"
+              className="btn cl-prime rounded-pill  m-auto "
               style={{ width: "12rem", border: "2px solid #363873" }}
             >
               تجاوز هذه الخطوة
@@ -114,7 +114,7 @@ const GetUserPicture = (props) => {
 const specialFormStyle = {
   height: "50vh",
   display: "block",
-  marginTop: "15vh",
+  // marginTop: "15vh",
 };
 
 const selfieContainerStyle = {
