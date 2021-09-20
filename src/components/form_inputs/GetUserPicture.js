@@ -112,7 +112,7 @@ const GetUserPicture = (props) => {
 };
 
 const specialFormStyle = {
-  height: "60vh",
+  height: "50vh",
   display: "block",
   marginTop: "15vh",
 };
