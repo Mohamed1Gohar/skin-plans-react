@@ -5,6 +5,7 @@ import { BsImage } from "react-icons/bs";
 import { VscDeviceCamera } from "react-icons/vsc";
 import { FaCheckCircle } from "react-icons/fa";
 import userPicPlaceholder from "../../assets/media/images/userPicPlaceholder.png";
+import { useTransition, animated } from "react-spring";
 
 // FaCheckCircle;
 const GetUserPicture = (props) => {
@@ -12,7 +13,6 @@ const GetUserPicture = (props) => {
   const [scanning, setScanning] = useState(false); // prevent user from uploading images will scanning
   const [userPicSource, setUserPicSource] = useState(null);
   const handleSubmit = (values) => {
-    console.log("user pic submittind");
     props.next(values);
   };
   const userPic = useRef(null);
@@ -20,6 +20,8 @@ const GetUserPicture = (props) => {
   const handlePic = () => {
     setCaptured(false); // if user reuploaded new pic
     setScanning(true);
+    setUserPicSource(null);
+    console.log(userPicSource);
     setTimeout(() => {
       setCaptured(true);
       setScanning(false);
@@ -29,13 +31,27 @@ const GetUserPicture = (props) => {
   const handleSelfiePic = () => {
     setCaptured(false); // if user reuploaded new pic
     setScanning(true);
+    setUserPicSource(null);
     setTimeout(() => {
       setCaptured(true);
       setScanning(false);
     }, 13000); // this timer depending on animation time 2.5 * 5 + 0.5 for more time
     setUserPicSource(URL.createObjectURL(userSelfiePic.current.files[0]));
   };
-  useEffect(() => {}, []);
+  const scanningBarAnimation = useTransition(userPicSource, null, {
+    from: {
+      top: "-11%",
+      opacity: "0",
+    },
+    enter: {
+      top: "98%",
+      opacity: "1",
+    },
+    leave: {
+      top: "-11%",
+      opacity: "0",
+    },
+  });
 
   return (
     <Formik initialValues={props.data} onSubmit={handleSubmit}>
@@ -53,9 +69,11 @@ const GetUserPicture = (props) => {
               <img
                 src={userPicSource ? userPicSource : userPicPlaceholder}
                 style={{ height: "35vh" }}
-                alt="صورة المستخدمة"
+                alt="صورة المستخدم"
               />
               {captured && <FaCheckCircle style={completedIconStyle} />}
+
+              {userPicSource && <div className="scanningBar"></div>}
             </div>
 
             <div className="d-flex justify-content-center my-lg-1">
