@@ -31,25 +31,9 @@ const Info = () => {
     {
       head: "25% من الالوفيرا والشاي الاخضر",
       secTxt:
-        ": لاحتوائهم على فيتامينات ومعادن ومضادات اكسده لمحاربة علامات التقدم في السن المبكره ومنع تكون الرئوس السوداء والحد من البثور والتصبغات.",
+        " لاحتوائهم على فيتامينات ومعادن ومضادات اكسده لمحاربة علامات التقدم في السن المبكره ومنع تكون الرئوس السوداء والحد من البثور والتصبغات.",
     },
   ];
-  const retanolCauses = [
-      "إعادة بناء الخلايا التالفة في البشرة",
-      "محاربة التجاعيد والخطوط الرفيعة",
-      "منح البشرة النضارة ومحاربة البهتان",
-      "مكافحة البثور وتنظيف المسامات الواسعة",
-      "معالجة التصبغات وندوب حب الشباب",
-      "محاربة الجفاف وترطيب البشرة",
-    ],
-    colaginCauses = [
-      "القضاء على خطوط الوجه والتجاعيد",
-      "إبراز الشفايف والخدود بمظهر أكثر امتلاء",
-      "القضاء على الخطوط البيضاء والسيلوليت في أجزاء الجسم المختلفة",
-      "توحيد لون البشرة والقضاء على البقع الداكنة",
-      "ترقيق وتنعيم الجلد",
-    ];
-
   return (
     <div
       className="text-right result_comp_style mb-4"
@@ -63,26 +47,36 @@ const Info = () => {
       </p>
       {content.map((c, i) => {
         return (
-          <div className="my-3">
-            <p className="h3 text-center mb-3" style={{ fontWeight: "600" }}>
+          // <div className="my-3">
+          <div
+            className="card text-center my-3"
+            style={{ border: "2px solid rgb(95, 100, 226)" }}
+          >
+            <div className="card-header bg-prime text-white">{c.head}</div>
+            <div className="card-body text-primary">
+              <p className="card-text" style={{ color: "rgb(95, 100, 226)" }}>
+                {c.secTxt}
+              </p>
+              {c.listItems && (
+                <ul className="my-3 w-100 text-right">
+                  {c.listItems.map((c, i) => {
+                    return (
+                      <li key={i} className="pb-2" style={listStyle}>
+                        <BsCheck className="bg-prime text-white ml-3" />
+                        {c}
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+            {/* </div> */}
+            {/* <p className="h3 text-center mb-3" style={{ fontWeight: "600" }}>
               {c.head}
             </p>
             <p className="text-center" style={{ color: "rgb(95, 100, 226)" }}>
               {c.secTxt}
-            </p>
-
-            {c.listItems && (
-              <ul className="my-3 w-100">
-                {c.listItems.map((c, i) => {
-                  return (
-                    <li key={i} className="pb-2" style={listStyle}>
-                      <BsCheck className="bg-prime text-white ml-3" />
-                      {c}
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
+            </p> */}
           </div>
         );
       })}
