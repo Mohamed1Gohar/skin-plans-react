@@ -439,6 +439,10 @@ summary:focus-visible {
 
 @media (max-width : 768px) {
 
+  form {
+    height: 50vh;
+  }
+
   .gridContainer {
     grid-gap: 0;
   }
