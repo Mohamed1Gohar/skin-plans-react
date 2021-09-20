@@ -3,8 +3,8 @@ import { useEffect, useState, useRef } from "react";
 import FormArrows from "../FormArrows";
 import { BsImage } from "react-icons/bs";
 import { VscDeviceCamera } from "react-icons/vsc";
-import { NavLink } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
+import userPicPlaceholder from "../../assets/media/images/userPicPlaceholder.png";
 
 // FaCheckCircle;
 const GetUserPicture = (props) => {
@@ -48,16 +48,16 @@ const GetUserPicture = (props) => {
               يمكنك ان تضع صورة لك وسيتمكن الذكاء الاصطناعي من توضيح المشكلة
               التي تعاني منها بشرتك لتسهيل معرفة الخيار الامثل لك
             </p>
-            {userPicSource && (
-              <div className="userPicContainer">
-                <img
-                  src={userPicSource}
-                  style={{ maxHeight: "30vh" }}
-                  alt="صورة المستخدمة"
-                />
-                {captured && <FaCheckCircle style={completedIconStyle} />}
-              </div>
-            )}
+
+            <div className="userPicContainer">
+              <img
+                src={userPicSource ? userPicSource : userPicPlaceholder}
+                style={{ height: "35vh" }}
+                alt="صورة المستخدمة"
+              />
+              {captured && <FaCheckCircle style={completedIconStyle} />}
+            </div>
+
             <div className="d-flex justify-content-center my-lg-1">
               <div
                 style={selfieContainerStyle}

@@ -174,9 +174,8 @@ form .list-group-item label {
 }
 
 .userPicContainer {
-  min-width: 8rem;
-  width: 70%;
-  max-width: 15rem;
+  min-width: 15rem;
+  max-width: 22rem;
   margin: 1rem auto;
   position: relative;
   overflow-x: hidden;
