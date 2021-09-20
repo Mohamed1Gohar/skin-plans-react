@@ -53,10 +53,8 @@ const Header = () => {
               بشرتك للوصول الى النتائج المرغوب فيها بسهولة.
             </p>
             <div style={{ maxWidth: "30rem" }} className="w-100 m-md-auto">
-              <NavLink
-                to="/"
-                exact
-                className=" w-100 "
+              <div
+                className="w-100 "
                 style={{
                   display: "grid",
                   gridTemplateColumns: "auto 3.7rem",
@@ -64,15 +62,29 @@ const Header = () => {
                 }}
               >
                 <span
-                  className="bg-prime p-3 text-white text-center rounded-pill"
+                  className="bg-prime text-white text-center rounded-pill"
                   style={{ fontSize: "18px" }}
                 >
-                  اكتشف روتينك المناسب
+                  <NavLink
+                    to="/assessments"
+                    exact
+                    className="text-white d-block w-100 h-100 p-3 rounded-pill"
+                  >
+                    اكتشف روتينك المناسب
+                  </NavLink>
                 </span>
-                <span className="bg-prime p-3 text-white rounded-pill">
-                  <BsFillCaretLeftFill style={{ fontSize: "1.5rem" }} />
+                <span className="bg-prime text-white text-center rounded-pill">
+                  <NavLink
+                    to="/assessments"
+                    exact
+                    className="text-white d-block w-100 h-100 p-3 rounded-pill"
+                  >
+                    <BsFillCaretLeftFill style={{ fontSize: "1.5rem" }} />
+                  </NavLink>
                 </span>
-              </NavLink>
+              </div>
+
+              {/* </NavLink> */}
               <p className=" my-4 cl-prime" style={{ lineHeight: "1.4" }}>
                 مجاني يستغرق دقيقتين فقط ليرشح لك الروتين الامثل لك.
               </p>

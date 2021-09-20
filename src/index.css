@@ -36,18 +36,7 @@ a:focus-visible {
   background: #4b4d9a !important;
   outline: none !important;
   border: none !important;
-}
-
-header a:hover,
-header a:focus,
-header a:focus-visible {
-  background: transparent !important;
-}
-
-header a:hover span,
-header a:focus span,
-header a:focus-visible span {
-  background: #4b4d9a !important;
+  text-decoration: none !important;
 }
 
 .btn:hover,
