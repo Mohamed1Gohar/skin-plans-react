@@ -111,7 +111,10 @@ const GetUserData = () => {
   // console.log("data", data);
 
   return (
-    <div className="d-flex align-items-center flex-column">
+    <div
+      className="d-flex align-items-center justify-content-center flex-column"
+      style={{ position: "relative", height: "100vh" }}
+    >
       <div
         style={{
           position: "absolute",

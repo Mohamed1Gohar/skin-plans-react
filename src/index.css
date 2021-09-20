@@ -66,7 +66,7 @@ p {
 }
 
 form {
-  height: 80vh;
+  /* height: 80vh; */
   width: 90%;
   min-width: 16rem;
   max-width: 35rem;
@@ -74,9 +74,9 @@ form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10vh;
-  position: relative;
-  padding-bottom: 10vh;
+  /* margin-top: 10vh; */
+  /* position: relative; */
+  /* padding-bottom: 10vh; */
 }
 
 form>div {
@@ -237,10 +237,10 @@ form .list-group-item label {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-border-radius:;
-  -moz-border-radius:;
-  -ms-border-radius:;
-  -o-border-radius:;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 } */
 .spinner {
   animation: spinner 1.5s linear infinite;
@@ -440,9 +440,9 @@ summary:focus-visible {
 @media (max-width : 768px) {
 
   form {
-    height: "65vh";
+    /* height: "65vh"; */
     justify-content: normal;
-    margin-top: 15vh;
+    /* margin-top: 15vh; */
   }
 
   .gridContainer {
