@@ -2,7 +2,7 @@ import { Formik, Form } from "formik";
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import FormArrows from "../FormArrows";
-import VegetablesImg from "../../assets/media/images/vegetables_intro.png";
+import VegetablesImg from "../../assets/media/images/vegetables_intro.jpg";
 import Logo from "../../assets/media/images/logo.png";
 
 import RadioInput from "../formFields/RadioInput";
@@ -149,18 +149,12 @@ const VegetablesAmount = (props) => {
           >
             جاري معالجة بيناتك
           </animated.div>
-          <strong style={{ lineHeight: "1.3" }}>
-            عندما يتعلق الأمر بالانتظام على روتين معين، تجنبي دائمًا المنتجات
-            الكماوية واختاري المكونات الطبيعية. يرشح لك
-            <img
-              src={Logo}
-              alt="skin plans"
-              style={{ width: "7rem", margin: "0 0.5rem " }}
-            />
-            منتجات طبيعيه لتقليل مخاطر التعامل مع مشاكل البشرة وتهيجها لاحقًا
-          </strong>
           <div
-            style={{ position: "relative", width: "100%", margin: "1rem 0" }}
+            style={{
+              position: "relative",
+              width: "100%",
+              marginBottom: "1.5rem",
+            }}
             dir="ltr"
           >
             <animated.div
@@ -173,6 +167,17 @@ const VegetablesAmount = (props) => {
               style={animPropsProgressBarFill}
             ></animated.div>
           </div>
+
+          <strong style={{ lineHeight: "1.3" }}>
+            ايجاد الروتين المناسب لبشرتك يمكن أن يكون من الصعب اكتشافه، وهنا
+            يأتي دور
+            <img
+              src={Logo}
+              alt="skin plans"
+              style={{ width: "7rem", margin: "0 0.5rem " }}
+            />
+            ليجد لك الحل الأمثل للقضاء على مشاكل البشرة
+          </strong>
 
           <img
             src={VegetablesImg}
