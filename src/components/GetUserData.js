@@ -40,7 +40,6 @@ const GetUserData = () => {
   const { setUserData } = useContext(AppContext);
 
   const makeRequest = (formData) => {
-    console.log(typeof formData, formData);
     let score = 0;
     for (let n of Object.keys(formData)) {
       const val = parseInt(formData[n]);
@@ -56,6 +55,7 @@ const GetUserData = () => {
       gender: formData.gender,
       phone: formData.phone,
       grade: score,
+      skinType: formData.cheeks,
     });
   };
 

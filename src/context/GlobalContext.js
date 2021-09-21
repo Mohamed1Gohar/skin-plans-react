@@ -7,6 +7,7 @@ const appState = {
   userAge: "",
   userGender: "",
   grade: 0,
+  skinType: "",
 };
 
 const appReducer = (state, action) => {
@@ -19,6 +20,7 @@ const appReducer = (state, action) => {
         userGender: action.payload.gender,
         userPhone: action.payload.phone,
         grade: action.payload.grade,
+        skinType: action.payload.skinType,
       };
     default:
       return state;
@@ -34,7 +36,6 @@ export const AppProvider = ({ children }) => {
 
   // set user data
   const setUserData = (obj) => {
-    console.log("cotext ", obj);
     dispatch({ type: "SET_USER_DATA", payload: obj });
   };
 
@@ -47,10 +48,10 @@ export const AppProvider = ({ children }) => {
         name: state.userName,
         displayedGrade: calculateDisplayedGrade(),
         age: state.userAge,
+        skinType: state.skinType,
         setUserData,
       }}
     >
-      {console.log(calculateDisplayedGrade())}
       {children}
     </AppContext.Provider>
   );
