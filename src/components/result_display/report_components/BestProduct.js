@@ -14,7 +14,9 @@ const BestProduct = () => {
     <div className="result_comp_style mb-4">
       <h1 className="h3" style={{ fontWieght: "900" }}>
         المنتج الطبيعي الأنسب لك هو
-        <strong>كريم لو رايدز </strong>
+        <strong style={{ fontSize: "130%", margin: "0 0.85rem" }}>
+          كريم لو رايدز{" "}
+        </strong>
       </h1>
       <img src={ProductImage} alt="كريم لو رايدز" />
       <ul className="py-3 text-right w-100">
