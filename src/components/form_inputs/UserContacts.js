@@ -1,7 +1,8 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import FormArrows from "../FormArrows";
 import RadioInput from "../formFields/RadioInput";
+import { NavLink } from "react-router-dom";
+import { AiFillLock } from "react-icons/ai";
 
 const UserName = (props) => {
   const handleSubmit = (values) => {
@@ -93,10 +94,10 @@ const UserName = (props) => {
               <ErrorMessage name="phone" />
             </p>
           </div>
-          <FormArrows
-            values={values}
-            parentProps={props}
-            condition={
+          <button
+            type="submit"
+            className="btn text-white bg-prime border-0 rounded-pill w-100 p-0"
+            disabled={
               values.name.length >= 2 &&
               values.age &&
               values.phone.length >= 11 &&
@@ -104,9 +105,31 @@ const UserName = (props) => {
                 ? false
                 : true
             }
-            lastStep={true}
-            handleSubmit={handleSubmit}
-          />
+          >
+            <NavLink
+              to="/results"
+              className="text-white rounded-pill submitFormBtn p-3"
+              data-active={
+                values.name.length < 2 &&
+                !values.age &&
+                values.phone.length < 11 &&
+                !values.gender
+                  ? ""
+                  : "active"
+              }
+              onClick={() => handleSubmit(values)}
+            >
+              اعرض النتائج الخاصة بي
+            </NavLink>
+          </button>
+          <div className="mt-2" dir="ltr" style={{ fontSize: "0.9rem" }}>
+            <p className="mb-1">
+              <AiFillLock
+                style={{ fontSize: "1.5rem", marginRight: "0.25rem" }}
+              />
+              information are 100% secure
+            </p>
+          </div>
         </Form>
       )}
     </Formik>

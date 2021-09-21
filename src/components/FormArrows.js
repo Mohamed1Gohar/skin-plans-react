@@ -1,5 +1,4 @@
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
 import { AiFillLock } from "react-icons/ai";
 
 const FormArrows = ({
@@ -35,19 +34,7 @@ const FormArrows = ({
         }}
         disabled={condition}
       >
-        {/* {console.log("conditions : ", condition)} */}
-        {lastStep ? (
-          <NavLink
-            to="/results"
-            className="text-white rounded-pill submitFormBtn "
-            data-active={!condition && "active"}
-            onClick={() => handleSubmit(values)}
-          >
-            اعرض النتائج الخاصة بي
-          </NavLink>
-        ) : (
-          <BsArrowRightShort style={{ fontSize: "2rem" }} />
-        )}
+        <BsArrowRightShort style={{ fontSize: "2rem" }} />
       </button>
       {lastStep && (
         <div className="mt-2" dir="ltr" style={{ fontSize: "0.9rem" }}>
@@ -58,11 +45,6 @@ const FormArrows = ({
             />{" "}
             information are 100% secure
           </p>
-          {/* <p>
-            <AiOutlineCheck style={checkIconStyle} />i understand my information
-            is kept 100% confidential and agree to the terms of service and
-            privacy policy
-          </p> */}
         </div>
       )}
       {!lastStep && !firstStep && (

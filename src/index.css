@@ -203,15 +203,11 @@ form .list-group-item label {
 .submitFormBtn:hover,
 .submitFormBtn:focus,
 .submitFormBtn:focus-visible {
-  text-decoration: none;
   width: 100%;
   display: inline-block;
   height: 100%;
-  /* background: transparent !important; */
-  padding: 0.5rem;
   cursor: inherit;
   pointer-events: none;
-  margin: 0.3rem 0rem;
   font-size: 1.4rem;
 }
 
