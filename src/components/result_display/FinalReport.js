@@ -7,6 +7,7 @@ import BestProduct from "./report_components/BestProduct";
 import SkinMatch from "./report_components/SkinMatch";
 import ExpectedChanges from "./report_components/ExpectedChanges";
 import ProductComponents from "./report_components/ProductComponents";
+import SkinTypeRoutine from "./report_components/SkinTypeRoutine";
 import Disclaimer from "./report_components/Disclaimer";
 
 const FinalReport = () => {
@@ -26,6 +27,7 @@ const FinalReport = () => {
         </div>
         <BestProduct />
         <ProductComponents />
+        <SkinTypeRoutine />
       </div>
       <Disclaimer />
     </>
