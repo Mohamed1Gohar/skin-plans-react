@@ -96,7 +96,7 @@ const UserName = (props) => {
           </div>
           <button
             type="submit"
-            className="btn text-white bg-prime border-0 rounded-pill w-100 "
+            className="btn text-white bg-prime border-0 rounded-pill w-100 p-3"
             disabled={
               values.name.length >= 2 &&
               values.age &&
@@ -108,7 +108,7 @@ const UserName = (props) => {
           >
             <NavLink
               to="/results"
-              className="text-white rounded-pill submitFormBtn p-3 d-inline-block"
+              className="text-white rounded-pill submitFormBtn d-inline-block"
               data-active={
                 values.name.length < 2 &&
                 !values.age &&

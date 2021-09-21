@@ -34,10 +34,13 @@ const ClaimOffer = () => {
               التجاعيد في أقل من 6 أسابيع
             </strong>
           </h2>
-          <div className="my3">
+          <div className="my-3">
             <NavLink
               to="/offer"
-              className="text-white rounded-pill submitFormBtn p-3 bg-prime my-3"
+              className="text-white rounded-pill  p-3 bg-prime my-3 w-100 h-100 d-inline-block"
+              style={{
+                fontSize: "1.5rem",
+              }}
             >
               استخدم كود الخصم
             </NavLink>
