@@ -209,6 +209,7 @@ form .list-group-item label {
   cursor: inherit;
   pointer-events: none;
   font-size: 1.4rem;
+  background: transparent !important
 }
 
 .submitFormBtn[data-active="active"],
@@ -217,6 +218,7 @@ form .list-group-item label {
 .submitFormBtn:focus-visible[data-active="active"] {
   pointer-events: auto;
   cursor: pointer;
+  background: transparent !important
 }
 
 .spinner {
