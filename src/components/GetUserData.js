@@ -77,7 +77,7 @@ const GetUserData = () => {
   };
 
   const steps = [
-    // <SkinConcerns next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <SkinConcerns next={handleNextStep} prev={handlePrevStep} data={data} />,
     <Cheeks next={handleNextStep} prev={handlePrevStep} data={data} />,
     <BlackSpots next={handleNextStep} prev={handlePrevStep} data={data} />,
     <SlimLines next={handleNextStep} prev={handlePrevStep} data={data} />,

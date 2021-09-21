@@ -113,7 +113,7 @@ const GetUserPicture = (props) => {
             <button
               type="submit"
               className="btn cl-prime rounded-pill  m-auto "
-              style={{ width: "12rem", border: "2px solid #363873" }}
+              style={{ width: "12rem", textDecoration: "underline" }}
             >
               تجاوز هذه الخطوة
             </button>
