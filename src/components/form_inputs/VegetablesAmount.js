@@ -147,7 +147,7 @@ const VegetablesAmount = (props) => {
             style={{ marginTop: "5vh", ...animPropsFadeOut }}
             className="h5"
           >
-            جاري معالجة بيناتك
+            جاري معالجة بياناتك
           </animated.div>
           <div
             style={{
