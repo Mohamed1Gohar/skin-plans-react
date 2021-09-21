@@ -8,7 +8,7 @@ import SkinMatch from "./report_components/SkinMatch";
 import ExpectedChanges from "./report_components/ExpectedChanges";
 import ProductComponents from "./report_components/ProductComponents";
 import SkinTypeRoutine from "./report_components/SkinTypeRoutine";
-import Offer from "./report_components/Offer";
+import ClaimOffer from "./report_components/ClaimOffer";
 import Disclaimer from "./report_components/Disclaimer";
 
 const FinalReport = () => {
@@ -29,7 +29,7 @@ const FinalReport = () => {
         <BestProduct />
         <ProductComponents />
         <SkinTypeRoutine />
-        <Offer />
+        <ClaimOffer />
       </div>
       <Disclaimer />
     </>

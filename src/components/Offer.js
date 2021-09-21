@@ -1,6 +1,6 @@
-import OfferImg from "../../../assets/media/images/offer.png";
+import OfferImg from "../assets/media/images/offer.png";
 import { useContext } from "react";
-import { AppContext } from "../../../context/GlobalContext";
+import { AppContext } from "../context/GlobalContext";
 
 import { BsCheck } from "react-icons/bs";
 
