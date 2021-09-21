@@ -79,20 +79,20 @@ const GetUserData = () => {
   const steps = [
     // <SkinConcerns next={handleNextStep} prev={handlePrevStep} data={data} />,
     <Cheeks next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <BlackSpots next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <SlimLines next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <Wrinkles next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <WaterAmount next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <VegetablesAmount
-    //   next={handleNextStep}
-    //   prev={handlePrevStep}
-    //   data={data}
-    // />,
-    // <SleepingHours next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <UsingMakeUp next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <DailyPressure next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <GetUserLocation next={handleNextStep} prev={handlePrevStep} data={data} />,
-    // <GetUserPicture next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <BlackSpots next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <SlimLines next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <Wrinkles next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <WaterAmount next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <VegetablesAmount
+      next={handleNextStep}
+      prev={handlePrevStep}
+      data={data}
+    />,
+    <SleepingHours next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <UsingMakeUp next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <DailyPressure next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <GetUserLocation next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <GetUserPicture next={handleNextStep} prev={handlePrevStep} data={data} />,
     <UserContacts next={handleNextStep} data={data} />,
   ];
 

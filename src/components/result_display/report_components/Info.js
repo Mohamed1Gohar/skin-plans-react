@@ -49,10 +49,24 @@ const Info = () => {
         return (
           <div
             key={i}
-            className="card text-center my-3"
-            style={{ border: "2px solid rgb(95, 100, 226)" }}
+            className="card text-center"
+            style={{
+              border: "2px solid rgb(95, 100, 226)",
+              borderRadius: `${
+                i === 0
+                  ? "2rem 2rem 0 0"
+                  : i === content.length - 1
+                  ? " 0 0 2rem 2rem"
+                  : "0"
+              }`,
+            }}
           >
-            <div className="card-header bg-prime text-white">{c.head}</div>
+            <div
+              className="card-header bg-prime text-white"
+              style={{ borderRadius: `${i === 0 && "2rem 2rem 0 0"}` }}
+            >
+              {c.head}
+            </div>
             <div className="card-body">
               <p className="card-text" style={{ color: "rgb(95, 100, 226)" }}>
                 {c.secTxt}
