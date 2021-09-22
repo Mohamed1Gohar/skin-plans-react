@@ -21,6 +21,7 @@ const FinalReport = () => {
           <ActAge />
         </div>
         <SkinMatch />
+        <SkinTypeRoutine />
         <div className="gridContainer forthLinResult">
           <Info />
           <Percentages />
@@ -28,7 +29,6 @@ const FinalReport = () => {
         </div>
         <BestProduct />
         <ProductComponents />
-        <SkinTypeRoutine />
         <ClaimOffer />
       </div>
       <Disclaimer />
