@@ -13,33 +13,33 @@ const Offer = () => {
   const [secs, setSecs] = useState("00");
 
   const { name } = useContext(AppContext);
-  let secondsLeft;
+  const secondsLeft = useRef(null);
 
   const offerForm = useRef(null);
 
   useEffect(() => {
     if (Cookies.get("timeLeft") > 0) {
-      secondsLeft = Cookies.get("timeLeft");
+      secondsLeft.current = Cookies.get("timeLeft");
       Cookies.remove("timeLeft");
-      secondsLeft--;
-      Cookies.set("timeLeft", secondsLeft);
+      secondsLeft.current--;
+      Cookies.set("timeLeft", secondsLeft.current);
     } else {
       Cookies.set("timeLeft", 10800);
     }
     setInterval(() => {
-      secondsLeft = Cookies.get("timeLeft");
-      let h = Math.floor(secondsLeft / 3600);
+      secondsLeft.current = Cookies.get("timeLeft");
+      let h = Math.floor(secondsLeft.current / 3600);
       h = h > 9 ? h : `0${h}`;
       setHours(h);
-      let m = Math.floor((secondsLeft % 3600) / 60);
+      let m = Math.floor((secondsLeft.current % 3600) / 60);
       m = m > 9 ? m : `0${m}`;
       setMins(m);
-      let s = Math.floor((secondsLeft % 3600) % 60);
+      let s = Math.floor((secondsLeft.current % 3600) % 60);
       s = s > 9 ? s : `0${s}`;
       setSecs(s);
-      secondsLeft--;
-      Cookies.set("timeLeft", secondsLeft);
-      if (secondsLeft < 0) {
+      secondsLeft.current--;
+      Cookies.set("timeLeft", secondsLeft.current);
+      if (secondsLeft.current < 0) {
         Cookies.set("timeLeft", 10800);
       }
     }, 1000);
