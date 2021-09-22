@@ -51,7 +51,7 @@ const Info = () => {
             key={i}
             className="card text-center"
             style={{
-              border: "2px solid rgb(95, 100, 226)",
+              border: "2px solid #363873",
               borderRadius: `${
                 i === 0
                   ? "2rem 2rem 0 0"
@@ -63,7 +63,7 @@ const Info = () => {
           >
             <div
               className="card-header bg-prime text-white"
-              style={{ borderRadius: `${i === 0 && "2rem 2rem 0 0"}` }}
+              style={{ borderRadius: `${i === 0 && "1.6rem 1.6rem 0 0"}` }}
             >
               {c.head}
             </div>
