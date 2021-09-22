@@ -39,7 +39,7 @@ const Offer = () => {
 
     if (secondsLeft === 0) {
       clearInterval(timer);
-      Cookies.remove("timeLeft");
+      Cookies.set("timeLeft", 10800);
     }
   }, []);
 
