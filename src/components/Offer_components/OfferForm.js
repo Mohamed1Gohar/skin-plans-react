@@ -42,7 +42,7 @@ const OfferForm = () => {
         <p className="d-flex align-items-center justify-content-center">
           <span
             style={{
-              fontSize: "3rem",
+              fontSize: "2.5rem",
               fontWeight: "900",
               color: "#2a95a4",
               paddingLeft: "0.5rem",
