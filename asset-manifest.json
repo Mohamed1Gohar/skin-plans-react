@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/khorbhsdfg/static/css/main.10b2059d.chunk.css",
-    "main.js": "/khorbhsdfg/static/js/main.48b8664c.chunk.js",
-    "main.js.map": "/khorbhsdfg/static/js/main.48b8664c.chunk.js.map",
+    "main.js": "/khorbhsdfg/static/js/main.f261b3d4.chunk.js",
+    "main.js.map": "/khorbhsdfg/static/js/main.f261b3d4.chunk.js.map",
     "runtime-main.js": "/khorbhsdfg/static/js/runtime-main.830c263f.js",
     "runtime-main.js.map": "/khorbhsdfg/static/js/runtime-main.830c263f.js.map",
     "static/js/2.6769520d.chunk.js": "/khorbhsdfg/static/js/2.6769520d.chunk.js",
@@ -27,13 +27,13 @@
     "static/media/provitamin.a0b5dd8a.png": "/khorbhsdfg/static/media/provitamin.a0b5dd8a.png",
     "static/media/skin_change.937cc4df.png": "/khorbhsdfg/static/media/skin_change.937cc4df.png",
     "static/media/sponsors.0a7349ee.png": "/khorbhsdfg/static/media/sponsors.0a7349ee.png",
-    "static/media/vegetables_intro.b080b342.jpg": "/khorbhsdfg/static/media/vegetables_intro.b080b342.jpg",
+    "static/media/vegetables_intro.30aae202.png": "/khorbhsdfg/static/media/vegetables_intro.30aae202.png",
     "static/media/vitaminE.986e43ba.png": "/khorbhsdfg/static/media/vitaminE.986e43ba.png"
   },
   "entrypoints": [
     "static/js/runtime-main.830c263f.js",
     "static/js/2.6769520d.chunk.js",
     "static/css/main.10b2059d.chunk.css",
-    "static/js/main.48b8664c.chunk.js"
+    "static/js/main.f261b3d4.chunk.js"
   ]
 }
