@@ -1,4 +1,5 @@
 import FinalResult from "../components/result_display/FinalResult";
+import Disclaimer from "../components/Disclaimer";
 
 const FinalResultPage = () => {
   return (

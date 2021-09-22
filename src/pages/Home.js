@@ -1,8 +1,7 @@
-// import Header from '../componenets/Header'
-// import About from '../componenets/About'
 
 import Header from "../components/Header";
 import About from "../components/About";
+import Disclaimer from "../components/Disclaimer";
 const Home = () => {
   return (
     <>
@@ -10,6 +9,7 @@ const Home = () => {
       <main className="m-lg-5 ">
         <About />
       </main>
+      <Disclaimer />
     </>
   );
 };

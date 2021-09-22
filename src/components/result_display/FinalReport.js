@@ -9,12 +9,12 @@ import ExpectedChanges from "./report_components/ExpectedChanges";
 import ProductComponents from "./report_components/ProductComponents";
 import SkinTypeRoutine from "./report_components/SkinTypeRoutine";
 import ClaimOffer from "./report_components/ClaimOffer";
-import Disclaimer from "./report_components/Disclaimer";
+import Disclaimer from "../Disclaimer";
 
 const FinalReport = () => {
   return (
     <>
-      <div className="text-center py-4 container cl-prime resultMaxWidth">
+      <div className="text-center pt-4 container cl-prime resultMaxWidth">
         <Graph />
         <div className="gridContainer secondLineResult ">
           <SkinEval />
@@ -30,8 +30,8 @@ const FinalReport = () => {
         <BestProduct />
         <ProductComponents />
         <ClaimOffer />
+        <Disclaimer />
       </div>
-      <Disclaimer />
     </>
   );
 };

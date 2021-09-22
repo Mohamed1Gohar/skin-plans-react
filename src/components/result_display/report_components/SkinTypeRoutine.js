@@ -85,7 +85,6 @@ const SkinTypeRoutine = () => {
                 style={{ color: "rgb(95, 100, 226)" }}
               ></p>
               <ul className="my-3 w-100 text-right">
-                {console.log(skinTypeRoutine.listItems)}
                 {skinTypeRoutine.listItems &&
                   skinTypeRoutine.listItems.map((c, i) => {
                     return (
