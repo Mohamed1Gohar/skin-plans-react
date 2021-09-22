@@ -40,7 +40,7 @@ const ClaimOffer = () => {
         </div>
         <div className="my-4">
           <h2 className="h4">
-            <strong>
+            <strong style={{ lineHeight: "1.5" }}>
               اطلب الآن روتينك المصمم خصيصا لك لتحصل على بشرة نضرة خالية من
               التجاعيد في أقل من 6 أسابيع
             </strong>
