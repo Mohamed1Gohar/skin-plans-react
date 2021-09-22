@@ -25,7 +25,7 @@ const Offer = () => {
       secondsLeft--;
       Cookies.set("timeLeft", secondsLeft);
     } else {
-      Cookies.set("timeLeft", 60);
+      Cookies.set("timeLeft", 10800);
     }
     setInterval(() => {
       secondsLeft = Cookies.get("timeLeft");
@@ -43,7 +43,7 @@ const Offer = () => {
       Cookies.set("timeLeft", secondsLeft);
       console.log("sec ", secondsLeft);
       if (secondsLeft < 0) {
-        Cookies.set("timeLeft", 60);
+        Cookies.set("timeLeft", 10800);
       }
     }, 1000);
   }, []);
