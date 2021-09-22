@@ -54,11 +54,11 @@ const Offer = () => {
         متبقي
         <h1
           className="bg-danger text-white mx-auto my-2 rounded-pill"
-          style={{ width: "15rem", fontWeight: "700" }}
+          style={{ width: "15rem", fontWeight: "700", fontSize: "2rem" }}
         >
           {hours} : {mins} : {secs}
         </h1>
-        فقط وينتهي كود الخصم الخاص بك، اسرع بالطلب الان !
+        <strong>فقط وينتهي كود الخصم الخاص بك، اسرع بالطلب الان </strong>
       </div>
 
       <div
