@@ -118,10 +118,10 @@ const UserName = (props) => {
                   : "active"
               }
               onClick={(e) =>
-                values.name.length >= 2 &&
-                values.age &&
-                values.phone.length >= 11 &&
-                values.gender &&
+                values.name.length < 2 &&
+                !values.age &&
+                values.phone.length < 11 &&
+                !values.gender &&
                 e.preventDefault()
               }
             >
