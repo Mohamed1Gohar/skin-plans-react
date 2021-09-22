@@ -36,14 +36,12 @@ const FinalResult = () => {
       display: `${resultReceived && timeout && "block"}`,
     },
     delay: showingTime + 2000,
-    // delay: 0,
   });
   const reportAnimationOut = useSpring({
     to: {
       display: `${resultReceived && timeout && "none"}`,
     },
     from: { display: "block" },
-    // delay: 0,
     delay: showingTime + 2000,
   });
   return (
