@@ -66,14 +66,17 @@ const SkinTypeRoutine = () => {
     <>
       {skinTypeRoutine && (
         <div className="text-right result_comp_style mb-4">
-          <p className="h5">
-            <br />
-          </p>
           <div
             className="card text-center my-3"
-            style={{ border: "2px solid rgb(95, 100, 226)" }}
+            style={{
+              borderRadius: "2rem",
+              border: "2px solid #363873",
+            }}
           >
-            <div className="card-header bg-prime text-white">
+            <div
+              className="card-header bg-prime text-white"
+              style={{ borderRadius: "1.7rem 1.7rem 0 0" }}
+            >
               {skinTypeRoutine.head}
             </div>
             <div className="card-body">
