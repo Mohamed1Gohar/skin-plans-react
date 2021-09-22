@@ -8,22 +8,33 @@ const ClaimOffer = () => {
   const { name } = useContext(AppContext);
 
   return (
-    <div className="result_comp_style mb-4">
+    <div className="result_comp_style mb-4 text-center">
       <div style={{ width: "100%", maxWidth: "35rem" }}>
-        <div className="d-flex justify-content-between w-100 mb-2">
-          <span>السعر العادي قبل الخصم:</span>
+        <div className="w-100 mb-2 d-flex flex-column border-bottom pb-2">
+          <strong>السعر العادي قبل الخصم:</strong>
           <del style={{ textDecoration: "line-through", color: "#898787" }}>
             1280 جنيه
           </del>
         </div>
-        <div className="d-flex justify-content-between w-100 mb-2">
+
+        <div className="w-100 mb-2 border-bottom pb-2">
           <span>
-            كود خصم skin-plans الخاص بك هو <strong>{name}44</strong>
+            كود خصم skin-plans الخاص بك هو <br />{" "}
+            <strong
+              className="px-3 rounded-pill"
+              style={{
+                background: "#d1cdcd",
+                margin: "0.75rem 0 0.5rem",
+                display: "inline-block",
+              }}
+            >
+              {name}44
+            </strong>
           </span>
         </div>
-        <div className="d-flex justify-content-between w-100 border-bottom pb-2 text-right">
+        <div className="d-flex flex-column w-100 border-bottom pb-2 ">
           <span>السعر بعد الخصم :</span>
-          <span style={{ fontSize: "80%" }}>
+          <span style={{ fontSize: "80%", color: "#5f64e2" }}>
             قم بتطبيق كود الخصم لتعرف نسبة الخصم
           </span>
         </div>
