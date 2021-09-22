@@ -42,6 +42,14 @@ const Disclaimer = () => {
             </details>
           );
         })}
+        <p>
+          The information is provided by [skin plans] and while we endeavour to
+          keep the information up to date and correct, we make no
+          representations or warranties of any kind, express or implied, about
+          the completeness, accuracy, reliability, suitability, or availability
+          concerning the website or the information, products, services, or
+          related graphics contained on the website for any purpose.
+        </p>
       </div>
     </footer>
   );
