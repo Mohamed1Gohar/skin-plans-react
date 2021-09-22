@@ -107,14 +107,7 @@ const UserName = (props) => {
             }
           >
             <NavLink
-              to={
-                values.name.length >= 2 &&
-                values.age &&
-                values.phone.length >= 11 &&
-                values.gender
-                  ? "/results"
-                  : ""
-              }
+              to="/results"
               className="text-white rounded-pill submitFormBtn d-inline-block"
               data-active={
                 values.name.length < 2 &&
@@ -124,7 +117,13 @@ const UserName = (props) => {
                   ? ""
                   : "active"
               }
-              onClick={() => handleSubmit(values)}
+              onClick={(e) =>
+                values.name.length >= 2 &&
+                values.age &&
+                values.phone.length >= 11 &&
+                values.gender &&
+                e.preventDefault()
+              }
             >
               اعرض النتائج الخاصة بي
             </NavLink>
