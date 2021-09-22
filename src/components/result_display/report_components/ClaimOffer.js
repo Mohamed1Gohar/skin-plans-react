@@ -2,8 +2,6 @@ import { useContext } from "react";
 import { AppContext } from "../../../context/GlobalContext";
 import { NavLink } from "react-router-dom";
 
-import { BsCheck } from "react-icons/bs";
-
 const ClaimOffer = () => {
   const { name } = useContext(AppContext);
 
