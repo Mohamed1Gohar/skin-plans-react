@@ -2,7 +2,7 @@ import { Formik, Form } from "formik";
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import FormArrows from "../FormArrows";
-import VegetablesImg from "../../assets/media/images/vegetables_intro.jpg";
+import VegetablesImg from "../../assets/media/images/vegetables_intro.png";
 import Logo from "../../assets/media/images/logo.png";
 
 import RadioInput from "../formFields/RadioInput";
