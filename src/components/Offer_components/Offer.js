@@ -18,7 +18,6 @@ const Offer = () => {
   const offerForm = useRef(null);
 
   useEffect(() => {
-    Cookies.remove("time");
     if (Cookies.get("timeLeft") > 0) {
       secondsLeft = Cookies.get("timeLeft");
       Cookies.remove("timeLeft");
@@ -29,7 +28,6 @@ const Offer = () => {
     }
     setInterval(() => {
       secondsLeft = Cookies.get("timeLeft");
-      console.log(Cookies.get("timeLeft"));
       let h = Math.floor(secondsLeft / 3600);
       h = h > 9 ? h : `0${h}`;
       setHours(h);
@@ -41,7 +39,6 @@ const Offer = () => {
       setSecs(s);
       secondsLeft--;
       Cookies.set("timeLeft", secondsLeft);
-      console.log("sec ", secondsLeft);
       if (secondsLeft < 0) {
         Cookies.set("timeLeft", 10800);
       }
@@ -59,7 +56,6 @@ const Offer = () => {
         dir="ltr"
         className="text-center w-100 py-2"
         style={{ background: "#e0c916", color: "#000" }}
-        // style={{ background: "#f80b0b", color: "#fff" }}
       >
         متبقي
         <h1
