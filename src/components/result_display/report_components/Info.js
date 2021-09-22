@@ -63,7 +63,7 @@ const Info = () => {
           >
             <div
               className="card-header bg-prime text-white"
-              style={{ borderRadius: `${i === 0 && "1.6rem 1.6rem 0 0"}` }}
+              style={{ borderRadius: `${i === 0 ? "1.6rem 1.6rem 0 0" : "0"}` }}
             >
               {c.head}
             </div>

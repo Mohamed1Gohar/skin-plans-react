@@ -1,4 +1,5 @@
 import { createContext, useReducer } from "react";
+import { ObjectSchema } from "yup";
 
 // App State
 const appState = {
@@ -8,6 +9,11 @@ const appState = {
   userGender: "",
   grade: 0,
   skinType: "",
+  offerData: {
+    name: "",
+    phone: "",
+    address: "",
+  },
 };
 
 const appReducer = (state, action) => {
@@ -22,6 +28,15 @@ const appReducer = (state, action) => {
         grade: action.payload.grade,
         skinType: action.payload.skinType,
       };
+    case "SET_OFFER_DATA":
+      return {
+        ...state,
+        // name: action.payload.name,
+        // phone: action.payload.phone,
+        // address: action.payload.address,
+        offerData: action.payload.offerData,
+      };
+
     default:
       return state;
   }
@@ -39,6 +54,11 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: "SET_USER_DATA", payload: obj });
   };
 
+  // set offer data
+  const setOfferData = (obj) => {
+    console.log(obj);
+    dispatch({ type: "SET_OFFER_DATA", payload: obj });
+  };
   const calculateDisplayedGrade = () => {
     return ((state.grade * 10) / 185).toFixed();
   };
@@ -50,6 +70,7 @@ export const AppProvider = ({ children }) => {
         age: state.userAge,
         skinType: state.skinType,
         setUserData,
+        setOfferData,
       }}
     >
       {children}
