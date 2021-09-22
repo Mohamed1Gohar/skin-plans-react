@@ -107,7 +107,14 @@ const UserName = (props) => {
             }
           >
             <NavLink
-              to="/results"
+              to={
+                values.name.length >= 2 &&
+                values.age &&
+                values.phone.length >= 11 &&
+                values.gender
+                  ? "/results"
+                  : ""
+              }
               className="text-white rounded-pill submitFormBtn d-inline-block"
               data-active={
                 values.name.length < 2 &&
