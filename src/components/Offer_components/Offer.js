@@ -1,5 +1,5 @@
 import OfferImg from "../../assets/media/images/offer.png";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { AppContext } from "../../context/GlobalContext";
 
 import { BsCheck } from "react-icons/bs";
@@ -15,15 +15,21 @@ const Offer = () => {
   const { name } = useContext(AppContext);
   let secondsLeft;
 
+  const offerForm = useRef(null);
+
   useEffect(() => {
-    Cookies.remove("teimeLeft");
-    if (Cookies.get("timeLeft")) {
+    Cookies.remove("time");
+    if (Cookies.get("timeLeft") > 0) {
       secondsLeft = Cookies.get("timeLeft");
+      Cookies.remove("timeLeft");
+      secondsLeft--;
+      Cookies.set("timeLeft", secondsLeft);
     } else {
-      secondsLeft = 10800;
-      Cookies.set("timeLeft", 10800);
+      Cookies.set("timeLeft", 60);
     }
-    const timer = setInterval(() => {
+    setInterval(() => {
+      secondsLeft = Cookies.get("timeLeft");
+      console.log(Cookies.get("timeLeft"));
       let h = Math.floor(secondsLeft / 3600);
       h = h > 9 ? h : `0${h}`;
       setHours(h);
@@ -35,13 +41,16 @@ const Offer = () => {
       setSecs(s);
       secondsLeft--;
       Cookies.set("timeLeft", secondsLeft);
+      console.log("sec ", secondsLeft);
+      if (secondsLeft < 0) {
+        Cookies.set("timeLeft", 60);
+      }
     }, 1000);
-
-    if (secondsLeft === 0) {
-      clearInterval(timer);
-      Cookies.set("timeLeft", 10800);
-    }
   }, []);
+
+  const scrollToForm = () => {
+    offerForm.current.scrollIntoView();
+  };
 
   return (
     <>
@@ -49,16 +58,27 @@ const Offer = () => {
       <div
         dir="ltr"
         className="text-center w-100 py-2"
-        style={{ background: "#ffd300" }}
+        style={{ background: "#e0c916", color: "#000" }}
+        // style={{ background: "#f80b0b", color: "#fff" }}
       >
         متبقي
         <h1
-          className="bg-danger text-white mx-auto my-2 rounded-pill"
+          className=" text-dark mx-auto my-2 rounded-pill"
           style={{ width: "15rem", fontWeight: "700", fontSize: "2rem" }}
         >
           {hours} : {mins} : {secs}
         </h1>
-        <strong>فقط وينتهي كود الخصم الخاص بك، اسرع بالطلب الان </strong>
+        <strong>
+          فقط وينتهي كود الخصم الخاص بك
+          <br />
+          <button
+            onClick={scrollToForm}
+            className="btn my-3 text-white px-4 font-weight-bold rounded-pill"
+            style={{ fontSize: "1.5rem", background: "#1e8187" }}
+          >
+            أسرع بالطلب الآن
+          </button>
+        </strong>
       </div>
 
       <div
@@ -120,7 +140,9 @@ const Offer = () => {
           </ul>
         </div>
         {/* submit a request  */}
-        <OfferForm />
+        <div ref={offerForm}>
+          <OfferForm />
+        </div>
       </div>
     </>
   );

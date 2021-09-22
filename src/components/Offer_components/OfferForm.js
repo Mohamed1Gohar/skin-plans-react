@@ -22,7 +22,7 @@ const OfferForm = () => {
   };
   return (
     <div
-      className="d-flex align-items-center flex-column"
+      className="d-flex align-items-center flex-column p-4"
       style={{ background: "#f4f2f3", width: "100%" }}
     >
       {/* images  */}
