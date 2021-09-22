@@ -42,6 +42,7 @@ const OfferForm = () => {
             placeholder="الاسم"
             {...name}
             style={inputStyle}
+            minLength="2"
           />
           <input
             type="tel"
@@ -49,6 +50,8 @@ const OfferForm = () => {
             placeholder="الهاتف"
             {...phone}
             style={inputStyle}
+            minLength="11"
+            maxLength="14"
           />
           <input
             type="address"
@@ -56,6 +59,7 @@ const OfferForm = () => {
             placeholder="العنوان"
             {...address}
             style={inputStyle}
+            minLength="10"
           />
 
           <button
