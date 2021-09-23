@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import FormArrows from "../FormArrows";
 import { BsImage } from "react-icons/bs";
 import { VscDeviceCamera } from "react-icons/vsc";
@@ -12,6 +12,7 @@ const GetUserPicture = (props) => {
   const [captured, setCaptured] = useState(false);
   const [scanning, setScanning] = useState(false); // prevent user from uploading images will scanning
   const [userPicSource, setUserPicSource] = useState(null);
+  const [reuploadUserPic, setReuploadUserPic] = useState(false);
   const handleSubmit = (values) => {
     props.next(values);
   };
@@ -20,24 +21,26 @@ const GetUserPicture = (props) => {
   const handlePic = () => {
     setCaptured(false); // if user reuploaded new pic
     setScanning(true);
-    setUserPicSource(null);
-    console.log(userPicSource);
+    setReuploadUserPic(true);
     setTimeout(() => {
       setCaptured(true);
       setScanning(false);
+      setReuploadUserPic(false);
     }, 13000); // this timer depending on animation time 2.5 * 5 + 0.5 for more time
     setUserPicSource(URL.createObjectURL(userPic.current.files[0]));
   };
   const handleSelfiePic = () => {
     setCaptured(false); // if user reuploaded new pic
     setScanning(true);
-    setUserPicSource(null);
+    setReuploadUserPic(true);
     setTimeout(() => {
       setCaptured(true);
       setScanning(false);
+      setReuploadUserPic(false);
     }, 13000); // this timer depending on animation time 2.5 * 5 + 0.5 for more time
     setUserPicSource(URL.createObjectURL(userSelfiePic.current.files[0]));
   };
+
   // const scanningBarAnimation = useTransition(userPicSource, null, {
   //   from: {
   //     top: "-11%",
@@ -73,7 +76,7 @@ const GetUserPicture = (props) => {
               />
               {captured && <FaCheckCircle style={completedIconStyle} />}
 
-              {userPicSource && <div className="scanningBar"></div>}
+              {reuploadUserPic && <div className="scanningBar"></div>}
             </div>
 
             <div className="d-flex justify-content-center my-lg-1">
