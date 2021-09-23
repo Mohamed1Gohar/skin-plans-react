@@ -11,7 +11,7 @@ const ClaimOffer = () => {
         <div className="w-100 mb-2 d-flex flex-column border-bottom pb-2">
           <strong>السعر العادي قبل الخصم:</strong>
           <del style={{ textDecoration: "line-through", color: "#898787" }}>
-            1280 جنيه
+            980 جنيه
           </del>
         </div>
 

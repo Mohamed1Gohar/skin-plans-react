@@ -55,7 +55,7 @@ const OfferForm = () => {
             style={{ display: "inline-block", width: "4rem" }}
           >
             {" "}
-            بدلا من 800 جنيه
+            بدلا من 980 جنيه
           </span>
         </p>
         <p
